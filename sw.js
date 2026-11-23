@@ -1,4 +1,4 @@
-const CACHE = "kastela-v6";
+const CACHE = "kastela-v7";
 const SHELL = [
   "./",
   "./index.html",
@@ -24,8 +24,33 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+self.addEventListener("push", (event) => {
+  const data = event.data ? event.data.json() : {};
+  event.waitUntil(self.registration.showNotification(data.title || "Kaštela.live – Podsjetnik", {
+    body: data.body || "",
+    icon: "./assets/icon-192.png",
+    badge: "./assets/icon-192.png",
+    image: data.image || undefined,
+    data: { url: data.url || "./" },
+  }));
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const target = new URL(event.notification.data?.url || "./", self.location.origin).href;
+  event.waitUntil(self.clients.matchAll({ type: "window", includeUncontrolled: true }).then(async (windows) => {
+    for (const client of windows) {
+      if (!client.url.startsWith(self.location.origin)) continue;
+      await client.navigate(target);
+      return client.focus();
+    }
+    return self.clients.openWindow(target);
+  }));
+});
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  if (new URL(event.request.url).pathname.startsWith("/api/")) return;
   event.respondWith(
     fetch(event.request)
       .then((response) => {

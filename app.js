@@ -1,5 +1,6 @@
-import { eventsToIcs, googleSubscribeUrl, googleTemplateUrl, parseCsv, validateEvents } from "./scripts/ics.mjs";
+import { eventsToIcs, googleTemplateUrl, parseCsv, validateEvents } from "./scripts/ics.mjs";
 import { filterEvents, foldText, isoWeekday, zagrebNow } from "./scripts/filter.mjs";
+import { scheduleDecision } from "./scripts/push-time.mjs";
 
 const WEEKDAYS = ["", "pon", "uto", "sri", "čet", "pet", "sub", "ned"];
 const WEEKDAYS_LONG = ["", "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota", "nedjelja"];
@@ -72,9 +73,8 @@ function calendarIcon() {
 
 function calendarButton(event, variant) {
   const list = variant === "list";
-  const popup = event.programme ? ' aria-haspopup="menu" aria-expanded="false"' : "";
   const label = list ? "Dodaj u kalendar" : "";
-  return `<button class="${list ? "list-cal" : "cal"}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar"${popup}>${list ? "" : calendarIcon()}${label}</button>`;
+  return `<button class="${list ? "list-cal" : "cal"}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar" aria-haspopup="menu" aria-expanded="false">${list ? "" : calendarIcon()}${label}</button>`;
 }
 
 function card(event) {
@@ -278,11 +278,6 @@ function openSubscribe() {
 
 let calendarAnchor = null;
 
-function programmeFile(name) {
-  const slug = foldText(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  return `${slug || "kalendar"}.ics`;
-}
-
 function closeCalendarMenu(restore) {
   document.querySelector(".cal-menu")?.remove();
   if (!calendarAnchor) return;
@@ -307,28 +302,160 @@ function addOne(event) {
   openCalendar(googleTemplateUrl(event));
 }
 
-function addProgramme(event) {
-  const httpsUrl = new URL(`programmes/${programmeFile(event.programme)}`, document.baseURI).href;
-  if (isAppleMobile()) {
-    openCalendar(httpsUrl.replace(/^https?:/, "webcal:"));
+const activeReminders = new Set();
+
+function reminderOn(eventId) {
+  return activeReminders.has(eventId);
+}
+
+function showPushStatus(title, message) {
+  $("#push-status-title").textContent = title;
+  $("#push-status-copy").textContent = message;
+  if (!$("#push-status").open) $("#push-status").showModal();
+}
+
+function isIos() {
+  return /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+function isStandalone() {
+  return window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+}
+
+function urlBase64ToUint8Array(value) {
+  const padding = "=".repeat((4 - (value.length % 4)) % 4);
+  const base64 = (value + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const raw = atob(base64);
+  const output = new Uint8Array(raw.length);
+  for (let index = 0; index < raw.length; index += 1) output[index] = raw.charCodeAt(index);
+  return output;
+}
+
+async function deviceSubscription() {
+  if (!("serviceWorker" in navigator) || !("PushManager" in window)) return null;
+  const registration = await navigator.serviceWorker.ready;
+  const subscription = await registration.pushManager.getSubscription();
+  if (!subscription) return null;
+  const json = subscription.toJSON();
+  return { endpoint: subscription.endpoint, keys: json.keys };
+}
+
+async function refreshReminders() {
+  activeReminders.clear();
+  const subscription = await deviceSubscription();
+  if (!subscription) return;
+  const response = await fetch(new URL("api/push/reminders/list", document.baseURI), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(subscription),
+  });
+  if (!response.ok) return;
+  const data = await response.json();
+  for (const item of data.reminders || []) activeReminders.add(item.event_id);
+}
+
+async function rememberSubscription(subscription) {
+  const response = await fetch(new URL("api/push/subscriptions", document.baseURI), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(subscription),
+  });
+  if (!response.ok) throw new Error("Pretplata nije spremljena.");
+}
+
+async function toggleReminder(event) {
+  const decision = scheduleDecision(event, new Date());
+  if (!reminderOn(event.id) && !decision.ok) {
+    showPushStatus("Podsjetnik", decision.message);
     return;
   }
-  openCalendar(googleSubscribeUrl(httpsUrl));
+  if (!("Notification" in window) || !("PushManager" in window) || !("serviceWorker" in navigator)) {
+    showPushStatus("Obavijesti", "Ovaj preglednik ne zna primiti obavijesti.");
+    return;
+  }
+  if (isIos() && !isStandalone()) {
+    if (!$("#push-ios").open) $("#push-ios").showModal();
+    return;
+  }
+  if (Notification.permission === "denied") {
+    showPushStatus("Obavijesti", "Obavijesti su isključene za ovu stranicu. U postavkama preglednika dopusti obavijesti, pa pokušaj opet.");
+    return;
+  }
+  try {
+  const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
+  if (permission !== "granted") {
+    showPushStatus("Obavijesti", "Bez dopuštenja ne možemo poslati obavijest.");
+    return;
+  }
+  const registration = await navigator.serviceWorker.ready;
+  let subscription = await deviceSubscription();
+  if (!subscription) {
+    const config = await fetch(new URL("api/push/config", document.baseURI)).then((response) => response.json());
+    const created = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(config.publicKey),
+    });
+    subscription = { endpoint: created.endpoint, keys: created.toJSON().keys };
+  }
+  await rememberSubscription(subscription);
+  const turningOff = reminderOn(event.id);
+  const response = await fetch(new URL("api/push/reminders", document.baseURI), {
+    method: turningOff ? "DELETE" : "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...subscription, eventId: event.id }),
+  });
+  const data = await response.json();
+  await refreshReminders();
+  if ($("#reminders").open) openReminderList();
+  showPushStatus(turningOff ? "Obavijest" : "Podsjetnik", data.message || (response.ok ? "Spremljeno." : "Podsjetnik nije spremljen."));
+  } catch (error) {
+    showPushStatus("Obavijest", error.message || "Obavijest se nije uključila.");
+  }
+}
+
+async function openReminderList() {
+  const host = $("#reminder-list");
+  const subscription = await deviceSubscription();
+  if (!subscription) {
+    host.innerHTML = "<p>Na ovom uređaju još nema uključenih obavijesti.</p>";
+  } else {
+    const response = await fetch(new URL("api/push/reminders/list", document.baseURI), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(subscription),
+    });
+    const data = await response.json();
+    const items = data.reminders || [];
+    host.innerHTML = items.length
+      ? items.map((item) => `<article class="reminder-row">
+          <strong>${escapeHtml(item.title)}</strong>
+          <p>${escapeHtml(item.date)} · ${escapeHtml(item.start_time)} · ${escapeHtml(item.venue)} ${escapeHtml(item.district)}</p>
+          <p>Podsjetnik je uključen. Obavijest stiže 8 sati prije.</p>
+          <button class="btn btn-line" type="button" data-action="reminder-off" data-id="${escapeHtml(item.event_id)}">Isključi</button>
+        </article>`).join("")
+      : "<p>Nema uključenih podsjetnika.</p>";
+  }
+  if ($("#menu").open) $("#menu").close();
+  if (!$("#reminders").open) $("#reminders").showModal();
 }
 
 function openCalendarMenu(anchor, event) {
   closeCalendarMenu();
   calendarAnchor = anchor;
   anchor.setAttribute("aria-expanded", "true");
-  const one = googleTemplateUrl(event);
-  const group = new URL(`programmes/${programmeFile(event.programme)}`, document.baseURI).href;
+  const decision = scheduleDecision(event, new Date());
+  const on = reminderOn(event.id);
+  const notifyLabel = on ? "Podsjetnik aktiviran" : "Dodaj samo obavijest";
+  const notifyNote = on
+    ? "Dodirni da isključiš obavijest."
+    : (decision.ok ? "Pošaljemo ti obavijest 8 sati prije početka događaja." : decision.message);
   const menu = document.createElement("div");
   menu.className = "cal-menu";
   menu.dataset.id = event.id;
   menu.setAttribute("role", "menu");
   menu.innerHTML = `
-    <a role="menuitem" data-action="ics-one" data-id="${escapeHtml(event.id)}" href="${escapeHtml(one)}">Dodaj samo ovaj event</a>
-    <a role="menuitem" data-action="ics-group" data-id="${escapeHtml(event.id)}" href="${escapeHtml(googleSubscribeUrl(group))}">Dodaj cijeli „${escapeHtml(event.programme)}”</a>
+    <button role="menuitem" type="button" data-action="ics-private" data-id="${escapeHtml(event.id)}">Dodaj u privatni kalendar</button>
+    <button role="menuitem" type="button" data-action="ics-notify" data-id="${escapeHtml(event.id)}"${on || decision.ok ? "" : " disabled"} class="${on ? "is-on" : ""}">${notifyLabel}<small>${escapeHtml(notifyNote)}</small></button>
   `;
   document.body.append(menu);
   const rect = anchor.getBoundingClientRect();
@@ -416,10 +543,6 @@ function bind() {
     if (button.dataset.action === "ics") {
       const item = state.events.find((entry) => entry.id === button.dataset.id);
       if (!item) return;
-      if (!item.programme) {
-        addOne(item);
-        return;
-      }
       if (calendarAnchor === button) {
         closeCalendarMenu();
         return;
@@ -427,13 +550,17 @@ function bind() {
       openCalendarMenu(button, item);
       return;
     }
-    if (button.dataset.action === "ics-one" || button.dataset.action === "ics-group") {
+    if (button.dataset.action === "ics-private" || button.dataset.action === "ics-notify" || button.dataset.action === "reminder-off") {
       event.preventDefault();
       const item = state.events.find((entry) => entry.id === button.dataset.id);
       closeCalendarMenu();
       if (!item) return;
-      if (button.dataset.action === "ics-one") addOne(item);
-      else addProgramme(item);
+      if (button.dataset.action === "ics-private") addOne(item);
+      else toggleReminder(item);
+    }
+    if (button.dataset.action === "reminders") {
+      event.preventDefault();
+      openReminderList();
     }
     if (button.dataset.action === "filtered-ics") downloadIcs("kastela-odabir.ics", selected());
     if (button.dataset.action === "reset") {
@@ -505,6 +632,7 @@ async function init() {
     const { events, errors } = validateEvents(parseCsv(await response.text()));
     if (errors.length) throw new Error(errors[0]);
     state.events = events;
+    await refreshReminders();
     render();
     const target = location.hash.replace("#", "");
     document.getElementById(target)?.scrollIntoView({ block: "center" });

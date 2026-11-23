@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Podsjetnici — kastela.live</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="wrap" style="padding: 28px 0 48px">
+      <h1 style="font-size: 40px">Podsjetnici</h1>
+      <p class="dialog-copy">Pregled push pretplata na ovom poslužitelju. S drugog računala treba token iz <code>PUSH_ADMIN_TOKEN</code>.</p>
+      <form id="admin" class="search" style="margin-top: 18px">
+        <input id="token" type="password" placeholder="Token, ako nije lokalno" autocomplete="off" />
+        <button class="btn btn-cyan" type="submit">Osvježi</button>
+      </form>
+      <div id="stats" class="guide" style="margin-top: 22px"></div>
+    </main>
+    <script>
+      const stats = document.querySelector("#stats");
+      async function load(token) {
+        const response = await fetch("./api/push/stats", { headers: token ? { "x-admin-token": token } : {} });
+        const data = await response.json();
+        if (!response.ok) {
+          stats.textContent = data.message || "Nema pristupa.";
+          return;
+        }
+        const rows = (data.upcoming || []).map((item) => `<li>${item.title} · ${item.scheduled_at}</li>`).join("");
+        stats.innerHTML = `<p>Aktivne pretplate: <strong>${data.subscriptions}</strong></p>
+          <p>Aktivni podsjetnici: <strong>${data.reminders}</strong></p>
+          <p>Poslane obavijesti: <strong>${data.sent}</strong></p>
+          <p>Neuspjela slanja: <strong>${data.failed}</strong></p>
+          <h2>Zakazano</h2>
+          <ul>${rows || "<li>Nema zakazanih podsjetnika.</li>"}</ul>`;
+      }
+      document.querySelector("#admin").addEventListener("submit", (event) => {
+        event.preventDefault();
+        load(document.querySelector("#token").value.trim());
+      });
+      load("");
+    </script>
+  </body>
+</html>

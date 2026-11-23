@@ -2,3 +2,7 @@
 .vercel
 node_modules
 _site
+.env
+.env.*
+data/vapid.json
+data/push-store.json

@@ -39,19 +39,27 @@ Ako redak ne valja, Action staje i u logu piše broj retka. Uobičajene greške:
 
 Vremena u kalendaru nose `TZID=Europe/Zagreb`. Svaki događaj ima svoj `UID` (`id@kastela.live`) i podsjetnik dva sata prije početka.
 
-## Pretplata
+## Kalendar i obavijest
 
-Na stranici gumb **Pretplati se na kalendar** otvara:
+**Dodaj u kalendar** nudi dvije odvojene stvari:
 
-- Google Kalendar
-- Apple Kalendar (`webcal://`)
-- Outlook
-- kopiranje adrese
-- QR kod za kameru mobitela
+- **Dodaj u privatni kalendar** otvara potvrdu za taj događaj (Google Kalendar, ili datoteka događaja na iPhoneu).
+- **Dodaj samo obavijest** uključuje Web Push. Poslužitelj šalje poruku točno 8 sati prije početka, po vremenu Europe/Zagreb. Ako je do početka ostalo manje od 8 sati, podsjetnik se ne uključuje.
 
-Adresa je `calendar.ics` na istoj domeni kao stranica. Pretplata prati **sva** događanja iz tablice. Telefon je sam povlači svakih nekoliko sati; to ne možemo ubrzati iz preglednika.
+Na iPhoneu obavijest radi nakon dodavanja stranice na početni zaslon. Dopuštenje se traži tek na dodir. **Moji podsjetnici** u izborniku isključuju obavijest na tom uređaju. Brisanje pretplate je `DELETE /api/push/subscriptions`.
 
-**Preuzmi odabir (.ics)** skida samo ono što filteri trenutno pokazuju. To je jednokratna datoteka, ne živa pretplata. **Dodaj u kalendar** otvara potvrdu u kalendaru: samo taj događaj, ili cijeli skup (sada `Advent u Kaštelima`).
+`node scripts/serve.mjs` svake minute provjeri rok. Isti posao radi `POST /api/push/dispatch`. S lokalnog računala token nije potreban. Inače zaglavlje `x-admin-token` mora biti `PUSH_ADMIN_TOKEN`. Statistika je na `admin.html` i `GET /api/push/stats`.
+
+VAPID ključevi su u `data/vapid.json` (nije u gitu) ili u varijablama:
+
+- `VAPID_PUBLIC_KEY`
+- `VAPID_PRIVATE_KEY`
+- `VAPID_SUBJECT` (npr. `mailto:podsjetnik@kastela.live`)
+- `PUSH_ADMIN_TOKEN`
+
+Pretplate i podsjetnici stoje u `data/push-store.json`. Nema prijave korisnika. Promjena vremena u `data/events.csv` preračuna rok. Nestanak događaja gasi podsjetnik i, ako pretplata još vrijedi, pošalje obavijest da je događaj uklonjen.
+
+**Preuzmi odabir (.ics)** i dalje skida samo trenutni filtar. To nije push ni živa pretplata.
 
 ## Lokalno
 

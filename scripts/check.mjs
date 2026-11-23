@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./push-check.mjs";
 import { readFileSync } from "node:fs";
 import { CATEGORIES, DISTRICTS, eventsToIcs, googleTemplateUrl, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
 import { filterEvents, foldText, weekendDates } from "./filter.mjs";

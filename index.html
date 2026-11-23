@@ -47,7 +47,7 @@
           <aside class="hero-note">
             <h2>Sva kaštelanska događanja na jednom mjestu</h2>
             <ul>
-              <li>Spremi na mobitel – dodaj pojedini događaj ili se pretplati na cijeli program da ti se nove objave i promjene same ažuriraju u kalendaru.</li>
+              <li>Spremi na mobitel – dodaj događaj u svoj kalendar ili uključi obavijest 8 sati prije početka.</li>
             </ul>
             <p>Ova aplikacija je interaktivni vodić kroz događanja u Kaštelima i okolici, a napravljena je iz revolta našim općinama koje su u stanju samo generirati PDF dokument i zalijepiti 2–3 plakata po Kaštelima.</p>
           </aside>
@@ -184,6 +184,7 @@
           </button>
         </div>
         <button class="guide-link" type="button" data-action="guide">Kako koristiti</button>
+        <button class="guide-link" type="button" data-action="reminders">Moji podsjetnici</button>
         <h3>Gradovi</h3>
         <div class="menu-list">
           <button type="button" data-city="kastela">Kaštela</button>
@@ -220,22 +221,55 @@
           <li>Mjesto i kategorija su u istom redu, ispod gradova.</li>
           <li>Tražilica hvata naziv, izvođača i lokaciju.</li>
         </ul>
-        <h3>Jedan događaj u kalendar</h3>
+        <h3>Dodaj u kalendar</h3>
         <ol>
           <li>Na popisu dodirni <strong>Dodaj u kalendar</strong>.</li>
-          <li>Ako je događaj dio većeg programa, izaberi <strong>Dodaj samo ovaj event</strong>.</li>
-          <li>Na iPhoneu otvara se Kalendar s ispunjenim terminom. Dodirni Dodaj.</li>
-          <li>Na Androidu otvara se Google Kalendar s nazivom, vremenom i mjestom. Dodirni Spremi.</li>
+          <li><strong>Dodaj u privatni kalendar</strong> otvara potvrdu u kalendaru. Na iPhoneu je to Kalendar, na Androidu Google Kalendar. Potvrdi spremanje.</li>
+          <li><strong>Dodaj samo obavijest</strong> šalje push poruku 8 sati prije početka. Možeš je kasnije isključiti.</li>
         </ol>
-        <h3>Cijeli program</h3>
-        <p>Neki događaji idu u skupu. Sada je to Advent u Kaštelima. Jedna pretplata prati sve te datume, pa se nova objava ili izmjena sama pojavi u kalendaru.</p>
+        <p>Na iPhoneu obavijest radi nakon što stranicu dodaš na početni zaslon i otvoriš je odatle.</p>
+      </form>
+    </dialog>
+
+    <dialog id="push-status">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2 id="push-status-title">Obavijest</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <p id="push-status-copy" class="dialog-copy"></p>
+      </form>
+    </dialog>
+
+    <dialog id="push-ios">
+      <form method="dialog" class="guide">
+        <div class="dialog-head">
+          <h2>Najprije na početni zaslon</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <p>Na iPhoneu obavijest stiže tek kad je kastela.live instaliran kao aplikacija.</p>
         <ol>
-          <li>Dodirni <strong>Dodaj u kalendar</strong> na bilo kojem događaju iz tog skupa.</li>
-          <li>Izaberi <strong>Dodaj cijeli „Advent u Kaštelima”</strong>.</li>
-          <li>Na iPhoneu Kalendar pita da se pretplatiš. Potvrdi.</li>
-          <li>Na Androidu Google Kalendar pita da dodaš kalendar. Potvrdi.</li>
+          <li>Otvori stranicu u Safariju.</li>
+          <li>Dodirni Dijeli.</li>
+          <li>Odaberi Dodaj na početni zaslon.</li>
+          <li>Otvori ikonu Kaštela i ponovno uključi obavijest.</li>
         </ol>
-        <p>Jedan događaj ostaje samo taj termin. Cijeli program drži sve datume iz skupa.</p>
+      </form>
+    </dialog>
+
+    <dialog id="reminders">
+      <form method="dialog" class="guide">
+        <div class="dialog-head">
+          <h2>Moji podsjetnici</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori podsjetnike">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div id="reminder-list"></div>
       </form>
     </dialog>
 

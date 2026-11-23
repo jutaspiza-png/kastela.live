@@ -15,12 +15,13 @@ rmSync(site, { recursive: true, force: true });
 mkdirSync(resolve(site, "scripts"), { recursive: true });
 mkdirSync(resolve(site, "data"), { recursive: true });
 
-for (const file of ["index.html", "styles.css", "app.js", "calendar.ics", "manifest.webmanifest", "sw.js"]) {
+for (const file of ["index.html", "admin.html", "styles.css", "app.js", "calendar.ics", "manifest.webmanifest", "sw.js"]) {
   cpSync(resolve(root, file), resolve(site, file));
 }
 cpSync(resolve(root, "data/events.csv"), resolve(site, "data/events.csv"));
 cpSync(resolve(root, "scripts/ics.mjs"), resolve(site, "scripts/ics.mjs"));
 cpSync(resolve(root, "scripts/filter.mjs"), resolve(site, "scripts/filter.mjs"));
+cpSync(resolve(root, "scripts/push-time.mjs"), resolve(site, "scripts/push-time.mjs"));
 for (const directory of ["assets", "fonts", "vendor"]) {
   cpSync(resolve(root, directory), resolve(site, directory), { recursive: true });
 }

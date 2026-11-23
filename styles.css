@@ -361,6 +361,18 @@ h2 { margin: 0; font-size: 26px; letter-spacing: -0.04em; }
   background: white;
   box-shadow: 0 16px 40px rgba(52, 52, 52, 0.16);
 }
+.cal-menu button small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.cal-menu button.is-on { color: var(--teal); }
+.cal-menu button:disabled { opacity: 0.6; cursor: default; }
+.reminder-row { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.reminder-row p { margin: 4px 0; }
 .cal-menu a,
 .cal-menu button {
   border: 0;

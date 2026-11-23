@@ -2,9 +2,11 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { handlePushApi, startPushScheduler } from "./push-api.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const port = Number(process.env.PORT || 4173);
+let pageOrigin = `http://127.0.0.1:${port}`;
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -23,6 +25,11 @@ const types = {
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", "http://127.0.0.1");
+    if (request.headers.origin) pageOrigin = request.headers.origin;
+    if (url.pathname.startsWith("/api/push")) {
+      await handlePushApi(request, response, url, root);
+      return;
+    }
     let pathname = decodeURIComponent(url.pathname);
     if (pathname.endsWith("/")) pathname += "index.html";
     pathname = pathname.replace(/^\/+/, "");
@@ -43,11 +50,19 @@ const server = createServer(async (request, response) => {
       "Cache-Control": "no-cache",
     });
     response.end(body);
-  } catch {
+  } catch (error) {
+    if (String(request.url || "").startsWith("/api/")) {
+      response.writeHead(500, { "Content-Type": "application/json; charset=utf-8" });
+      response.end(JSON.stringify({ ok: false, message: "Poslužitelj nije odradio zahtjev." }));
+      console.error(error);
+      return;
+    }
     response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     response.end("Nema datoteke");
   }
 });
+
+startPushScheduler(root, () => pageOrigin);
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`Kaštela događanja: http://127.0.0.1:${port}`);
