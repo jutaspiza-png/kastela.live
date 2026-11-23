@@ -23,7 +23,6 @@ const state = {
   eveningOnly: false,
   freeOnly: false,
   showPast: false,
-  view: "list",
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -101,9 +100,8 @@ function currentCity() {
   return CITIES.find((city) => city.id === state.city) || CITIES[0];
 }
 
-function countLabel(count) {
-  const word = count % 10 === 1 && count % 100 !== 11 ? "događanje" : "događanja";
-  return `${count} ${word}`;
+function eventWord(count) {
+  return count % 10 === 1 && count % 100 !== 11 ? "događanje" : "događanja";
 }
 
 function criteria() {
@@ -115,6 +113,49 @@ function criteria() {
     eveningOnly: state.eveningOnly,
     freeOnly: state.freeOnly,
     showPast: state.showPast,
+  };
+}
+
+function setupFeaturedLoop() {
+  const scroller = $("#featured");
+  scroller.onscroll = null;
+  const count = scroller.children.length;
+  if (count < 2) return;
+  const originals = [...scroller.children];
+  const clones = () => originals.map((node) => {
+    const copy = node.cloneNode(true);
+    copy.removeAttribute("id");
+    copy.setAttribute("aria-hidden", "true");
+    copy.querySelectorAll("button, a").forEach((el) => el.setAttribute("tabindex", "-1"));
+    return copy;
+  });
+  scroller.prepend(...clones());
+  scroller.append(...clones());
+  const metrics = () => {
+    const gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+    const setWidth = (originals[0].offsetWidth + gap) * count;
+    return setWidth;
+  };
+  const place = () => {
+    const setWidth = metrics();
+    if (!setWidth) return false;
+    scroller.scrollLeft = setWidth;
+    return true;
+  };
+  if (!place()) requestAnimationFrame(place);
+  let lock = false;
+  scroller.onscroll = () => {
+    if (lock) return;
+    const setWidth = metrics();
+    if (!setWidth) return;
+    const left = scroller.scrollLeft;
+    let next = left;
+    if (left < setWidth) next = left + setWidth;
+    else if (left >= setWidth * 2) next = left - setWidth;
+    if (next === left) return;
+    lock = true;
+    scroller.scrollLeft = next;
+    lock = false;
   };
 }
 
@@ -146,10 +187,11 @@ function render() {
 
   const events = selected();
   const featured = events.slice(0, 6);
-  const rest = events.slice(featured.length);
   const featuredSection = $("#featured-section");
   featuredSection.hidden = featured.length === 0;
+  $("#featured-nav").hidden = featured.length < 2;
   $("#featured").innerHTML = featured.map((event) => card(event)).join("");
+  if (featured.length >= 2) setupFeaturedLoop();
 
   const results = $("#results");
   const title = $("#upcoming-title");
@@ -160,9 +202,9 @@ function render() {
     const bare = !state.query && state.district === "all" && state.period === "all" && state.category === "all" && !state.eveningOnly && !state.freeOnly;
     const message = bare && city.id !== "kastela" ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
     results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${bare && city.id !== "kastela" ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
-  } else if (state.view === "list") {
+  } else {
     upcomingSection.hidden = false;
-    title.textContent = `Uskoro · ${countLabel(events.length)}`;
+    title.innerHTML = `Uskoro · <span class="count">${events.length}</span> ${eventWord(events.length)}`;
     const groups = new Map();
     for (const event of events) {
       if (!groups.has(event.date)) groups.set(event.date, []);
@@ -186,26 +228,14 @@ function render() {
           </li>`).join("")}
         </ul>
       </section>`).join("");
-  } else if (!rest.length) {
-    upcomingSection.hidden = true;
-    results.innerHTML = "";
-  } else {
-    upcomingSection.hidden = false;
-    title.textContent = `Uskoro · ${countLabel(rest.length)}`;
-    results.innerHTML = `<div class="grid">${rest.map((event) => card(event)).join("")}</div>`;
   }
 
   $("#status").hidden = true;
-  document.querySelectorAll("[data-view]").forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.view === state.view));
-  });
   document.querySelectorAll("[data-intent]").forEach((button) => {
     const on =
-      (button.dataset.intent === "today" && state.period === "today" && !state.eveningOnly) ||
-      (button.dataset.intent === "evening" && state.eveningOnly) ||
       (button.dataset.intent === "weekend" && state.period === "weekend") ||
-      (button.dataset.intent === "free" && state.freeOnly) ||
-      (button.dataset.intent === "kids" && state.category === "Djeca");
+      (button.dataset.intent === "kids" && state.category === "Djeca") ||
+      (button.dataset.intent === "concerts" && state.category === "Glazba");
     button.setAttribute("aria-pressed", String(on));
   });
   bindPhotos();
@@ -334,7 +364,6 @@ function resetFilters() {
   state.freeOnly = false;
   $("#q").value = "";
   $("#district").value = "all";
-  $("#period").value = "all";
   $("#category").value = "all";
 }
 
@@ -351,11 +380,6 @@ function bind() {
   });
   $("#district").addEventListener("change", () => {
     state.district = $("#district").value;
-    render();
-  });
-  $("#period").addEventListener("change", () => {
-    state.period = $("#period").value;
-    if (state.period !== "today") state.eveningOnly = false;
     render();
   });
   $("#category").addEventListener("change", () => {
@@ -376,8 +400,18 @@ function bind() {
       openSubscribe();
     }
     if (button.dataset.action === "menu") $("#menu").showModal();
+    if (button.dataset.action === "guide") {
+      if ($("#menu").open) $("#menu").close();
+      $("#guide").showModal();
+    }
     if (button.dataset.action === "scroll-featured") {
-      $("#featured").scrollBy({ left: 240, behavior: "smooth" });
+      const scroller = $("#featured");
+      const card = scroller.querySelector(".card");
+      const gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+      const step = (card?.offsetWidth || 180) + gap;
+      const dir = Number(button.dataset.dir || 1);
+      const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      scroller.scrollBy({ left: step * dir, behavior });
     }
     if (button.dataset.action === "ics") {
       const item = state.events.find((entry) => entry.id === button.dataset.id);
@@ -406,29 +440,17 @@ function bind() {
       resetFilters();
       render();
     }
-    if (button.dataset.view) {
-      state.view = button.dataset.view;
-      try { localStorage.setItem("kastela-view", state.view); } catch { /* private mode */ }
-      render();
-    }
     if (button.dataset.intent) {
       const intent = button.dataset.intent;
       const was = button.getAttribute("aria-pressed") === "true";
-      if (intent === "today") {
-        state.period = was ? "all" : "today";
-        state.eveningOnly = false;
-      } else if (intent === "evening") {
-        state.period = was ? "all" : "today";
-        state.eveningOnly = !was;
-      } else if (intent === "weekend") {
+      if (intent === "weekend") {
         state.period = was ? "all" : "weekend";
         state.eveningOnly = false;
-      } else if (intent === "free") {
-        state.freeOnly = !was;
       } else if (intent === "kids") {
         state.category = was ? "all" : "Djeca";
+      } else if (intent === "concerts") {
+        state.category = was ? "all" : "Glazba";
       }
-      $("#period").value = state.period;
       $("#category").value = state.category;
       render();
       $("#dogadanja").scrollIntoView({ block: "start" });
@@ -476,9 +498,6 @@ async function init() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register(new URL("sw.js", document.baseURI)).catch(() => {});
   }
-  try {
-    state.view = localStorage.getItem("kastela-view") === "grid" ? "grid" : "list";
-  } catch { /* ignore */ }
   bind();
   try {
     const response = await fetch(new URL("data/events.csv", document.baseURI));
