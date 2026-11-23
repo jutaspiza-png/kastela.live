@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#67e8f0" />
+    <meta
+      name="description"
+      content="Kalendar događanja u Kaštelima. Advent, koncerti, predstave i pretplata na calendar.ics."
+    />
+    <title>Kaštela — što se događa</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#dogadanja">Preskoči na događanja</a>
+    <header class="top">
+      <div class="wrap top-bar">
+        <a class="logo" href="./" aria-label="Kaštela, početna">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#0f172a" />
+            <path fill="#67e8f0" d="M6 22V12l4-3 4 3v3l2-1.5L20 15v7H6zm3-2h2v-3H9v3zm5 0h2v-3h-2v3z" />
+          </svg>
+          <span>kaštela</span>
+        </a>
+        <div class="top-actions">
+          <button class="btn btn-dark" type="button" data-action="subscribe">
+            Pretplati se <span class="wide">na kalendar</span>
+          </button>
+          <button class="btn btn-icon" type="button" data-action="menu" aria-label="Izbornik">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-layout">
+          <div class="hero-art" aria-hidden="true">
+            <img class="float f1" src="./assets/posters/glazba.svg" alt="" />
+            <img class="float f2" src="./assets/posters/advent.svg" alt="" />
+            <img class="float f3" src="./assets/posters/kastilac.svg" alt="" />
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow">Advent i zbivanja</p>
+            <h1>Što se događa<br />u Kaštelima</h1>
+            <p class="lede" id="hero-count">Kalendar Božićnog grada i Fritulice.</p>
+            <form class="search" id="search-form" role="search">
+              <label class="sr-only" for="q">Pretraga</label>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                <path d="M16 16l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <input id="q" name="q" type="search" placeholder="Pretraži izvođače, događaje ili lokacije..." autocomplete="off" />
+              <button class="btn btn-cyan" type="submit">Traži</button>
+            </form>
+            <div class="quick" role="group" aria-label="Brzi odabir">
+              <button type="button" data-intent="today">Danas</button>
+              <button type="button" data-intent="evening">Večeras</button>
+              <button type="button" data-intent="weekend">Ovaj vikend</button>
+              <button type="button" data-intent="free">Besplatno</button>
+              <button type="button" data-intent="kids">Za djecu</button>
+            </div>
+            <button class="btn btn-hero" type="button" data-action="subscribe">Pretplati se na kalendar</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap controls">
+        <form id="filters" class="filters">
+          <label>
+            <span>Mjesto</span>
+            <select id="district" name="district">
+              <option value="all">Sva mjesta</option>
+              <option>Kaštel Novi</option>
+              <option>Kaštel Stari</option>
+              <option>Kaštel Lukšić</option>
+              <option>Kaštel Kambelovac</option>
+              <option>Kaštel Gomilica</option>
+              <option>Kaštel Sućurac</option>
+            </select>
+          </label>
+          <label>
+            <span>Datum</span>
+            <select id="period" name="period">
+              <option value="all">Svi datumi</option>
+              <option value="today">Danas</option>
+              <option value="tomorrow">Sutra</option>
+              <option value="weekend">Ovaj vikend</option>
+            </select>
+          </label>
+          <label>
+            <span>Kategorija</span>
+            <select id="category" name="category">
+              <option value="all">Sve</option>
+              <option>Glazba</option>
+              <option>Djeca</option>
+              <option>Predstava</option>
+              <option>Gastro</option>
+              <option>Kultura</option>
+              <option>Sport i rekreacija</option>
+              <option>Tradicionalno</option>
+            </select>
+          </label>
+        </form>
+        <div class="control-row">
+          <label class="check">
+            <input id="show-past" type="checkbox" />
+            Prikaži i prošla
+          </label>
+          <button class="text-btn" type="button" data-action="filtered-ics">Preuzmi odabir (.ics)</button>
+        </div>
+      </div>
+
+      <div class="wrap" id="dogadanja">
+        <p id="status" class="status" role="status">Učitavam događanja…</p>
+        <section id="featured-section" class="block" hidden>
+          <div class="block-head">
+            <h2>Istaknuto</h2>
+            <button class="circle" type="button" data-action="scroll-featured" aria-label="Sljedeća istaknuta događanja">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div id="featured" class="scroller"></div>
+        </section>
+
+        <section class="block">
+          <div class="block-head">
+            <h2 id="upcoming-title">Uskoro</h2>
+            <div class="view-toggle" role="group" aria-label="Prikaz">
+              <button type="button" data-view="grid" aria-pressed="true">Kartice</button>
+              <button type="button" data-view="list" aria-pressed="false">Popis po danima</button>
+            </div>
+          </div>
+          <div id="results"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <p>Događanja u Kaštelima. Podaci su u <code>data/events.csv</code>, pretplata je <code>calendar.ics</code>.</p>
+        <button class="text-btn" type="button" data-action="subscribe">Pretplati se na kalendar</button>
+      </div>
+    </footer>
+
+    <dialog id="subscribe">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2>Pretplati se na kalendar</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <p class="dialog-copy">Jedna pretplata na sva događanja. Datoteka se osvježi kad netko doda redak u tablicu na GitHubu.</p>
+        <label class="url-row">
+          <span class="sr-only">Adresa pretplate</span>
+          <input id="sub-url" type="text" readonly />
+        </label>
+        <div class="sub-actions">
+          <a id="sub-google" class="btn btn-line" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer">Google Kalendar</a>
+          <a id="sub-apple" class="btn btn-line" href="webcal://">Apple Kalendar</a>
+          <a id="sub-outlook" class="btn btn-line" href="https://outlook.live.com" target="_blank" rel="noopener noreferrer">Outlook</a>
+          <button id="sub-copy" class="btn btn-dark" type="button">Kopiraj poveznicu</button>
+        </div>
+        <div class="qr-panel">
+          <div id="qr"></div>
+          <p>Skeniraj kamerom mobitela. Kod vodi na istu <code>calendar.ics</code> adresu.</p>
+        </div>
+        <p class="fine">Pretplata pokriva cijeli kalendar. Za trenutne filtere koristi „Preuzmi odabir”.</p>
+      </form>
+    </dialog>
+
+    <dialog id="menu">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2>Kaštela</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori izbornik">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <h3>Naselja</h3>
+        <div class="menu-list">
+          <button type="button" data-district="all">Sva mjesta</button>
+          <button type="button" data-district="Kaštel Novi">Kaštel Novi</button>
+          <button type="button" data-district="Kaštel Stari">Kaštel Stari</button>
+          <button type="button" data-district="Kaštel Lukšić">Kaštel Lukšić</button>
+          <button type="button" data-district="Kaštel Kambelovac">Kaštel Kambelovac</button>
+          <button type="button" data-district="Kaštel Gomilica">Kaštel Gomilica</button>
+          <button type="button" data-district="Kaštel Sućurac">Kaštel Sućurac</button>
+        </div>
+        <h3>Kalendar</h3>
+        <button class="btn btn-dark menu-cta" type="button" data-action="subscribe">Pretplati se na kalendar</button>
+        <p class="fine">Novo događanje dodaje se retkom u <code>data/events.csv</code>. Objava na GitHubu sama izgradi <code>calendar.ics</code>.</p>
+      </form>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">Za popis događanja potreban je JavaScript. Datoteka <code>data/events.csv</code> i <code>calendar.ics</code> i dalje su na ovoj adresi.</p>
+    </noscript>
+    <script src="./vendor/qrcode-generator.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

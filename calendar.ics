@@ -1,0 +1,502 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//kastela.live//Dogadanja//HR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Događanja u Kaštelima
+X-WR-TIMEZONE:Europe/Zagreb
+BEGIN:VTIMEZONE
+TZID:Europe/Zagreb
+X-LIC-LOCATION:Europe/Zagreb
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:kastela-2026-002@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261205T180000
+DTEND;TZID=Europe/Zagreb:20261205T200000
+SUMMARY:Paljenje 2. adventske svijeće
+LOCATION:Đardin\, Kaštel Novi
+DESCRIPTION:Tradicionalno paljenje adventske svijeće uz prigodni program.\
+ nKategorija: Tradicionalno\nUlaz slobodan\nVanjski prostor\nĐardin\, Kaš
+ tel Novi
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje 2. adventske svijeće
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-001@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261205T210000
+DTEND;TZID=Europe/Zagreb:20261205T230000
+SUMMARY:Stela Rade
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Stela Rade
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-003@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261206T170000
+DTEND;TZID=Europe/Zagreb:20261206T190000
+SUMMARY:KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
+LOCATION:Kulturni centar Kaštela / Novi park\, Kaštel Lukšić
+DESCRIPTION:Kazališna predstava 'Pobuna igračaka' (KDK Škatula) i dolaza
+ k sv. Nikole u Novom parku.\nKategorija: Djeca\nUlaz slobodan\nKombinirano
+ \nKulturni centar Kaštela / Novi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-004@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261208T170000
+DTEND;TZID=Europe/Zagreb:20261208T190000
+SUMMARY:Kino Mediteran - Hexe: Kraljevstvo čarolije
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Sinkronizirana filmska projekcija za djecu u sklopu programa Fr
+ itulica.\nKategorija: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Ka
+ štela\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kino Mediteran - Hexe: Kraljevstvo čarolije
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-006@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261211T173000
+DTEND;TZID=Europe/Zagreb:20261211T193000
+SUMMARY:Produkcija Z: Kako je dječak Srećko spasio Božić
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Lutkarska predstava u sklopu dječjeg adventskog programa Fritu
+ lica.\nKategorija: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kašt
+ ela\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Produkcija Z: Kako je dječak Srećko spasio Boži
+ ć
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-005@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261211T210000
+DTEND;TZID=Europe/Zagreb:20261211T230000
+SUMMARY:Magazin
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Magazin
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-008@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261212T173000
+DTEND;TZID=Europe/Zagreb:20261212T193000
+SUMMARY:Klaun Šarenko: Božićna pustolovina luckastih vilenjaka
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Dječji program Fritulica u Kulturnom centru Kaštela.\nKategor
+ ija: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, Kaštel 
+ Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Klaun Šarenko: Božićna pustolovina luckastih vil
+ enjaka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-010@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261212T180000
+DTEND;TZID=Europe/Zagreb:20261212T200000
+SUMMARY:Paljenje 3. adventske svijeće
+LOCATION:Đardin\, Kaštel Novi
+DESCRIPTION:Tradicionalno paljenje adventske svijeće uz prigodni program.\
+ nKategorija: Tradicionalno\nUlaz slobodan\nVanjski prostor\nĐardin\, Kaš
+ tel Novi
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje 3. adventske svijeće
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-009@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261212T190000
+DTEND;TZID=Europe/Zagreb:20261212T210000
+SUMMARY:Fritulica - dječji kolaž program
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Večernji dječji kolaž program u sklopu Fritulice.\nKategorij
+ a: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, Kaštel Lu
+ kšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-007@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261212T210000
+DTEND;TZID=Europe/Zagreb:20261212T230000
+SUMMARY:Grupa Cambi
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Grupa Cambi
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-012@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261213T170000
+DTEND;TZID=Europe/Zagreb:20261213T190000
+SUMMARY:HNK u Šibeniku: Snijeg u pravi čas & Dolazak sv. Lucije
+LOCATION:Kulturni centar Kaštela / Novi park\, Kaštel Lukšić
+DESCRIPTION:Kazališna predstava 'Snijeg u pravi čas' (HNK u Šibeniku) i 
+ dolazak sv. Lucije u Novom parku.\nKategorija: Predstava\nUlaz slobodan\nK
+ ombinirano\nKulturni centar Kaštela / Novi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: HNK u Šibeniku: Snijeg u pravi čas & Dolazak sv. 
+ Lucije
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-011@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261213T210000
+DTEND;TZID=Europe/Zagreb:20261213T230000
+SUMMARY:Marko Kutlić
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Marko Kutlić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-013@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261216T170000
+DTEND;TZID=Europe/Zagreb:20261216T190000
+SUMMARY:Kino Mediteran - Asterix: Kraljevstvo Nubije
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Sinkronizirana filmska projekcija u sklopu programa Fritulica.\
+ nKategorija: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, 
+ Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kino Mediteran - Asterix: Kraljevstvo Nubije
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-014@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261217T180000
+DTEND;TZID=Europe/Zagreb:20261217T200000
+SUMMARY:Svijet čarolije: Božićna radionica šašavog majstora
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Predstava dječjih animatora u sklopu programa Fritulica.\nKate
+ gorija: Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, Kašt
+ el Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Svijet čarolije: Božićna radionica šašavog maj
+ stora
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-016@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261218T173000
+DTEND;TZID=Europe/Zagreb:20261218T193000
+SUMMARY:Ritam igre: Božićni vilenjaci
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Kazališna predstava za djecu u sklopu programa Fritulica.\nKat
+ egorija: Predstava\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, 
+ Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ritam igre: Božićni vilenjaci
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-017@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261218T183000
+DTEND;TZID=Europe/Zagreb:20261218T203000
+SUMMARY:Helen Doron Show: Let's Have Fun in English!
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Interaktivni program za djecu na engleskom jeziku.\nKategorija:
+  Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, Kaštel Luk
+ šić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Helen Doron Show: Let's Have Fun in English!
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-015@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261218T210000
+DTEND;TZID=Europe/Zagreb:20261218T230000
+SUMMARY:Macao Band
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Macao Band
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-021@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261219T120000
+DTEND;TZID=Europe/Zagreb:20261219T140000
+SUMMARY:Tradicionalna podjela bakalara (PŠK Srdela)
+LOCATION:Porat\, Kaštel Stari
+DESCRIPTION:Tradicionalna podjela bakalara u organizaciji PŠK Srdela na lo
+ kaciji Porat u Kaštel Starom.\nKategorija: Gastro\nUlaz slobodan\nVanjski
+  prostor\nPorat\, Kaštel Stari
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tradicionalna podjela bakalara (PŠK Srdela)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-019@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261219T173000
+DTEND;TZID=Europe/Zagreb:20261219T193000
+SUMMARY:Jasna Held - Pripovijedanje bajki i priča (1. termin)
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Profesionalna pripovjedačica bajki i priča u sklopu programa 
+ Fritulica.\nKategorija: Kultura\nUlaz slobodan\nNatkriveno\nKulturni centa
+ r Kaštela\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Jasna Held - Pripovijedanje bajki i priča (1. term
+ in)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-022@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261219T180000
+DTEND;TZID=Europe/Zagreb:20261219T200000
+SUMMARY:Paljenje 4. adventske svijeće
+LOCATION:Đardin\, Kaštel Novi
+DESCRIPTION:Tradicionalno paljenje adventske svijeće uz prigodni program.\
+ nKategorija: Tradicionalno\nUlaz slobodan\nVanjski prostor\nĐardin\, Kaš
+ tel Novi
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje 4. adventske svijeće
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-020@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261219T190000
+DTEND;TZID=Europe/Zagreb:20261219T210000
+SUMMARY:Jasna Held - Pripovijedanje bajki i priča (2. termin)
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Profesionalna pripovjedačica bajki i priča u sklopu programa 
+ Fritulica.\nKategorija: Kultura\nUlaz slobodan\nNatkriveno\nKulturni centa
+ r Kaštela\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Jasna Held - Pripovijedanje bajki i priča (2. term
+ in)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-018@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261219T210000
+DTEND;TZID=Europe/Zagreb:20261219T230000
+SUMMARY:Željko Bebek
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Željko Bebek
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-024@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261220T180000
+DTEND;TZID=Europe/Zagreb:20261220T200000
+SUMMARY:Fritulica - dječji kolaž program
+LOCATION:Kulturni centar Kaštela\, Kaštel Lukšić
+DESCRIPTION:Dječji kolaž program u Kulturnom centru Kaštela.\nKategorija
+ : Djeca\nUlaz slobodan\nNatkriveno\nKulturni centar Kaštela\, Kaštel Luk
+ šić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-023@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261220T210000
+DTEND;TZID=Europe/Zagreb:20261220T230000
+SUMMARY:Antoniette Čerkez
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Antoniette Čerkez
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-025@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261225T210000
+DTEND;TZID=Europe/Zagreb:20261225T230000
+SUMMARY:Grupa Viva (Božićni koncert)
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Božićni koncert u Novom parku u sklopu Božićnog grada.\nKat
+ egorija: Glazba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukš
+ ić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Grupa Viva (Božićni koncert)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-026@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261226T210000
+DTEND;TZID=Europe/Zagreb:20261226T230000
+SUMMARY:Mejaši
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Mejaši
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-027@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261227T210000
+DTEND;TZID=Europe/Zagreb:20261227T230000
+SUMMARY:Josip Ivančić
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Josip Ivančić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-028@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261230T183000
+DTEND;TZID=Europe/Zagreb:20261230T203000
+SUMMARY:Čarobni animatori: Dječji doček Nove godine
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Dječji doček Nove godine u Novom parku u Kaštel Lukšiću.\n
+ Kategorija: Djeca\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Luk
+ šić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarobni animatori: Dječji doček Nove godine
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-029@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20261231T220000
+DTEND;TZID=Europe/Zagreb:20270101T000000
+SUMMARY:Siniša Vuco (Doček Nove godine)
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Novogodišnji koncert u Novom parku u Kaštel Lukšiću.\nKateg
+ orija: Glazba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukši
+ ć
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Siniša Vuco (Doček Nove godine)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:kastela-2026-030@kastela.live
+DTSTAMP:20261123T125927Z
+DTSTART;TZID=Europe/Zagreb:20270102T210000
+DTEND;TZID=Europe/Zagreb:20270102T230000
+SUMMARY:Tomislav Bralić i Klapa Intrade
+LOCATION:Novi park\, Kaštel Lukšić
+DESCRIPTION:Koncertni program Božićni grad u Novom parku.\nKategorija: Gl
+ azba\nUlaz slobodan\nVanjski prostor\nNovi park\, Kaštel Lukšić
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tomislav Bralić i Klapa Intrade
+END:VALARM
+END:VEVENT
+END:VCALENDAR

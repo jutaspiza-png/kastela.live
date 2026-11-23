@@ -1,0 +1,70 @@
+name: Kalendar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/events.csv"
+      - "scripts/**"
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "assets/**"
+      - "fonts/**"
+      - "vendor/**"
+      - "package.json"
+      - "vercel.json"
+      - ".github/workflows/build-calendar.yml"
+  pull_request:
+    paths:
+      - "data/events.csv"
+      - "scripts/**"
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kalendar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Provjera CSV-a i gradnja stranice
+        run: |
+          node scripts/check.mjs
+          node scripts/build-site.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kastela-kalendar
+          path: |
+            calendar.ics
+            _site
+          if-no-files-found: error
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Objava na GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
