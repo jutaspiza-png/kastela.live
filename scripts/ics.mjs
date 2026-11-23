@@ -13,6 +13,7 @@ export const COLUMNS = [
   "indoor_outdoor",
   "image_url",
   "description",
+  "programme",
 ];
 
 export const DISTRICTS = [
@@ -190,6 +191,9 @@ export function validateEvents(rows) {
       problems.push("image_url nije valjan");
     }
     if (!raw.description) problems.push("nedostaje description");
+    if (raw.programme.length > 80 || /[\u0000-\u001f]/.test(raw.programme)) {
+      problems.push("programme može imati najviše 80 znakova");
+    }
 
     if (problems.length) {
       problems.forEach((problem) => errors.push(`Red ${line}: ${problem}.`));
@@ -271,7 +275,7 @@ export function eventsToIcs(events, options = {}) {
     "PRODID:-//kastela.live//Dogadanja//HR",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    "X-WR-CALNAME:Događanja u Kaštelima",
+    `X-WR-CALNAME:${escapeText(options.calName || "Događanja u Kaštelima")}`,
     "X-WR-TIMEZONE:Europe/Zagreb",
     "BEGIN:VTIMEZONE",
     "TZID:Europe/Zagreb",

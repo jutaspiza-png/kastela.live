@@ -63,19 +63,24 @@ function calendarIcon() {
   return '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 3v4M16 3v4M4 10h16M12 13v5M9.5 15.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
 }
 
-function card(event, list) {
+function calendarButton(event, variant) {
+  const list = variant === "list";
+  const popup = event.programme ? ' aria-haspopup="menu" aria-expanded="false"' : "";
+  const label = list ? "Dodaj u kalendar" : "";
+  return `<button class="${list ? "list-cal" : "cal"}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar"${popup}>${list ? "" : calendarIcon()}${label}</button>`;
+}
+
+function card(event) {
   const image = safeImage(event.image_url);
   const photo = image ? `<img data-photo alt="" src="${escapeHtml(image)}" />` : "";
   const free = event.is_free ? '<span class="free-badge">Besplatno</span>' : "";
-  const buttonClass = list ? "cal list-cal" : "cal";
-  const label = list ? "Dodaj u kalendar" : "";
   return `<article class="card" id="${escapeHtml(event.id)}">
     <div class="media ${catClass(event.category)}">
       <div class="motif">${motif(event.category)}</div>
       ${photo}
       <span class="badge">${escapeHtml(event.category)}</span>
       ${free}
-      <button class="${buttonClass}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar">${calendarIcon()}${label}</button>
+      ${calendarButton(event, "card")}
     </div>
     <h3>${escapeHtml(event.title)}</h3>
     <p class="when">${escapeHtml(formatWhen(event))}</p>
@@ -104,6 +109,7 @@ function selected() {
 }
 
 function render() {
+  closeCalendarMenu();
   const now = zagrebNow();
   const upcoming = filterEvents(state.events, {}, now);
   $("#hero-count").textContent = upcoming.length
@@ -115,7 +121,7 @@ function render() {
   const rest = events.slice(featured.length);
   const featuredSection = $("#featured-section");
   featuredSection.hidden = featured.length === 0;
-  $("#featured").innerHTML = featured.map((event) => card(event, false)).join("");
+  $("#featured").innerHTML = featured.map((event) => card(event)).join("");
 
   const results = $("#results");
   const title = $("#upcoming-title");
@@ -143,7 +149,7 @@ function render() {
               <p>${escapeHtml(event.venue)} · ${escapeHtml(event.district)}</p>
               <p>${escapeHtml(event.description)}</p>
               <span class="day-badge">${escapeHtml(event.category)}</span>
-              <button class="list-cal" type="button" data-action="ics" data-id="${escapeHtml(event.id)}">Dodaj u kalendar</button>
+              ${calendarButton(event, "list")}
             </div>
           </li>`).join("")}
         </ul>
@@ -154,7 +160,7 @@ function render() {
   } else {
     upcomingSection.hidden = false;
     title.textContent = `Uskoro · ${rest.length}`;
-    results.innerHTML = `<div class="grid">${rest.map((event) => card(event, false)).join("")}</div>`;
+    results.innerHTML = `<div class="grid">${rest.map((event) => card(event)).join("")}</div>`;
   }
 
   $("#status").hidden = true;
@@ -208,8 +214,47 @@ function openSubscribe() {
   if (!dialog.open) dialog.showModal();
 }
 
-function downloadIcs(filename, events) {
-  const ics = eventsToIcs(events, { pageUrl: document.baseURI });
+let calendarAnchor = null;
+
+function programmeFile(name) {
+  const slug = foldText(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `${slug || "kalendar"}.ics`;
+}
+
+function closeCalendarMenu(restore) {
+  document.querySelector(".cal-menu")?.remove();
+  if (!calendarAnchor) return;
+  calendarAnchor.setAttribute("aria-expanded", "false");
+  if (restore) calendarAnchor.focus();
+  calendarAnchor = null;
+}
+
+function openCalendarMenu(anchor, event) {
+  closeCalendarMenu();
+  calendarAnchor = anchor;
+  anchor.setAttribute("aria-expanded", "true");
+  const menu = document.createElement("div");
+  menu.className = "cal-menu";
+  menu.dataset.id = event.id;
+  menu.setAttribute("role", "menu");
+  menu.innerHTML = `
+    <button type="button" role="menuitem" data-action="ics-one" data-id="${escapeHtml(event.id)}">Dodaj samo ovaj event</button>
+    <button type="button" role="menuitem" data-action="ics-group" data-id="${escapeHtml(event.id)}">Dodaj cijeli „${escapeHtml(event.programme)}”</button>
+  `;
+  document.body.append(menu);
+  const rect = anchor.getBoundingClientRect();
+  const menuRect = menu.getBoundingClientRect();
+  let top = rect.bottom + 8;
+  if (top + menuRect.height > window.innerHeight - 8) top = Math.max(8, rect.top - menuRect.height - 8);
+  let left = rect.left;
+  if (left + menuRect.width > window.innerWidth - 8) left = window.innerWidth - menuRect.width - 8;
+  menu.style.top = `${top}px`;
+  menu.style.left = `${Math.max(8, left)}px`;
+  menu.querySelector("button")?.focus();
+}
+
+function downloadIcs(filename, events, calName) {
+  const ics = eventsToIcs(events, { pageUrl: document.baseURI, calName });
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -264,6 +309,8 @@ function bind() {
   });
   document.addEventListener("click", async (event) => {
     const button = event.target.closest("button, a");
+    const inMenu = Boolean(event.target.closest(".cal-menu"));
+    if (button?.dataset.action !== "ics" && !inMenu) closeCalendarMenu();
     if (!button) return;
     if (button.dataset.action === "subscribe") {
       event.preventDefault();
@@ -275,7 +322,27 @@ function bind() {
     }
     if (button.dataset.action === "ics") {
       const item = state.events.find((entry) => entry.id === button.dataset.id);
-      if (item) downloadIcs(`${item.id}.ics`, [item]);
+      if (!item) return;
+      if (!item.programme) {
+        downloadIcs(`${item.id}.ics`, [item]);
+        return;
+      }
+      if (calendarAnchor === button) {
+        closeCalendarMenu();
+        return;
+      }
+      openCalendarMenu(button, item);
+      return;
+    }
+    if (button.dataset.action === "ics-one" || button.dataset.action === "ics-group") {
+      const item = state.events.find((entry) => entry.id === button.dataset.id);
+      closeCalendarMenu();
+      if (!item) return;
+      if (button.dataset.action === "ics-one") downloadIcs(`${item.id}.ics`, [item]);
+      else {
+        const group = state.events.filter((entry) => entry.programme === item.programme);
+        downloadIcs(programmeFile(item.programme), group, item.programme);
+      }
     }
     if (button.dataset.action === "filtered-ics") downloadIcs("kastela-odabir.ics", selected());
     if (button.dataset.action === "reset") {
@@ -316,6 +383,13 @@ function bind() {
       render();
     }
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.querySelector(".cal-menu")) {
+      event.preventDefault();
+      closeCalendarMenu(true);
+    }
+  });
+  window.addEventListener("scroll", () => closeCalendarMenu(), true);
   for (const dialog of document.querySelectorAll("dialog")) {
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();

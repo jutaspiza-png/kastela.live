@@ -15,6 +15,7 @@ for (const category of CATEGORIES) assert.ok(html.includes(category), `index.htm
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);
   assert.ok(CATEGORIES.includes(event.category), event.category);
+  assert.equal(event.programme, "Advent u Kaštelima");
 }
 
 const stela = events.find((event) => event.id === "kastela-2026-001");
@@ -100,11 +101,17 @@ assert.equal(ics.includes("LOCATION:Đardin\\, Kaštel Novi"), true);
 const uids = [...ics.matchAll(/^UID:(.+)$/gm)].map((match) => match[1]);
 assert.equal(new Set(uids).size, uids.length);
 
-const semi = validateEvents(parseCsv("id;title;date;start_time;end_time;venue;district;category;is_free;indoor_outdoor;image_url;description\nkastela-2026-900;Proba;2026-12-01;18:00;;Riva;Kaštel Novi;Glazba;true;Vanjski prostor;;Kratko.\n"));
+const adventIcs = eventsToIcs(events, { now: new Date("2026-11-23T12:00:00Z"), calName: "Advent u Kaštelima" });
+assert.equal((adventIcs.match(/^BEGIN:VEVENT/gm) || []).length, 30);
+assert.equal(adventIcs.includes("X-WR-CALNAME:Advent u Kaštelima"), true);
+assert.equal(ics.includes("X-WR-CALNAME:Događanja u Kaštelima"), true);
+
+const semi = validateEvents(parseCsv("id;title;date;start_time;end_time;venue;district;category;is_free;indoor_outdoor;image_url;description;programme\nkastela-2026-900;Proba;2026-12-01;18:00;;Riva;Kaštel Novi;Glazba;true;Vanjski prostor;;Kratko.;\n"));
 assert.equal(semi.errors.length, 0);
 assert.equal(semi.events[0].end_time, "20:00");
+assert.equal(semi.events[0].programme, "");
 
-const broken = validateEvents(parseCsv(`${csv.trim()}\nkastela-2026-002,Duplikat,2026-12-01,18:00,19:00,Riva,Kaštel,Glazba,maybe,Vani,,\n`));
+const broken = validateEvents(parseCsv(`${csv.trim()}\nkastela-2026-002,Duplikat,2026-12-01,18:00,19:00,Riva,Kaštel,Glazba,maybe,Vani,,,Advent u Kaštelima\n`));
 assert.ok(broken.errors.some((error) => error.includes("već postoji")));
 assert.ok(broken.errors.some((error) => error.includes("district")));
 assert.ok(broken.errors.some((error) => error.includes("is_free")));

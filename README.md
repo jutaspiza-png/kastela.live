@@ -35,6 +35,7 @@ Ako redak ne valja, Action staje i u logu piše broj retka. Uobičajene greške:
 | `indoor_outdoor` | `Vanjski prostor`, `Natkriveno` ili `Kombinirano` |
 | `image_url` | Neobavezno. Prazno polje daje karticu u boji kategorije. Slomljeni URL isto. |
 | `description` | Kratko, jedna rečenica ili dvije |
+| `programme` | Naziv skupa ako je događaj ubačen zajedno s drugima, npr. `Advent u Kaštelima`. Prazno polje nudi samo taj događaj. |
 
 Vremena u kalendaru nose `TZID=Europe/Zagreb`. Svaki događaj ima svoj `UID` (`id@kastela.live`) i podsjetnik dva sata prije početka.
 
@@ -50,7 +51,7 @@ Na stranici gumb **Pretplati se na kalendar** otvara:
 
 Adresa je `calendar.ics` na istoj domeni kao stranica. Pretplata prati **sva** događanja iz tablice. Telefon je sam povlači svakih nekoliko sati; to ne možemo ubrzati iz preglednika.
 
-**Preuzmi odabir (.ics)** skida samo ono što filteri trenutno pokazuju. To je jednokratna datoteka, ne živa pretplata. Na kartici, kružić s kalendarom skida samo taj događaj.
+**Preuzmi odabir (.ics)** skida samo ono što filteri trenutno pokazuju. To je jednokratna datoteka, ne živa pretplata. **Dodaj u kalendar** na događaju koji pripada skupu nudi dvije datoteke: samo taj događaj, ili cijeli skup (sada `Advent u Kaštelima`). Događaj bez `programme` skida samo sebe.
 
 ## Lokalno
 
