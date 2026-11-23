@@ -144,10 +144,12 @@ function render() {
         <ul>
           ${items.map((event) => `<li>
             <time datetime="${escapeHtml(event.date)}T${escapeHtml(event.start_time)}">${escapeHtml(event.start_time)}</time>
-            <div>
+            <div class="event-copy">
               <strong>${escapeHtml(event.title)}</strong>
               <p>${escapeHtml(event.venue)} · ${escapeHtml(event.district)}</p>
               <p>${escapeHtml(event.description)}</p>
+            </div>
+            <div class="event-side">
               <span class="day-badge">${escapeHtml(event.category)}</span>
               ${calendarButton(event, "list")}
             </div>
@@ -409,6 +411,9 @@ function bind() {
 }
 
 async function init() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register(new URL("sw.js", document.baseURI)).catch(() => {});
+  }
   try {
     state.view = localStorage.getItem("kastela-view") === "grid" ? "grid" : "list";
   } catch { /* ignore */ }

@@ -13,8 +13,11 @@ const types = {
   ".csv": "text/csv; charset=utf-8",
   ".ics": "text/calendar; charset=utf-8",
   ".svg": "image/svg+xml",
+  ".png": "image/png",
+  ".webp": "image/webp",
   ".woff2": "font/woff2",
   ".json": "application/json; charset=utf-8",
+  ".webmanifest": "application/manifest+json; charset=utf-8",
 };
 
 const server = createServer(async (request, response) => {

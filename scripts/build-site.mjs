@@ -13,7 +13,7 @@ rmSync(site, { recursive: true, force: true });
 mkdirSync(resolve(site, "scripts"), { recursive: true });
 mkdirSync(resolve(site, "data"), { recursive: true });
 
-for (const file of ["index.html", "styles.css", "app.js", "calendar.ics"]) {
+for (const file of ["index.html", "styles.css", "app.js", "calendar.ics", "manifest.webmanifest", "sw.js"]) {
   cpSync(resolve(root, file), resolve(site, file));
 }
 cpSync(resolve(root, "data/events.csv"), resolve(site, "data/events.csv"));
