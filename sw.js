@@ -1,7 +1,10 @@
-const CACHE = "kastela-v7";
+const CACHE = "kastela-v8";
 const SHELL = [
   "./",
   "./index.html",
+  "./nedjelje.html",
+  "./nedjelje.js",
+  "./data/sunday-stores.json",
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",

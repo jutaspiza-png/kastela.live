@@ -514,6 +514,7 @@ dialog form { padding: 22px; }
 #menu h3 { margin: 18px 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .menu-list { display: grid; gap: 4px; }
 .menu-list button { text-align: left; border: 0; background: transparent; padding: 8px 0; font-weight: 600; border-bottom: 1px solid var(--line); }
+a.guide-link { text-decoration: none; }
 .guide-link {
   display: flex;
   width: 100%;
@@ -534,6 +535,28 @@ dialog form { padding: 22px; }
 .guide ul, .guide ol { margin: 0 0 8px; padding-left: 18px; }
 .guide li { margin: 0 0 8px; }
 .guide strong { color: var(--ink); }
+.sunday { padding: 22px 0 48px; }
+.sunday h1 { font-size: clamp(40px, 8vw, 64px); }
+.sunday .cities, .sunday .filters, .sunday .search { margin-top: 14px; }
+.sunday-note, .sunday-count { color: #334155; }
+.sunday-count { font-weight: 700; }
+.store-list { display: grid; gap: 10px; margin-top: 8px; }
+.store {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--blue) 22%, white);
+  border-radius: 16px;
+  background: white;
+}
+.store h2 { margin: 0; font-size: 18px; letter-spacing: -0.03em; }
+.store p { margin: 2px 0 0; color: var(--muted); }
+.store-chain { margin: 0; color: var(--teal); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.store-hours { margin: 0; font-weight: 800; white-space: nowrap; }
+.store.is-closed { opacity: 0.62; }
+.store.is-closed .store-hours { color: var(--muted); font-weight: 700; }
 .noscript { padding: 16px; }
 
 .cat-glazba { color: var(--blue); background: #343434; }
@@ -572,6 +595,7 @@ dialog form { padding: 22px; }
   .logo img { width: 34px; height: 34px; }
   .top-bar { height: 60px; }
   .foot-row, .control-row { flex-direction: column; align-items: flex-start; }
+  .store { align-items: flex-start; flex-direction: column; }
   .qr-panel { grid-template-columns: 1fr; }
   .sub-actions .btn { flex-basis: 100%; }
 }

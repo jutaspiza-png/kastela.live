@@ -3,6 +3,7 @@ import "./push-check.mjs";
 import { readFileSync } from "node:fs";
 import { CATEGORIES, DISTRICTS, eventsToIcs, googleTemplateUrl, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
 import { filterEvents, foldText, weekendDates } from "./filter.mjs";
+import { validateSundayStores } from "./sunday-stores.mjs";
 
 const csv = readFileSync(new URL("../data/events.csv", import.meta.url), "utf8");
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
@@ -124,5 +125,13 @@ assert.ok(broken.errors.some((error) => error.includes("is_free")));
 
 const badHeader = validateEvents(parseCsv("id,title\n"));
 assert.ok(badHeader.errors.length > 0);
+
+const sunday = JSON.parse(readFileSync(new URL("../data/sunday-stores.json", import.meta.url), "utf8"));
+const sundayErrors = validateSundayStores(sunday);
+assert.equal(sundayErrors.length, 0, sundayErrors.join("\n"));
+assert.ok(sunday.stores.some((store) => store.chain === "Tommy" && store.open));
+assert.ok(sunday.stores.some((store) => store.chain === "Tommy" && store.open === false && store.hours === null));
+assert.ok(sunday.stores.some((store) => store.chain === "Ribola" && store.city === "Kaštela" && store.open));
+assert.equal(sunday.stores.filter((store) => !["Kaštela", "Split", "Solin", "Trogir"].includes(store.city)).length, 0);
 
 console.log(`check: ${events.length} događanja, ICS ${Buffer.byteLength(ics)} bajtova`);

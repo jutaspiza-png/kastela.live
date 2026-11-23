@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Radne nedjelje — kastela.live</title>
+    <link rel="icon" href="./assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap top-bar">
+        <a class="logo" href="./" aria-label="kastela.live, početna">
+          <img src="./assets/logo-mark.png" alt="" width="40" height="40" />
+          <span class="wordmark">kastela<span class="live">.live</span></span>
+        </a>
+        <a class="btn btn-line" href="./">Događanja</a>
+      </div>
+    </header>
+    <main class="wrap sunday">
+      <p class="eyebrow">Trgovine</p>
+      <h1>Radne nedjelje</h1>
+      <p class="lede" id="sunday-date">Nedjelja</p>
+      <p class="sunday-note" id="updated"></p>
+      <div class="cities" role="group" aria-label="Grad">
+        <button type="button" data-city="all" aria-pressed="true">Sve</button>
+        <button type="button" data-city="Kaštela">Kaštela</button>
+        <button type="button" data-city="Split">Split</button>
+        <button type="button" data-city="Solin">Solin</button>
+        <button type="button" data-city="Trogir">Trogir</button>
+      </div>
+      <form class="filters" id="store-filters">
+        <label>
+          <span>Naselje</span>
+          <select id="district" name="district">
+            <option value="all">Sva naselja</option>
+          </select>
+        </label>
+      </form>
+      <div class="cities" role="group" aria-label="Lanac">
+        <button type="button" data-chain="all" aria-pressed="true">Svi</button>
+        <button type="button" data-chain="Tommy">Tommy</button>
+        <button type="button" data-chain="Ribola">Ribola</button>
+      </div>
+      <form class="search" id="search-form" role="search">
+        <label class="sr-only" for="q">Pretraga</label>
+        <input id="q" name="q" type="search" placeholder="Adresa, naselje ili trgovina" autocomplete="off" />
+      </form>
+      <p id="store-count" class="sunday-count"></p>
+      <div id="stores" class="store-list"></div>
+    </main>
+    <script type="module" src="./nedjelje.js"></script>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+{
+  "weekOf": "2026-11-23",
+  "sunday": "2026-11-29",
+  "lastUpdated": "2026-11-23",
+  "note": "Provjeri radno vrijeme prije polaska. Tommy navodi i zatvorene poslovnice. Ribola na svojoj stranici navodi samo one koje rade.",
+  "sources": [
+    {
+      "chain": "Tommy",
+      "url": "https://radnenedjelje.hr/trgovine/tommy/split"
+    },
+    {
+      "chain": "Ribola",
+      "url": "https://ribola.hr/radno-vrijeme-nedjeljom/"
+    }
+  ],
+  "stores": [
+    {
+      "id": "tommy-fra-ante-pavlova-1-kastel-gomilica",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Gomilica",
+      "address": "Fra Ante Pavlova 1",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-fra-f-kamenjarina-27-kastel-kambelovac",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Kaštela",
+      "district": "Kaštel Kambelovac",
+      "address": "Fra F. Kamenjarina 27",
+      "open": true,
+      "hours": "07:00–20:00"
+    },
+    {
+      "id": "ribola-031",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Kaštela",
+      "district": "Kaštel Lukšić",
+      "address": "Novi put 6",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-cesta-dr-franje-tudmana-696-kastel-luksic",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Lukšić",
+      "address": "Cesta dr. Franje Tuđmana 696",
+      "open": true,
+      "hours": "07:00–20:00"
+    },
+    {
+      "id": "tommy-franje-tudmana-1038-kastel-novi",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Kaštela",
+      "district": "Kaštel Novi",
+      "address": "Franje Tuđmana 1038",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-ivana-pavla-ii-346-kastel-novi",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Novi",
+      "address": "Ivana Pavla II 346",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-dr-franje-tudmana-932-kastel-stari",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Kaštela",
+      "district": "Kaštel Stari",
+      "address": "Cesta Dr. Franje Tuđmana 932",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-dr-franje-tudmana-878-kastel-stari",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Kaštela",
+      "district": "Kaštel Stari",
+      "address": "Cesta dr. Franje Tuđmana 878",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-obala-kralja-tomislava-50-kastel-stari",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Kaštela",
+      "district": "Kaštel Stari",
+      "address": "Obala kralja Tomislava 50",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-zagorski-put-48-kastel-stari",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Stari",
+      "address": "Zagorski put 48",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "ribola-081",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Kaštela",
+      "district": "Kaštel Sućurac",
+      "address": "Cesta dr. Franje Tuđmana 242",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "ribola-100",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Kaštela",
+      "district": "Kaštel Sućurac",
+      "address": "Cesta dr. Franje Tuđmana 7",
+      "open": true,
+      "hours": "08:00–20:00"
+    },
+    {
+      "id": "tommy-cesta-dr-franje-tudmana-260-kastel-sucurac",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Sućurac",
+      "address": "Cesta dr. Franje Tuđmana 260",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-dr-franje-tudmana-1062-kastel-stafilic",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Kaštela",
+      "district": "Kaštel Štafilić",
+      "address": "Cesta dr. Franje Tuđmana 1062",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "ribola-020",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Solin",
+      "district": "",
+      "address": "Kralja Zvonimira 103",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-brace-radica-22-solin",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Solin",
+      "district": "",
+      "address": "Braće Radića 22",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-don-frane-bulica-66-b-solin",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Solin",
+      "district": "",
+      "address": "Don Frane Bulića 66 B",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-matoseva-102-solin",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Solin",
+      "district": "",
+      "address": "Matoševa 102",
+      "open": true,
+      "hours": "07:00–20:00"
+    },
+    {
+      "id": "tommy-matoseva-29-solin",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Solin",
+      "district": "",
+      "address": "Matoševa 29",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-brace-radic-35-mravince",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Solin",
+      "district": "Mravince",
+      "address": "Braće Radić 35",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "ribola-015",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Ante Starčevića 26",
+      "open": true,
+      "hours": "07:00–20:00"
+    },
+    {
+      "id": "ribola-053",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Gat sv. Duje",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "ribola-035",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Gospe od Karmela 22",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "ribola-047",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Jeretova 12",
+      "open": true,
+      "hours": "07:00–20:00"
+    },
+    {
+      "id": "ribola-067",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Mažuranićevo šetalište 49-51",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "ribola-057",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "Mostarska 34",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "ribola-034",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Split",
+      "district": "",
+      "address": "V. Krstulovića",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-busiceva-8-a-split",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Split",
+      "district": "",
+      "address": "Bušićeva 8 A",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-domovinskog-rata-93-split",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Domovinskog rata 93",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-doverska-33-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Doverska 33",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-drazanac-46-b-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Dražanac 46 B",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-drziceva-1-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Držićeva 1",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-dubrovacka-1-split",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Split",
+      "district": "",
+      "address": "Dubrovačka 1",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-grge-novaka-1-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Grge Novaka 1",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-gunduliceva-33-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Gundulićeva 33",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-hrvojeva-2-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Hrvojeva 2",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-kranjcevica-45-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Kranjčevića 45",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-kroz-smrdecac-33-a-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Kroz Smrdečac 33 A",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-lovacki-put-11-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Lovački put 11",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-matoseva-29-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Matoševa 29",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-mazuranicevo-setaliste-24a-split",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Split",
+      "district": "",
+      "address": "Mažuranićevo Šetalište 24A",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-mejasi-33-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Mejaši 33",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-miroslava-krleze-1-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Miroslava Krleže 1",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-moliskih-hrvata-7-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Moliških Hrvata 7",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-mosecka-ulica-103-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Mosećka ulica 103",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-ninska-2-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Ninska 2",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-put-brda-13-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Put Brda 13",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-put-brodarice-6-split",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Put Brodarice 6",
+      "open": true,
+      "hours": "08:00–21:00"
+    },
+    {
+      "id": "tommy-rudera-boskovica-18-a-split",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Ruđera Boškovića 18 A",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-slanice-3-a-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Slanice 3 A",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-svetog-petra-44-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Svetog Petra 44",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-tolstojeva-32-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Tolstojeva 32",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-trg-hrvatske-bratske-zajednice-4-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Trg hrvatske bratske zajednice 4",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-trumbiceva-obala-5-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Trumbićeva obala 5",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-varazdinska-3-a-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Varaždinska 3 A",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-velebitska-121-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Velebitska 121",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-zagrebacka-37-split",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "",
+      "address": "Zagrebačka 37",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-zoraniceva-5-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Zoranićeva 5",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-sibenska-9-split",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Šibenska 9",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-soltanska-12-split",
+      "chain": "Tommy",
+      "name": "Tommy Maximarket",
+      "city": "Split",
+      "district": "",
+      "address": "Šoltanska 12",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-znjanska-ulica-4-split",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Split",
+      "district": "",
+      "address": "Žnjanska ulica 4",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-bana-jelacica-111a-slatine",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Split",
+      "district": "Slatine",
+      "address": "Bana Jelačića 111A",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-put-sv-lovre-59-d-stobrec",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Split",
+      "district": "Stobreč",
+      "address": "Put Sv. Lovre 59 D",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-plano-59-trogir",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Trogir",
+      "district": "",
+      "address": "CESTA PLANO 59",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-domovinske-zahvalnosti-1-arbanija",
+      "chain": "Tommy",
+      "name": "Tommy Supermarket",
+      "city": "Trogir",
+      "district": "Arbanija",
+      "address": "Cesta Domovinske zahvalnosti 1",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "tommy-cesta-domovinske-zahvalnosti-73-a-arbanija",
+      "chain": "Tommy",
+      "name": "Tommy Market",
+      "city": "Trogir",
+      "district": "Arbanija",
+      "address": "Cesta Domovinske zahvalnosti 73 A",
+      "open": false,
+      "hours": null
+    },
+    {
+      "id": "ribola-076",
+      "chain": "Ribola",
+      "name": "Ribola",
+      "city": "Trogir",
+      "district": "Mastrinka",
+      "address": "Put gradine 3a",
+      "open": true,
+      "hours": "07:00–21:00"
+    },
+    {
+      "id": "tommy-trogirska-cesta-6-plano",
+      "chain": "Tommy",
+      "name": "Tommy Hipermarket",
+      "city": "Trogir",
+      "district": "Plano",
+      "address": "Trogirska cesta 6",
+      "open": false,
+      "hours": null
+    }
+  ]
+}
