@@ -1,6 +1,23 @@
 {
   "buildCommand": "node scripts/build-site.mjs",
   "outputDirectory": "_site",
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": "data/events.csv"
+    },
+    "api/push-dispatch.js": {
+      "includeFiles": "data/events.csv",
+      "experimentalTriggers": [{ "type": "schedule/v1beta" }]
+    }
+  },
+  "schedules": {
+    "push-dispatch": {
+      "schedule": "*/15 * * * *",
+      "timezone": "Europe/Zagreb",
+      "jitter": 15,
+      "function": "api/push-dispatch"
+    }
+  },
   "headers": [
     {
       "source": "/calendar.ics",

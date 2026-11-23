@@ -19,7 +19,7 @@
     <script>
       const stats = document.querySelector("#stats");
       async function load(token) {
-        const response = await fetch("./api/push/stats", { headers: token ? { "x-admin-token": token } : {} });
+        const response = await fetch("./api/push-stats", { headers: token ? { "x-admin-token": token } : {} });
         const data = await response.json();
         if (!response.ok) {
           stats.textContent = data.message || "Nema pristupa.";

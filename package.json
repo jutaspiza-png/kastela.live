@@ -9,6 +9,7 @@
     "calendar": "node scripts/generate-ics.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "^2.9.0",
     "web-push": "^4.0.0"
   }
 }

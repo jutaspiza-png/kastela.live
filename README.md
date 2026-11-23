@@ -46,9 +46,11 @@ Vremena u kalendaru nose `TZID=Europe/Zagreb`. Svaki događaj ima svoj `UID` (`i
 - **Dodaj u privatni kalendar** otvara potvrdu za taj događaj (Google Kalendar, ili datoteka događaja na iPhoneu).
 - **Dodaj samo obavijest** uključuje Web Push. Poslužitelj šalje poruku točno 8 sati prije početka, po vremenu Europe/Zagreb. Ako je do početka ostalo manje od 8 sati, podsjetnik se ne uključuje.
 
-Na iPhoneu obavijest radi nakon dodavanja stranice na početni zaslon. Dopuštenje se traži tek na dodir. **Moji podsjetnici** u izborniku isključuju obavijest na tom uređaju. Brisanje pretplate je `DELETE /api/push/subscriptions`.
+Na iPhoneu obavijest radi nakon dodavanja stranice na početni zaslon. Dopuštenje se traži tek na dodir. **Moji podsjetnici** u izborniku isključuju obavijest na tom uređaju. Brisanje pretplate je `DELETE /api/push-subscriptions`.
 
-`node scripts/serve.mjs` svake minute provjeri rok. Isti posao radi `POST /api/push/dispatch`. S lokalnog računala token nije potreban. Inače zaglavlje `x-admin-token` mora biti `PUSH_ADMIN_TOKEN`. Statistika je na `admin.html` i `GET /api/push/stats`.
+`node scripts/serve.mjs` svake minute provjeri rok. Na Vercelu isto radi zakazana funkcija `api/push-dispatch` svakih 15 minuta. Ručno slanje je `POST /api/push-dispatch`. S lokalnog računala token nije potreban. Inače zaglavlje `x-admin-token` mora biti `PUSH_ADMIN_TOKEN`. Statistika je na `admin.html` i `GET /api/push-stats`.
+
+Na Vercelu pretplate stoje u privatnom Blob spremištu (`push/store.json`), a ključevi u `VAPID_PUBLIC_KEY` i `VAPID_PRIVATE_KEY`. Lokalno i dalje vrijede `data/vapid.json` i `data/push-store.json`.
 
 VAPID ključevi su u `data/vapid.json` (nije u gitu) ili u varijablama:
 

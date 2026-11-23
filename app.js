@@ -340,27 +340,43 @@ async function deviceSubscription() {
   return { endpoint: subscription.endpoint, keys: json.keys };
 }
 
+async function readApi(response) {
+  const text = await response.text();
+  let data;
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    throw new Error("Obavijest se nije uključila. Poslužitelj nije vratio odgovor.");
+  }
+  if (!response.ok) throw new Error(data.message || "Obavijest se nije uključila.");
+  return data;
+}
+
 async function refreshReminders() {
   activeReminders.clear();
   const subscription = await deviceSubscription();
   if (!subscription) return;
-  const response = await fetch(new URL("api/push/reminders/list", document.baseURI), {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(subscription),
-  });
-  if (!response.ok) return;
-  const data = await response.json();
-  for (const item of data.reminders || []) activeReminders.add(item.event_id);
+  try {
+    const response = await fetch(new URL("api/push-reminders-list", document.baseURI), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(subscription),
+    });
+    if (!response.ok) return;
+    const data = await response.json();
+    for (const item of data.reminders || []) activeReminders.add(item.event_id);
+  } catch {
+    activeReminders.clear();
+  }
 }
 
 async function rememberSubscription(subscription) {
-  const response = await fetch(new URL("api/push/subscriptions", document.baseURI), {
+  const response = await fetch(new URL("api/push-subscriptions", document.baseURI), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(subscription),
   });
-  if (!response.ok) throw new Error("Pretplata nije spremljena.");
+  await readApi(response);
 }
 
 async function toggleReminder(event) {
@@ -390,7 +406,8 @@ async function toggleReminder(event) {
   const registration = await navigator.serviceWorker.ready;
   let subscription = await deviceSubscription();
   if (!subscription) {
-    const config = await fetch(new URL("api/push/config", document.baseURI)).then((response) => response.json());
+    const config = await readApi(await fetch(new URL("api/push-config", document.baseURI)));
+    if (!config.publicKey) throw new Error("Poslužitelj nema ključ za obavijesti.");
     const created = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(config.publicKey),
@@ -399,12 +416,12 @@ async function toggleReminder(event) {
   }
   await rememberSubscription(subscription);
   const turningOff = reminderOn(event.id);
-  const response = await fetch(new URL("api/push/reminders", document.baseURI), {
+  const response = await fetch(new URL("api/push-reminders", document.baseURI), {
     method: turningOff ? "DELETE" : "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...subscription, eventId: event.id }),
   });
-  const data = await response.json();
+  const data = await readApi(response);
   await refreshReminders();
   if ($("#reminders").open) openReminderList();
   showPushStatus(turningOff ? "Obavijest" : "Podsjetnik", data.message || (response.ok ? "Spremljeno." : "Podsjetnik nije spremljen."));
@@ -419,12 +436,12 @@ async function openReminderList() {
   if (!subscription) {
     host.innerHTML = "<p>Na ovom uređaju još nema uključenih obavijesti.</p>";
   } else {
-    const response = await fetch(new URL("api/push/reminders/list", document.baseURI), {
+    const response = await fetch(new URL("api/push-reminders-list", document.baseURI), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(subscription),
     });
-    const data = await response.json();
+    const data = await readApi(response);
     const items = data.reminders || [];
     host.innerHTML = items.length
       ? items.map((item) => `<article class="reminder-row">

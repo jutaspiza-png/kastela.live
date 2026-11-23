@@ -6,3 +6,4 @@ _site
 .env.*
 data/vapid.json
 data/push-store.json
+.env*
