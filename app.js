@@ -15,7 +15,7 @@ const state = {
   eveningOnly: false,
   freeOnly: false,
   showPast: false,
-  view: "grid",
+  view: "list",
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -48,13 +48,13 @@ function formatDay(date) {
 
 function motif(category) {
   const paths = {
-    Glazba: '<path d="M18 6v22l10-3V9L18 6zm2 4.2 6 1.6V23l-6 1.8V10.2zM40 18a8 8 0 1 0 0 16h2V18h-2z" fill="#fff"/>',
-    Djeca: '<circle cx="28" cy="24" r="14" fill="#fff"/><circle cx="22" cy="22" r="2" fill="#0f172a"/><circle cx="34" cy="22" r="2" fill="#0f172a"/><path d="M22 30c2 3 10 3 12 0" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>',
-    Predstava: '<path d="M8 14c6 8 10 8 16 0-6 10-10 10-16 0zm24 0c6 8 10 8 16 0-6 10-10 10-16 0z" fill="#fff"/>',
-    Gastro: '<path d="M16 14h24v6a12 12 0 0 1-24 0v-6zm-4 22h32" fill="#fff" stroke="#fff" stroke-width="3" stroke-linecap="round"/>',
-    Kultura: '<path d="M10 38V20h6v18h-6zm14 0V16h6v22h-6zm14 0V22h6v16h-6zM6 18 28 8l22 10v4H6v-4z" fill="#fff"/>',
-    "Sport i rekreacija": '<circle cx="28" cy="28" r="14" fill="none" stroke="#fff" stroke-width="4"/><path d="M16 40c8-10 16-10 24 0" fill="none" stroke="#fff" stroke-width="3"/>',
-    Tradicionalno: '<path d="M28 8c8 10 14 14 14 22a14 14 0 0 1-28 0c0-8 6-12 14-22z" fill="#fff"/>',
+    Glazba: '<path d="M18 6v22l10-3V9L18 6zm2 4.2 6 1.6V23l-6 1.8V10.2zM40 18a8 8 0 1 0 0 16h2V18h-2z" fill="currentColor"/>',
+    Djeca: '<circle cx="28" cy="24" r="14" fill="currentColor"/><circle cx="22" cy="22" r="2" fill="#343434"/><circle cx="34" cy="22" r="2" fill="#343434"/><path d="M22 30c2 3 10 3 12 0" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="round"/>',
+    Predstava: '<path d="M8 14c6 8 10 8 16 0-6 10-10 10-16 0zm24 0c6 8 10 8 16 0-6 10-10 10-16 0z" fill="currentColor"/>',
+    Gastro: '<path d="M16 14h24v6a12 12 0 0 1-24 0v-6zm-4 22h32" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>',
+    Kultura: '<path d="M10 38V20h6v18h-6zm14 0V16h6v22h-6zm14 0V22h6v16h-6zM6 18 28 8l22 10v4H6v-4z" fill="currentColor"/>',
+    "Sport i rekreacija": '<circle cx="28" cy="28" r="14" fill="none" stroke="currentColor" stroke-width="4"/><path d="M16 40c8-10 16-10 24 0" fill="none" stroke="currentColor" stroke-width="3"/>',
+    Tradicionalno: '<path d="M28 8c8 10 14 14 14 22a14 14 0 0 1-28 0c0-8 6-12 14-22z" fill="currentColor"/>',
   };
   return `<svg viewBox="0 0 56 56" aria-hidden="true">${paths[category] || paths.Glazba}</svg>`;
 }
@@ -142,9 +142,9 @@ function render() {
               <strong>${escapeHtml(event.title)}</strong>
               <p>${escapeHtml(event.venue)} · ${escapeHtml(event.district)}</p>
               <p>${escapeHtml(event.description)}</p>
+              <span class="day-badge">${escapeHtml(event.category)}</span>
+              <button class="list-cal" type="button" data-action="ics" data-id="${escapeHtml(event.id)}">Dodaj u kalendar</button>
             </div>
-            <span class="badge">${escapeHtml(event.category)}</span>
-            <button class="cal list-cal" type="button" data-action="ics" data-id="${escapeHtml(event.id)}">Dodaj u kalendar</button>
           </li>`).join("")}
         </ul>
       </section>`).join("");
@@ -336,7 +336,7 @@ function bind() {
 
 async function init() {
   try {
-    state.view = localStorage.getItem("kastela-view") === "list" ? "list" : "grid";
+    state.view = localStorage.getItem("kastela-view") === "grid" ? "grid" : "list";
   } catch { /* ignore */ }
   bind();
   try {
