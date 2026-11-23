@@ -22,9 +22,9 @@
     <a class="skip" href="#dogadanja">Preskoči na događanja</a>
     <header class="top">
       <div class="wrap top-bar">
-        <a class="logo" href="./" aria-label="Kaštela, početna">
-          <img src="./assets/icon-192.png" alt="" width="36" height="36" />
-          <span>kaštela</span>
+        <a class="logo" href="./" aria-label="kastela.live, početna">
+          <img src="./assets/logo-mark.png" alt="" width="40" height="40" />
+          <span class="wordmark">kastela<span class="live">.live</span></span>
         </a>
         <div class="top-actions">
           <button class="btn btn-dark" type="button" data-action="subscribe">
@@ -45,10 +45,9 @@
           <figure class="hero-frame">
             <img src="./assets/hero.webp" width="1024" height="576" alt="Božićni sajam na rivi: kućice, bor, svjetla i dvorac uz more." />
           </figure>
-          <div class="lights" aria-hidden="true"></div>
           <div class="hero-copy">
             <p class="eyebrow">Advent i zbivanja</p>
-            <h1>Što se događa<br />u Kaštelima</h1>
+            <h1 id="hero-title">Što se događa<br />u Kaštelima</h1>
             <p class="lede" id="hero-count">Kalendar Božićnog grada i Fritulice.</p>
             <form class="search" id="search-form" role="search">
               <label class="sr-only" for="q">Pretraga</label>
@@ -72,6 +71,12 @@
       </section>
 
       <div class="wrap controls">
+        <div class="cities" role="group" aria-label="Grad">
+          <button type="button" data-city="kastela" aria-pressed="true">Kaštela</button>
+          <button type="button" data-city="trogir" aria-pressed="false">Trogir</button>
+          <button type="button" data-city="solin" aria-pressed="false">Solin</button>
+          <button type="button" data-city="split" aria-pressed="false">Split</button>
+        </div>
         <form id="filters" class="filters">
           <label>
             <span>Mjesto</span>
@@ -179,13 +184,20 @@
     <dialog id="menu">
       <form method="dialog">
         <div class="dialog-head">
-          <h2>Kaštela</h2>
+          <h2>Izbornik</h2>
           <button class="btn btn-icon" value="cancel" aria-label="Zatvori izbornik">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </button>
         </div>
-        <h3>Naselja</h3>
+        <h3>Gradovi</h3>
         <div class="menu-list">
+          <button type="button" data-city="kastela">Kaštela</button>
+          <button type="button" data-city="trogir">Trogir</button>
+          <button type="button" data-city="solin">Solin</button>
+          <button type="button" data-city="split">Split</button>
+        </div>
+        <h3 id="places-heading">Naselja</h3>
+        <div class="menu-list" id="place-menu">
           <button type="button" data-district="all">Sva mjesta</button>
           <button type="button" data-district="Kaštel Novi">Kaštel Novi</button>
           <button type="button" data-district="Kaštel Stari">Kaštel Stari</button>
@@ -196,7 +208,6 @@
         </div>
         <h3>Kalendar</h3>
         <button class="btn btn-dark menu-cta" type="button" data-action="subscribe">Pretplati se na kalendar</button>
-        <p class="fine">Novo događanje dodaje se retkom u <code>data/events.csv</code>. Objava na GitHubu sama izgradi <code>calendar.ics</code>.</p>
       </form>
     </dialog>
 

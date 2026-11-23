@@ -152,7 +152,9 @@ code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.92em;
 }
 .top-bar { height: 68px; justify-content: space-between; gap: 12px; }
 .logo { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.04em; }
-.logo img { width: 36px; height: 36px; border-radius: 10px; }
+.logo img { width: 40px; height: 40px; display: block; }
+.wordmark { font-size: 20px; letter-spacing: -0.045em; }
+.wordmark .live { color: var(--blue); }
 .top-actions { gap: 8px; flex: none; }
 
 .btn {
@@ -186,9 +188,10 @@ code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.92em;
   padding: 18px 0 8px;
   overflow: hidden;
 }
+.hero-layout { display: grid; gap: 22px; align-items: center; }
 .hero-frame {
-  width: min(960px, 100%);
-  margin: 0 auto 14px;
+  width: 100%;
+  margin: 0;
   padding: 12px;
   background: white;
   border: 3px solid var(--orange);
@@ -202,18 +205,6 @@ code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.92em;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 18px;
-}
-.lights {
-  width: min(520px, 92%);
-  height: 16px;
-  margin: 0 auto 8px;
-  background:
-    radial-gradient(circle at 6% 50%, var(--yellow) 0 4px, transparent 5px),
-    radial-gradient(circle at 22% 50%, var(--orange) 0 4px, transparent 5px),
-    radial-gradient(circle at 38% 50%, var(--yellow) 0 4px, transparent 5px),
-    radial-gradient(circle at 54% 50%, var(--teal) 0 4px, transparent 5px),
-    radial-gradient(circle at 70% 50%, var(--orange) 0 4px, transparent 5px),
-    radial-gradient(circle at 86% 50%, var(--yellow) 0 4px, transparent 5px);
 }
 .hero-copy { position: relative; z-index: 1; text-align: center; }
 .eyebrow { margin: 0 0 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; color: var(--orange); }
@@ -252,6 +243,17 @@ h1 { margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: 0.92; letter-spa
 .quick button[aria-pressed="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--hot); }
 
 .controls { margin-top: 8px; }
+.cities { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.cities button {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+}
+.cities button[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
+.menu-list button[aria-pressed="true"] { color: var(--blue); }
 .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .filters label { display: flex; flex-direction: column; gap: 4px; min-width: min(100%, 210px); text-align: left; }
 .filters span { font-size: 12px; font-weight: 700; color: var(--muted); padding-left: 12px; }
@@ -498,6 +500,13 @@ dialog form { padding: 22px; }
   .day li { grid-template-columns: 72px minmax(0, 1fr) auto; align-items: center; }
   .event-side { grid-column: auto; flex-wrap: nowrap; }
 }
+@media (min-width: 900px) {
+  .hero-layout { grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr); gap: 36px; }
+  .hero-copy { text-align: left; }
+  .lede { margin-left: 0; margin-right: 0; }
+  .search { margin-left: 0; width: 100%; }
+  .quick { justify-content: flex-start; }
+}
 @media (min-width: 1100px) {
   .hero { padding: 28px 0 12px; }
   .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -508,6 +517,8 @@ dialog form { padding: 22px; }
 }
 @media (max-width: 719px) {
   .wide { display: none; }
+  .wordmark { font-size: 17px; }
+  .logo img { width: 34px; height: 34px; }
   .top-bar { height: 60px; }
   .foot-row, .control-row { flex-direction: column; align-items: flex-start; }
   .qr-panel { grid-template-columns: 1fr; }

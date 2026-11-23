@@ -1,6 +1,6 @@
 # Kaštela — događanja i kalendar
 
-Kalendar lokalnih događanja u Kaštelima. Stranica čita `data/events.csv` u pregledniku, a `calendar.ics` je pretplata koju telefoni i Google, Apple i Outlook znaju osvježiti sami.
+Kalendar lokalnih događanja u Kaštelima. Na istoj stranici su i kalendari za Trogir, Solin i Split; ti gradovi još nemaju unesena događanja. Stranica čita `data/events.csv` u pregledniku, a `calendar.ics` je pretplata koju telefoni i Google, Apple i Outlook znaju osvježiti sami.
 
 U tablici je program Božićnog grada i Fritulice, od 5. prosinca 2026. do 2. siječnja 2027.: koncerti u Novom parku, dječji program u Kulturnom centru Kaštela, paljenje svijeća na Đardinu i podjela bakalara na Poratu.
 

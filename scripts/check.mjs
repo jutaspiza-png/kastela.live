@@ -11,6 +11,7 @@ assert.equal(errors.length, 0, errors.join("\n"));
 assert.equal(events.length, 30);
 
 for (const district of DISTRICTS) assert.ok(html.includes(district), `index.html nema ${district}`);
+for (const city of ["Trogir", "Solin", "Split"]) assert.ok(html.includes(city), `index.html nema ${city}`);
 for (const category of CATEGORIES) assert.ok(html.includes(category), `index.html nema ${category}`);
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);

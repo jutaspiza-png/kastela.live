@@ -6,8 +6,16 @@ const WEEKDAYS_LONG = ["", "ponedjeljak", "utorak", "srijeda", "četvrtak", "pet
 const MONTHS = ["", "sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro"];
 const MONTHS_LONG = ["", "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja", "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"];
 
+const CITIES = [
+  { id: "kastela", name: "Kaštela", inPlace: "Kaštelima" },
+  { id: "trogir", name: "Trogir", inPlace: "Trogiru" },
+  { id: "solin", name: "Solin", inPlace: "Solinu" },
+  { id: "split", name: "Split", inPlace: "Splitu" },
+];
+
 const state = {
   events: [],
+  city: "kastela",
   query: "",
   district: "all",
   period: "all",
@@ -89,6 +97,15 @@ function card(event) {
   </article>`;
 }
 
+function currentCity() {
+  return CITIES.find((city) => city.id === state.city) || CITIES[0];
+}
+
+function countLabel(count) {
+  const word = count % 10 === 1 && count % 100 !== 11 ? "događanje" : "događanja";
+  return `${count} ${word}`;
+}
+
 function criteria() {
   return {
     query: state.query,
@@ -103,18 +120,29 @@ function criteria() {
 
 function selected() {
   const now = zagrebNow();
-  return filterEvents(state.events, criteria(), now).sort(
+  const events = state.events.filter((event) => (event.city || "kastela") === state.city);
+  return filterEvents(events, criteria(), now).sort(
     (a, b) => `${a.date}T${a.start_time}`.localeCompare(`${b.date}T${b.start_time}`) || a.id.localeCompare(b.id),
   );
 }
 
 function render() {
   closeCalendarMenu();
+  const city = currentCity();
   const now = zagrebNow();
-  const upcoming = filterEvents(state.events, {}, now);
-  $("#hero-count").textContent = upcoming.length
-    ? `${upcoming.length} nadolazećih događanja u Božićnom gradu i Fritulici.`
-    : "Kalendar Božićnog grada i Fritulice.";
+  const cityEvents = state.events.filter((event) => (event.city || "kastela") === city.id);
+  const upcoming = filterEvents(cityEvents, {}, now);
+  $("#hero-title").innerHTML = `Što se događa<br />u ${escapeHtml(city.inPlace)}`;
+  $("#hero-count").textContent = city.id === "kastela"
+    ? (upcoming.length ? `${upcoming.length} nadolazećih događanja u Božićnom gradu i Fritulici.` : "Kalendar Božićnog grada i Fritulice.")
+    : `Kalendar događanja u ${city.inPlace}.`;
+  document.querySelectorAll("[data-city]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.city === city.id));
+  });
+  const kastela = city.id === "kastela";
+  $("#places-heading").hidden = !kastela;
+  $("#place-menu").hidden = !kastela;
+  $("#district").closest("label").hidden = !kastela;
 
   const events = selected();
   const featured = events.slice(0, 6);
@@ -129,10 +157,12 @@ function render() {
   if (!events.length) {
     upcomingSection.hidden = false;
     title.textContent = "Uskoro";
-    results.innerHTML = '<div class="empty"><p>Nema događanja za ovaj odabir.</p><button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button></div>';
+    const bare = !state.query && state.district === "all" && state.period === "all" && state.category === "all" && !state.eveningOnly && !state.freeOnly;
+    const message = bare && city.id !== "kastela" ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
+    results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${bare && city.id !== "kastela" ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
   } else if (state.view === "list") {
     upcomingSection.hidden = false;
-    title.textContent = `Uskoro · ${events.length}`;
+    title.textContent = `Uskoro · ${countLabel(events.length)}`;
     const groups = new Map();
     for (const event of events) {
       if (!groups.has(event.date)) groups.set(event.date, []);
@@ -161,7 +191,7 @@ function render() {
     results.innerHTML = "";
   } else {
     upcomingSection.hidden = false;
-    title.textContent = `Uskoro · ${rest.length}`;
+    title.textContent = `Uskoro · ${countLabel(rest.length)}`;
     results.innerHTML = `<div class="grid">${rest.map((event) => card(event)).join("")}</div>`;
   }
 
@@ -377,6 +407,13 @@ function bind() {
       $("#category").value = state.category;
       render();
       $("#dogadanja").scrollIntoView({ block: "start" });
+    }
+    if (button.dataset.city) {
+      state.city = button.dataset.city;
+      state.district = "all";
+      $("#district").value = "all";
+      if ($("#menu").open) $("#menu").close();
+      render();
     }
     if (button.dataset.district) {
       state.district = button.dataset.district;

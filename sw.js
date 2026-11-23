@@ -1,4 +1,4 @@
-const CACHE = "kastela-v3";
+const CACHE = "kastela-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -9,6 +9,7 @@ const SHELL = [
   "./assets/icon-512.png",
   "./assets/apple-touch-icon.png",
   "./assets/hero.webp",
+  "./assets/logo-mark.png",
 ];
 
 self.addEventListener("install", (event) => {
