@@ -1,4 +1,4 @@
-import { eventsToIcs, parseCsv, validateEvents } from "./scripts/ics.mjs";
+import { eventsToIcs, googleSubscribeUrl, googleTemplateUrl, parseCsv, validateEvents } from "./scripts/ics.mjs";
 import { filterEvents, foldText, isoWeekday, zagrebNow } from "./scripts/filter.mjs";
 
 const WEEKDAYS = ["", "pon", "uto", "sri", "čet", "pet", "sub", "ned"];
@@ -261,17 +261,44 @@ function closeCalendarMenu(restore) {
   calendarAnchor = null;
 }
 
+function isAppleMobile() {
+  return /iPhone|iPad|iPod/.test(navigator.userAgent);
+}
+
+function openCalendar(url) {
+  window.location.assign(url);
+}
+
+function addOne(event) {
+  if (isAppleMobile()) {
+    openCalendar(new URL(`events/${event.id}.ics`, document.baseURI).href);
+    return;
+  }
+  openCalendar(googleTemplateUrl(event));
+}
+
+function addProgramme(event) {
+  const httpsUrl = new URL(`programmes/${programmeFile(event.programme)}`, document.baseURI).href;
+  if (isAppleMobile()) {
+    openCalendar(httpsUrl.replace(/^https?:/, "webcal:"));
+    return;
+  }
+  openCalendar(googleSubscribeUrl(httpsUrl));
+}
+
 function openCalendarMenu(anchor, event) {
   closeCalendarMenu();
   calendarAnchor = anchor;
   anchor.setAttribute("aria-expanded", "true");
+  const one = googleTemplateUrl(event);
+  const group = new URL(`programmes/${programmeFile(event.programme)}`, document.baseURI).href;
   const menu = document.createElement("div");
   menu.className = "cal-menu";
   menu.dataset.id = event.id;
   menu.setAttribute("role", "menu");
   menu.innerHTML = `
-    <button type="button" role="menuitem" data-action="ics-one" data-id="${escapeHtml(event.id)}">Dodaj samo ovaj event</button>
-    <button type="button" role="menuitem" data-action="ics-group" data-id="${escapeHtml(event.id)}">Dodaj cijeli „${escapeHtml(event.programme)}”</button>
+    <a role="menuitem" data-action="ics-one" data-id="${escapeHtml(event.id)}" href="${escapeHtml(one)}">Dodaj samo ovaj event</a>
+    <a role="menuitem" data-action="ics-group" data-id="${escapeHtml(event.id)}" href="${escapeHtml(googleSubscribeUrl(group))}">Dodaj cijeli „${escapeHtml(event.programme)}”</a>
   `;
   document.body.append(menu);
   const rect = anchor.getBoundingClientRect();
@@ -356,7 +383,7 @@ function bind() {
       const item = state.events.find((entry) => entry.id === button.dataset.id);
       if (!item) return;
       if (!item.programme) {
-        downloadIcs(`${item.id}.ics`, [item]);
+        addOne(item);
         return;
       }
       if (calendarAnchor === button) {
@@ -367,14 +394,12 @@ function bind() {
       return;
     }
     if (button.dataset.action === "ics-one" || button.dataset.action === "ics-group") {
+      event.preventDefault();
       const item = state.events.find((entry) => entry.id === button.dataset.id);
       closeCalendarMenu();
       if (!item) return;
-      if (button.dataset.action === "ics-one") downloadIcs(`${item.id}.ics`, [item]);
-      else {
-        const group = state.events.filter((entry) => entry.programme === item.programme);
-        downloadIcs(programmeFile(item.programme), group, item.programme);
-      }
+      if (button.dataset.action === "ics-one") addOne(item);
+      else addProgramme(item);
     }
     if (button.dataset.action === "filtered-ics") downloadIcs("kastela-odabir.ics", selected());
     if (button.dataset.action === "reset") {

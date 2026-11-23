@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { CATEGORIES, DISTRICTS, eventsToIcs, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
+import { CATEGORIES, DISTRICTS, eventsToIcs, googleTemplateUrl, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
 import { filterEvents, foldText, weekendDates } from "./filter.mjs";
 
 const csv = readFileSync(new URL("../data/events.csv", import.meta.url), "utf8");
@@ -26,6 +26,10 @@ assert.equal(stela.end_inferred, true);
 assert.equal(stela.end_time, "23:00");
 assert.equal(stela.venue, "Novi park");
 assert.equal(stela.district, "Kaštel Lukšić");
+const stelaUrl = new URL(googleTemplateUrl(stela));
+assert.equal(stelaUrl.searchParams.get("text"), "Stela Rade");
+assert.equal(stelaUrl.searchParams.get("dates"), "20261205T210000/20261205T230000");
+assert.equal(stelaUrl.searchParams.get("ctz"), "Europe/Zagreb");
 
 const candle = events.find((event) => event.id === "kastela-2026-002");
 assert.equal(candle.title, "Paljenje 2. adventske svijeće");

@@ -11,6 +11,20 @@
       ]
     },
     {
+      "source": "/events/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/calendar; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline" }
+      ]
+    },
+    {
+      "source": "/programmes/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/calendar; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline" }
+      ]
+    },
+    {
       "source": "/data/events.csv",
       "headers": [
         { "key": "Content-Type", "value": "text/csv; charset=utf-8" },

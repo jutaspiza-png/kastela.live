@@ -51,7 +51,7 @@ Na stranici gumb **Pretplati se na kalendar** otvara:
 
 Adresa je `calendar.ics` na istoj domeni kao stranica. Pretplata prati **sva** događanja iz tablice. Telefon je sam povlači svakih nekoliko sati; to ne možemo ubrzati iz preglednika.
 
-**Preuzmi odabir (.ics)** skida samo ono što filteri trenutno pokazuju. To je jednokratna datoteka, ne živa pretplata. **Dodaj u kalendar** na događaju koji pripada skupu nudi dvije datoteke: samo taj događaj, ili cijeli skup (sada `Advent u Kaštelima`). Događaj bez `programme` skida samo sebe.
+**Preuzmi odabir (.ics)** skida samo ono što filteri trenutno pokazuju. To je jednokratna datoteka, ne živa pretplata. **Dodaj u kalendar** otvara potvrdu u kalendaru: samo taj događaj, ili cijeli skup (sada `Advent u Kaštelima`).
 
 ## Lokalno
 

@@ -267,6 +267,24 @@ function eventDescription(event) {
   ].join("\n");
 }
 
+export function googleTemplateUrl(event) {
+  const stamp = (date, time) => `${date.replaceAll("-", "")}T${time.replace(":", "")}00`;
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${stamp(event.date, event.start_time)}/${stamp(event.end_date, event.end_time)}`,
+    ctz: "Europe/Zagreb",
+    details: event.description,
+    location: `${event.venue}, ${event.district}`,
+  });
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
+export function googleSubscribeUrl(httpsUrl) {
+  const webcal = String(httpsUrl).replace(/^https?:/, "webcal:");
+  return `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcal)}`;
+}
+
 export function eventsToIcs(events, options = {}) {
   const now = options.now instanceof Date ? options.now : new Date();
   const lines = [
