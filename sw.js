@@ -1,4 +1,4 @@
-const CACHE = "kastela-v5";
+const CACHE = "kastela-v6";
 const SHELL = [
   "./",
   "./index.html",
@@ -8,7 +8,6 @@ const SHELL = [
   "./assets/icon-192.png",
   "./assets/icon-512.png",
   "./assets/apple-touch-icon.png",
-  "./assets/hero.webp",
   "./assets/logo-mark.png",
 ];
 

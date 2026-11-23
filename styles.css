@@ -190,28 +190,22 @@ code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.92em;
   padding: 18px 0 8px;
   overflow: hidden;
 }
-.hero-layout { display: grid; gap: 22px; align-items: center; min-width: 0; }
+.hero-layout { display: grid; gap: 18px; align-items: start; min-width: 0; }
 .hero-layout > * { min-width: 0; }
-.hero-frame {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  margin: 0;
-  padding: 12px;
-  background: white;
-  border: 3px solid var(--orange);
-  border-radius: 28px;
-  box-shadow: 0 0 0 8px color-mix(in srgb, var(--blue) 16%, white), 0 18px 40px rgba(52, 52, 52, 0.12);
-}
-.hero-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 18px;
-}
 .hero-copy { position: relative; z-index: 1; text-align: center; max-width: 100%; }
+.hero-note {
+  margin: 0;
+  padding: 16px 18px 8px;
+  text-align: left;
+  background: white;
+  border: 1px solid color-mix(in srgb, var(--blue) 24%, white);
+  border-radius: 20px;
+}
+.hero-note p { margin: 0 0 10px; color: #334155; line-height: 1.45; }
+.hero-note .eyebrow { margin-bottom: 8px; }
+.hero-note ul { margin: 0 0 8px; padding-left: 18px; }
+.hero-note li { margin: 0 0 8px; line-height: 1.4; }
+.hero-tools { margin-top: 8px; text-align: center; }
 .eyebrow { margin: 0 0 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; color: var(--orange); }
 h1 { margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: 0.92; letter-spacing: -0.055em; font-weight: 800; }
 .lede { margin: 14px auto 0; max-width: 460px; color: #334155; font-size: 16px; }
@@ -514,11 +508,9 @@ dialog form { padding: 22px; }
   .event-side { grid-column: auto; flex-wrap: nowrap; }
 }
 @media (min-width: 900px) {
-  .hero-layout { grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr); gap: 36px; }
+  .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr); gap: 36px; align-items: center; }
   .hero-copy { text-align: left; }
   .lede { margin-left: 0; margin-right: 0; }
-  .search { margin-left: 0; width: 100%; }
-  .quick { justify-content: flex-start; }
 }
 @media (min-width: 1100px) {
   .hero { padding: 28px 0 12px; }
