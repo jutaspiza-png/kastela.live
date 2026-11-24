@@ -2,8 +2,8 @@
 <html lang="hr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#e6f5ff" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Kaštela" />
@@ -27,12 +27,6 @@
           <span class="wordmark">kastela<span class="live">.live</span></span>
         </a>
         <div class="top-actions">
-          <button class="btn btn-icon" type="button" id="install-app" data-action="install" aria-label="Instaliraj aplikaciju">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v10M8.5 9.5 12 13l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M5 17.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-            </svg>
-          </button>
           <button class="btn btn-icon" type="button" data-action="menu" aria-label="Izbornik">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
@@ -193,7 +187,8 @@
           </button>
         </div>
         <button class="guide-link" type="button" data-action="reminders">Moji podsjetnici</button>
-        <a class="guide-link" href="./nedjelje.html">Radne nedjelje</a>
+        <button class="guide-link" type="button" id="install-app" data-action="install">Instaliraj aplikaciju</button>
+        <!-- <a class="guide-link" href="./nedjelje.html">Radne nedjelje</a> -->
         <h3>Gradovi</h3>
         <div class="menu-list">
           <button type="button" data-city="all">Sve</button>
