@@ -124,6 +124,35 @@ function criteria() {
   };
 }
 
+function placeFeatured(featuredSection) {
+  const days = [...$("#results").querySelectorAll(":scope > .day")];
+  if (!days.length || featuredSection.hidden) {
+    $("#results").before(featuredSection);
+    return;
+  }
+  const minimum = 4;
+  let seen = 0;
+  for (const day of days) {
+    const items = [...day.querySelectorAll(":scope > ul > li")];
+    const remain = minimum - seen;
+    if (items.length > remain) {
+      const ul = day.querySelector("ul");
+      ul.replaceChildren(...items.slice(0, remain));
+      day.after(featuredSection);
+      const rest = day.cloneNode(true);
+      rest.querySelector("ul").replaceChildren(...items.slice(remain));
+      featuredSection.after(rest);
+      return;
+    }
+    seen += items.length;
+    if (seen >= minimum) {
+      day.after(featuredSection);
+      return;
+    }
+  }
+  days.at(-1).after(featuredSection);
+}
+
 function setupFeaturedLoop() {
   const scroller = $("#featured");
   scroller.onscroll = null;
@@ -203,6 +232,7 @@ function render() {
   $("#featured-nav").hidden = featured.length < 2;
   $("#featured").innerHTML = featured.map((event) => card(event)).join("");
   if (featured.length >= 2) setupFeaturedLoop();
+  featuredSection.remove();
 
   const results = $("#results");
   const title = $("#upcoming-title");
@@ -214,6 +244,7 @@ function render() {
     const waiting = bare && !["all", "kastela", "trogir", "solin", "split"].includes(city.id);
     const message = waiting ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
     results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${waiting ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
+    results.before(featuredSection);
   } else {
     upcomingSection.hidden = false;
     title.innerHTML = `Uskoro · <span class="count">${events.length}</span> ${eventWord(events.length)}`;
@@ -241,6 +272,7 @@ function render() {
           </li>`).join("")}
         </ul>
       </section>`).join("");
+    placeFeatured(featuredSection);
   }
 
   $("#status").hidden = true;
