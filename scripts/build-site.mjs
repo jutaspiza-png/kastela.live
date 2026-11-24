@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { foldText } from "./filter.mjs";
@@ -23,6 +23,15 @@ cpSync(resolve(root, "data/sunday-stores.json"), resolve(site, "data/sunday-stor
 cpSync(resolve(root, "scripts/ics.mjs"), resolve(site, "scripts/ics.mjs"));
 cpSync(resolve(root, "scripts/filter.mjs"), resolve(site, "scripts/filter.mjs"));
 cpSync(resolve(root, "scripts/push-time.mjs"), resolve(site, "scripts/push-time.mjs"));
+cpSync(resolve(root, "scripts/cities.mjs"), resolve(site, "scripts/cities.mjs"));
+
+for (const file of ["app.js", "nedjelje.js", "scripts/ics.mjs", "scripts/filter.mjs", "scripts/push-time.mjs", "scripts/cities.mjs"]) {
+  const source = readFileSync(resolve(site, file), "utf8");
+  for (const match of source.matchAll(/from\s+["'](\.[^"']+)["']/g)) {
+    const target = resolve(site, dirname(file), match[1]);
+    if (!existsSync(target)) throw new Error(`Objava ne uključuje ${match[1]}, a traži ga ${file}.`);
+  }
+}
 for (const directory of ["assets", "fonts", "vendor"]) {
   cpSync(resolve(root, directory), resolve(site, directory), { recursive: true });
 }
