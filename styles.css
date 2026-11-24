@@ -475,7 +475,9 @@ h2 { margin: 0; font-size: 26px; letter-spacing: -0.04em; }
 .empty { background: white; border-radius: 16px; padding: 22px; }
 .status[hidden] { display: none; }
 
-.foot { margin-top: 48px; padding: 28px 0 40px; }
+.page-note { margin: 36px auto 0; }
+.page-note .hero-note { max-width: 720px; }
+.foot { margin-top: 28px; padding: 28px 0 40px; }
 .foot-brand { justify-content: center; }
 
 dialog {
@@ -576,11 +578,6 @@ a.guide-link { text-decoration: none; }
   .day li { grid-template-columns: 72px minmax(0, 1fr) auto; align-items: center; }
   .event-side { grid-column: auto; justify-content: flex-end; }
   .event-side .day-badge { overflow: visible; }
-}
-@media (min-width: 900px) {
-  .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr); gap: 36px; align-items: center; }
-  .hero-copy { text-align: left; }
-  .lede { margin-left: 0; margin-right: 0; }
 }
 @media (min-width: 1100px) {
   .hero { padding: 28px 0 12px; }

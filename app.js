@@ -320,6 +320,52 @@ function isStandalone() {
   return window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 }
 
+let installPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installPrompt = event;
+});
+
+window.addEventListener("appinstalled", () => {
+  installPrompt = null;
+  const button = $("#install-app");
+  if (button) button.hidden = true;
+});
+
+function openInstallHelp() {
+  const ios = isIos();
+  $("#install-title").textContent = ios ? "Dodaj na početni zaslon" : "Instaliraj aplikaciju";
+  $("#install-copy").innerHTML = ios
+    ? `<p>Na iPhoneu preglednik sam ne može dodati ikonu. U Safariju:</p>
+       <ol>
+         <li>Dodirni Dijeli.</li>
+         <li>Odaberi Dodaj na početni zaslon.</li>
+         <li>Potvrdi Dodaj. Ikona Kaštela ostaje na zaslonu.</li>
+       </ol>`
+    : `<p>U izborniku Chromea odaberi Instaliraj aplikaciju. Nakon potvrde ikona se doda na radnu površinu ili početni zaslon.</p>`;
+  if (!$("#install").open) $("#install").showModal();
+}
+
+async function installApp() {
+  if (isStandalone()) {
+    $("#install-app").hidden = true;
+    return;
+  }
+  if (installPrompt) {
+    try {
+      installPrompt.prompt();
+      const choice = await installPrompt.userChoice;
+      installPrompt = null;
+      if (choice.outcome === "accepted") $("#install-app").hidden = true;
+      return;
+    } catch {
+      installPrompt = null;
+    }
+  }
+  openInstallHelp();
+}
+
 function urlBase64ToUint8Array(value) {
   const padding = "=".repeat((4 - (value.length % 4)) % 4);
   const base64 = (value + padding).replace(/-/g, "+").replace(/_/g, "/");
@@ -542,6 +588,7 @@ function bind() {
       openSubscribe();
     }
     if (button.dataset.action === "menu") $("#menu").showModal();
+    if (button.dataset.action === "install") installApp();
     if (button.dataset.action === "guide") {
       if ($("#menu").open) $("#menu").close();
       $("#guide").showModal();
@@ -640,6 +687,7 @@ async function init() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register(new URL("sw.js", document.baseURI)).catch(() => {});
   }
+  if (isStandalone()) $("#install-app").hidden = true;
   bind();
   try {
     const response = await fetch(new URL("data/events.csv", document.baseURI));

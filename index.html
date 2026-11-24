@@ -27,6 +27,12 @@
           <span class="wordmark">kastela<span class="live">.live</span></span>
         </a>
         <div class="top-actions">
+          <button class="btn btn-icon" type="button" id="install-app" data-action="install" aria-label="Instaliraj aplikaciju">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v10M8.5 9.5 12 13l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5 17.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </button>
           <button class="btn btn-icon" type="button" data-action="menu" aria-label="Izbornik">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
@@ -44,13 +50,6 @@
             <h1 id="hero-title">Što se događa<br />u Kaštelima</h1>
             <p class="lede" id="hero-count">Kalendar Božićnog grada i Fritulice.</p>
           </div>
-          <aside class="hero-note">
-            <h2>Sva kaštelanska događanja na jednom mjestu</h2>
-            <ul>
-              <li>Spremi na mobitel – dodaj događaj u svoj kalendar ili uključi obavijest 8 sati prije početka.</li>
-            </ul>
-            <p>Ova aplikacija je interaktivni vodić kroz događanja u Kaštelima i okolici, a napravljena je iz revolta našim općinama koje su u stanju samo generirati PDF dokument i zalijepiti 2–3 plakata po Kaštelima.</p>
-          </aside>
         </div>
         <div class="wrap hero-tools">
             <form class="search" id="search-form" role="search">
@@ -137,6 +136,15 @@
           <div id="results"></div>
         </section>
       </div>
+      <section class="wrap page-note">
+        <aside class="hero-note">
+          <h2>Sva kaštelanska događanja na jednom mjestu</h2>
+          <ul>
+            <li>Spremi na mobitel – dodaj događaj u svoj kalendar ili uključi obavijest 8 sati prije početka.</li>
+          </ul>
+          <p>Ova aplikacija je interaktivni vodić kroz događanja u Kaštelima i okolici, a napravljena je iz revolta našim općinama koje su u stanju samo generirati PDF dokument i zalijepiti 2–3 plakata po Kaštelima.</p>
+        </aside>
+      </section>
     </main>
 
     <footer class="foot">
@@ -231,6 +239,18 @@
           </button>
         </div>
         <p id="push-status-copy" class="dialog-copy"></p>
+      </form>
+    </dialog>
+
+    <dialog id="install">
+      <form method="dialog" class="guide">
+        <div class="dialog-head">
+          <h2 id="install-title">Instaliraj aplikaciju</h2>
+          <button class="btn btn-icon" value="cancel" aria-label="Zatvori">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div id="install-copy"></div>
       </form>
     </dialog>
 
