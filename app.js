@@ -1,6 +1,7 @@
 import { eventsToIcs, googleTemplateUrl, parseCsv, validateEvents } from "./scripts/ics.mjs";
 import { filterEvents, foldText, isoWeekday, zagrebNow } from "./scripts/filter.mjs";
 import { scheduleDecision } from "./scripts/push-time.mjs";
+import { cityFromHost } from "./scripts/cities.mjs";
 
 const WEEKDAYS = ["", "pon", "uto", "sri", "čet", "pet", "sub", "ned"];
 const WEEKDAYS_LONG = ["", "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota", "nedjelja"];
@@ -17,7 +18,7 @@ const CITIES = [
 
 const state = {
   events: [],
-  city: "all",
+  city: cityFromHost(globalThis.location?.hostname),
   query: "",
   district: "all",
   period: "all",
@@ -216,6 +217,7 @@ function render() {
   const cityEvents = state.events.filter(inCity);
   const upcoming = filterEvents(cityEvents, {}, now);
   $("#hero-title").innerHTML = `Što se događa<br />u ${escapeHtml(city.inPlace)}`;
+  document.title = `${city.id === "all" ? "Kaštela" : city.name} — što se događa`;
   $("#hero-count").textContent = upcoming.length
     ? `${upcoming.length} nadolazećih ${eventWord(upcoming.length)}.`
     : `Kalendar događanja u ${city.inPlace}.`;

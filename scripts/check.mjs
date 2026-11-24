@@ -3,6 +3,7 @@ import "./push-check.mjs";
 import { readFileSync } from "node:fs";
 import { CATEGORIES, DISTRICTS, eventsToIcs, googleTemplateUrl, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
 import { filterEvents, foldText, weekendDates } from "./filter.mjs";
+import { cityFromHost } from "./cities.mjs";
 import { validateSundayStores } from "./sunday-stores.mjs";
 
 const csv = readFileSync(new URL("../data/events.csv", import.meta.url), "utf8");
@@ -18,6 +19,15 @@ assert.ok(events.filter((event) => event.city === "split").length > 0);
 
 for (const district of DISTRICTS) assert.ok(html.includes(district), `index.html nema ${district}`);
 for (const city of ["Trogir", "Solin", "Split"]) assert.ok(html.includes(city), `index.html nema ${city}`);
+assert.equal(cityFromHost("kastela.live"), "kastela");
+assert.equal(cityFromHost("www.kastela.live"), "kastela");
+assert.equal(cityFromHost("split.live"), "split");
+assert.equal(cityFromHost("www.split.live"), "split");
+assert.equal(cityFromHost("trogir.live"), "trogir");
+assert.equal(cityFromHost("solin.live"), "solin");
+assert.equal(cityFromHost("localhost"), "kastela");
+assert.equal(cityFromHost("kastela-dogadanja.apps.grok.bot"), "kastela");
+assert.equal(html.includes('data-city="kastela" aria-pressed="true"'), true);
 for (const category of CATEGORIES) assert.ok(html.includes(category), `index.html nema ${category}`);
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);
