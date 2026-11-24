@@ -10,9 +10,11 @@ const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const { events, errors } = validateEvents(parseCsv(csv));
 
 assert.equal(errors.length, 0, errors.join("\n"));
-assert.equal(events.length, 119);
 assert.equal(events.filter((event) => event.city === "kastela").length, 30);
 assert.equal(events.filter((event) => event.city === "trogir").length, 89);
+assert.equal(events.filter((event) => event.city === "solin").length, 12);
+assert.equal(events.filter((event) => event.city === "split").length, events.length - 131);
+assert.ok(events.filter((event) => event.city === "split").length > 0);
 
 for (const district of DISTRICTS) assert.ok(html.includes(district), `index.html nema ${district}`);
 for (const city of ["Trogir", "Solin", "Split"]) assert.ok(html.includes(city), `index.html nema ${city}`);
@@ -20,7 +22,7 @@ for (const category of CATEGORIES) assert.ok(html.includes(category), `index.htm
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);
   assert.ok(CATEGORIES.includes(event.category), event.category);
-  assert.ok(["Advent u Kaštelima", "Zimska Adventura Trogir 2026"].includes(event.programme), event.programme);
+  assert.ok(["Advent u Kaštelima", "Zimska Adventura Trogir 2026", "Solinski Adventorium 2026", "Advent Grada Splita 2026"].includes(event.programme), event.programme);
 }
 
 const stela = events.find((event) => event.id === "kastela-2026-001");
@@ -78,16 +80,26 @@ assert.deepEqual(freeNovi.map((event) => event.id), ["kastela-2026-002", "kastel
 
 const search = filterEvents(events, { query: "djardin" }, adventSaturday);
 assert.ok(search.every((event) => event.venue === "Đardin"));
-assert.equal(search.length, 3);
+assert.ok(search.some((event) => event.city === "kastela"));
+assert.ok(search.some((event) => event.city === "split"));
 assert.equal(foldText("Đardin"), "dardin");
 
 const beforeSeason = filterEvents(events, {}, { date: "2026-11-23", time: "13:30" });
-assert.equal(beforeSeason.length, 119);
+assert.equal(beforeSeason.length, events.length);
 
-const afterSeason = filterEvents(events, {}, { date: "2027-01-04", time: "10:00" });
+const afterSeason = filterEvents(events, {}, { date: "2027-01-08", time: "10:00" });
 assert.equal(afterSeason.length, 0);
-const withPast = filterEvents(events, { showPast: true }, { date: "2027-01-04", time: "10:00" });
-assert.equal(withPast.length, 119);
+const withPast = filterEvents(events, { showPast: true }, { date: "2027-01-08", time: "10:00" });
+assert.equal(withPast.length, events.length);
+
+const bebek = events.find((event) => event.city === "solin" && event.title.includes("Bebek"));
+assert.equal(bebek.start_time, "");
+assert.equal(bebek.district, "Solin");
+assert.equal(bebek.venue, "Gradina");
+assert.equal(bebek.category, "Glazba");
+const splitOpen = events.find((event) => event.city === "split" && event.date === "2026-11-26");
+assert.equal(splitOpen.category, "Glazba");
+assert.equal(splitOpen.start_time, "19:30");
 
 const tony = events.find((event) => event.id === "trogir-2026-007");
 assert.equal(tony.title, "Tony Cetinski - koncert");
@@ -96,10 +108,11 @@ assert.equal(tony.district, "Trogir");
 assert.equal(tony.category, "Glazba");
 assert.equal(tony.date, "2026-12-04");
 const sameDay = events.filter((event) => event.date === "2026-12-05").map((event) => event.city);
-assert.ok(sameDay.includes("kastela") && sameDay.includes("trogir"));
+assert.ok(["kastela", "trogir", "solin", "split"].every((city) => sameDay.includes(city)));
 
 const late = filterEvents(events, { period: "today" }, { date: "2026-12-05", time: "23:00" });
-assert.deepEqual(late, []);
+assert.ok(!late.some((event) => event.id === "kastela-2026-002"));
+assert.ok(late.every((event) => event.end_date > "2026-12-05" || event.end_time > "23:00" || !event.start_time));
 
 const ics = eventsToIcs(events, { now: new Date("2026-11-23T12:00:00Z") });
 assert.ok(ics.startsWith("BEGIN:VCALENDAR\r\n"));
@@ -111,7 +124,8 @@ for (const line of ics.split("\r\n").filter(Boolean)) {
 }
 assert.equal(ics.includes("TZID:Europe/Zagreb"), true);
 assert.equal((ics.match(/^BEGIN:VEVENT/gm) || []).length, events.length);
-assert.equal((ics.match(/^BEGIN:VALARM/gm) || []).length, events.length);
+assert.equal((ics.match(/^BEGIN:VALARM/gm) || []).length, events.filter((event) => event.start_time).length);
+assert.equal(ics.includes("DTSTART;VALUE=DATE:20261204"), true);
 assert.equal(ics.includes("DTSTART;TZID=Europe/Zagreb:20261205T210000"), true);
 assert.equal(ics.includes("DTEND;TZID=Europe/Zagreb:20261205T230000"), true);
 assert.equal(ics.includes("DTSTART;TZID=Europe/Zagreb:20261205T180000"), true);
@@ -125,7 +139,7 @@ const uids = [...ics.matchAll(/^UID:(.+)$/gm)].map((match) => match[1]);
 assert.equal(new Set(uids).size, uids.length);
 
 const adventIcs = eventsToIcs(events, { now: new Date("2026-11-23T12:00:00Z"), calName: "Advent u Kaštelima" });
-assert.equal((adventIcs.match(/^BEGIN:VEVENT/gm) || []).length, 119);
+assert.equal((adventIcs.match(/^BEGIN:VEVENT/gm) || []).length, events.length);
 assert.equal(adventIcs.includes("X-WR-CALNAME:Advent u Kaštelima"), true);
 assert.equal(ics.includes("X-WR-CALNAME:Događanja u Kaštelima i okolici"), true);
 

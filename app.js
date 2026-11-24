@@ -47,7 +47,8 @@ function safeImage(url) {
 function formatWhen(event) {
   const [, month, day] = event.date.split("-");
   const weekday = WEEKDAYS[isoWeekday(event.date)];
-  return `${weekday}, ${Number(day)}. ${MONTHS[Number(month)]} · ${event.start_time}–${event.end_time}`;
+  const clock = event.start_time ? `${event.start_time}–${event.end_time}` : "sat nije objavljen";
+  return `${weekday}, ${Number(day)}. ${MONTHS[Number(month)]} · ${clock}`;
 }
 
 function formatDay(date) {
@@ -169,7 +170,7 @@ function selected() {
   const now = zagrebNow();
   const events = state.events.filter(inCity);
   return filterEvents(events, criteria(), now).sort(
-    (a, b) => `${a.date}T${a.start_time}`.localeCompare(`${b.date}T${b.start_time}`) || a.id.localeCompare(b.id),
+    (a, b) => `${a.date}T${a.start_time || "99:99"}`.localeCompare(`${b.date}T${b.start_time || "99:99"}`) || a.id.localeCompare(b.id),
   );
 }
 
@@ -204,7 +205,7 @@ function render() {
     upcomingSection.hidden = false;
     title.textContent = "Uskoro";
     const bare = !state.query && state.district === "all" && state.period === "all" && state.category === "all" && !state.eveningOnly && !state.freeOnly;
-    const waiting = bare && city.id !== "all" && city.id !== "kastela" && city.id !== "trogir";
+    const waiting = bare && !["all", "kastela", "trogir", "solin", "split"].includes(city.id);
     const message = waiting ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
     results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${waiting ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
   } else {
@@ -220,7 +221,7 @@ function render() {
         <h3>${escapeHtml(formatDay(date))}</h3>
         <ul>
           ${items.map((event) => `<li>
-            <time datetime="${escapeHtml(event.date)}T${escapeHtml(event.start_time)}">${escapeHtml(event.start_time)}</time>
+            <time datetime="${escapeHtml(event.date)}${event.start_time ? `T${escapeHtml(event.start_time)}` : ""}">${escapeHtml(event.start_time || "—")}</time>
             <div class="event-copy">
               <strong>${escapeHtml(event.title)}</strong>
               <p>${escapeHtml(event.venue)} · ${escapeHtml(event.district)}</p>

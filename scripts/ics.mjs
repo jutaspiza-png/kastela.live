@@ -24,10 +24,14 @@ export const DISTRICTS = [
   "Kaštel Gomilica",
   "Kaštel Sućurac",
   "Trogir",
+  "Solin",
+  "Split",
 ];
 
 export function cityOf(district) {
   if (district === "Trogir") return "trogir";
+  if (district === "Solin") return "solin";
+  if (district === "Split") return "split";
   return "kastela";
 }
 
@@ -137,6 +141,7 @@ function pad(value) {
 }
 
 export function resolveSpan(date, start, end) {
+  if (!start) return { end_time: "", end_date: date, end_inferred: false };
   const [startHour, startMinute] = start.split(":").map(Number);
   if (!end) {
     const total = startHour * 60 + startMinute + 120;
@@ -185,7 +190,7 @@ export function validateEvents(rows) {
     seen.add(raw.id);
     if (!raw.title) problems.push("nedostaje title");
     if (!isRealDate(raw.date)) problems.push("date mora biti stvarni datum YYYY-MM-DD");
-    if (!TIME_RE.test(raw.start_time)) problems.push("start_time mora biti HH:MM");
+    if (raw.start_time && !TIME_RE.test(raw.start_time)) problems.push("start_time mora biti HH:MM ili prazan");
     if (raw.end_time && !TIME_RE.test(raw.end_time)) problems.push("end_time mora biti HH:MM ili prazan");
     if (raw.end_time && raw.end_time === raw.start_time) problems.push("end_time ne može biti isti kao start_time");
     if (!raw.venue) problems.push("nedostaje venue");
@@ -279,7 +284,9 @@ export function googleTemplateUrl(event) {
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: event.title,
-    dates: `${stamp(event.date, event.start_time)}/${stamp(event.end_date, event.end_time)}`,
+    dates: event.start_time
+      ? `${stamp(event.date, event.start_time)}/${stamp(event.end_date, event.end_time)}`
+      : `${event.date.replaceAll("-", "")}/${addDays(event.date, 1).replaceAll("-", "")}`,
     ctz: "Europe/Zagreb",
     details: event.description,
     location: `${event.venue}, ${event.district}`,
@@ -322,28 +329,41 @@ export function eventsToIcs(events, options = {}) {
     "END:VTIMEZONE",
   ];
 
-  const ordered = [...events].sort((a, b) => `${a.date}T${a.start_time}`.localeCompare(`${b.date}T${b.start_time}`) || a.id.localeCompare(b.id));
+  const ordered = [...events].sort((a, b) => `${a.date}T${a.start_time || "99:99"}`.localeCompare(`${b.date}T${b.start_time || "99:99"}`) || a.id.localeCompare(b.id));
   for (const event of ordered) {
     const pageUrl = options.pageUrl ? new URL(`#${event.id}`, options.pageUrl).href : "";
     lines.push(
       "BEGIN:VEVENT",
       `UID:${event.id}@kastela.live`,
       `DTSTAMP:${stampUtc(now)}`,
-      `DTSTART;TZID=Europe/Zagreb:${icsStamp(event.date, event.start_time)}`,
-      `DTEND;TZID=Europe/Zagreb:${icsStamp(event.end_date, event.end_time)}`,
+    );
+    if (event.start_time) {
+      lines.push(
+        `DTSTART;TZID=Europe/Zagreb:${icsStamp(event.date, event.start_time)}`,
+        `DTEND;TZID=Europe/Zagreb:${icsStamp(event.end_date, event.end_time)}`,
+      );
+    } else {
+      lines.push(
+        `DTSTART;VALUE=DATE:${event.date.replaceAll("-", "")}`,
+        `DTEND;VALUE=DATE:${addDays(event.date, 1).replaceAll("-", "")}`,
+      );
+    }
+    lines.push(
       `SUMMARY:${escapeText(event.title)}`,
       `LOCATION:${escapeText(`${event.venue}, ${event.district}`)}`,
       `DESCRIPTION:${escapeText(eventDescription(event))}`,
     );
     if (pageUrl) lines.push(`URL:${escapeText(pageUrl)}`);
-    lines.push(
-      "BEGIN:VALARM",
-      "TRIGGER:-PT2H",
-      "ACTION:DISPLAY",
-      `DESCRIPTION:${escapeText(`Podsjetnik: ${event.title}`)}`,
-      "END:VALARM",
-      "END:VEVENT",
-    );
+    if (event.start_time) {
+      lines.push(
+        "BEGIN:VALARM",
+        "TRIGGER:-PT2H",
+        "ACTION:DISPLAY",
+        `DESCRIPTION:${escapeText(`Podsjetnik: ${event.title}`)}`,
+        "END:VALARM",
+      );
+    }
+    lines.push("END:VEVENT");
   }
   lines.push("END:VCALENDAR");
   return `${lines.map(fold).join("\r\n")}\r\n`;

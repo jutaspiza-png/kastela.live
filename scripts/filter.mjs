@@ -40,6 +40,7 @@ function stamp(date, time) {
 }
 
 export function isPast(event, now) {
+  if (!event.start_time) return event.date < now.date;
   return stamp(event.end_date, event.end_time) <= stamp(now.date, now.time);
 }
 
@@ -54,7 +55,7 @@ export function filterEvents(events, criteria, now) {
     if (criteria.period === "today" && event.date !== now.date) return false;
     if (criteria.period === "tomorrow" && event.date !== addDays(now.date, 1)) return false;
     if (criteria.period === "weekend" && !weekend.includes(event.date)) return false;
-    if (criteria.eveningOnly && (event.date !== now.date || event.start_time < "17:00")) return false;
+    if (criteria.eveningOnly && (event.date !== now.date || !event.start_time || event.start_time < "17:00")) return false;
     if (!query) return true;
     const haystack = foldText([event.title, event.venue, event.district, event.category, event.description].join(" "));
     return haystack.includes(query);

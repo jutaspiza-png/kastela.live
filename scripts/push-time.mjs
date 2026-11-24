@@ -33,6 +33,9 @@ export function reminderInstant(event) {
 }
 
 export function scheduleDecision(event, now = new Date()) {
+  if (!event.start_time) {
+    return { ok: false, code: "unknown", message: "Sat početka nije objavljen." };
+  }
   const start = eventStartUtc(event);
   const when = new Date(start.getTime() - 8 * HOUR);
   if (start.getTime() <= now.getTime()) {

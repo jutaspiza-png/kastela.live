@@ -261,6 +261,7 @@ h1 { margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: 0.92; letter-spa
   margin-inline: auto;
 }
 .filters label { display: flex; flex-direction: column; gap: 4px; min-width: 0; text-align: left; }
+.filters label[hidden] { display: none; }
 .filters label[hidden] + label { grid-column: 1 / -1; }
 .filters span { font-size: 12px; font-weight: 700; color: var(--muted); padding-left: 12px; }
 .filters select {

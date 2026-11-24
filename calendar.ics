@@ -24,8 +24,181 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
+UID:split-2026-001@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261126T193000
+DTEND;TZID=Europe/Zagreb:20261126T213000
+SUMMARY:Otvaranje / Paljenje lampica / Grupa Boss
+LOCATION:Kampus\, Split
+DESCRIPTION:Otvaranje / Paljenje lampica / Grupa Boss. Program Adventa grad
+ a Splita\, Kampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prosto
+ r\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Otvaranje / Paljenje lampica / Grupa Boss
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-002@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T000000
+DTEND;TZID=Europe/Zagreb:20261127T020000
+SUMMARY:Kućna glazba / Strings takeover
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Kućna glazba / Strings takeover. Program Adventa grada Splita\
+ , Morpurgova poljana.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pro
+ stor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kućna glazba / Strings takeover
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-003@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T160000
+DTEND;TZID=Europe/Zagreb:20261127T180000
+SUMMARY:Promenadni nastup limene glazbe
+LOCATION:Đardin\, Split
+DESCRIPTION:Promenadni nastup limene glazbe. Program Adventa grada Splita\,
+  Đardin.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nĐardi
+ n\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Promenadni nastup limene glazbe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-004@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T180000
+DTEND;TZID=Europe/Zagreb:20261127T200000
+SUMMARY:Revija narodnih nošnji na ledu
+LOCATION:Đardin\, Split
+DESCRIPTION:Revija narodnih nošnji na ledu. Program Adventa grada Splita\,
+  Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVanjski pro
+ stor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Revija narodnih nošnji na ledu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-005@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T184500
+DTEND;TZID=Europe/Zagreb:20261127T204500
+SUMMARY:Otvaranje adventa - Srdelice
+LOCATION:Prokurative\, Split
+DESCRIPTION:Otvaranje adventa - Srdelice. Program Adventa grada Splita\, Pr
+ okurative.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProku
+ rative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Otvaranje adventa - Srdelice
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-006@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T190000
+DTEND;TZID=Europe/Zagreb:20261127T210000
+SUMMARY:Kuzma i Shaka Zulu
+LOCATION:Obrov\, Split
+DESCRIPTION:Kuzma i Shaka Zulu. Program Adventa grada Splita\, Obrov.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nObrov\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kuzma i Shaka Zulu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-007@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T200000
+DTEND;TZID=Europe/Zagreb:20261127T220000
+SUMMARY:Alan Hržica
+LOCATION:Prokurative\, Split
+DESCRIPTION:Alan Hržica. Program Adventa grada Splita\, Prokurative.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Alan Hržica
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-008@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T200000
+DTEND;TZID=Europe/Zagreb:20261127T220000
+SUMMARY:DJ party
+LOCATION:Đardin\, Split
+DESCRIPTION:DJ party. Program Adventa grada Splita\, Đardin.\nKategorija: 
+ Glazba\nUlaz se naplaćuje\nVanjski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ party
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-009@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261127T200000
+DTEND;TZID=Europe/Zagreb:20261127T220000
+SUMMARY:ET
+LOCATION:Kampus\, Split
+DESCRIPTION:ET. Program Adventa grada Splita\, Kampus.\nKategorija: Glazba\
+ nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: ET
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-010@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261128T000000
+DTEND;TZID=Europe/Zagreb:20261128T020000
+SUMMARY:Oscar de Lima (Refugee recordings)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Oscar de Lima (Refugee recordings). Program Adventa grada Split
+ a\, Morpurgova poljana.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Oscar de Lima (Refugee recordings)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-011@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261128T110000
+DTEND;TZID=Europe/Zagreb:20261128T130000
+SUMMARY:Svijet čarolije - "Božićna radionica Šašavog majstora"
+LOCATION:Prokurative\, Split
+DESCRIPTION:Svijet čarolije - "Božićna radionica Šašavog majstora". Pr
+ ogram Adventa grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se napl
+ aćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Svijet čarolije - "Božićna radionica Šašavog m
+ ajstora"
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-001@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261128T180000
 DTEND;TZID=Europe/Zagreb:20261128T200000
 SUMMARY:Paljenje prve adventske svijeće i blagoslov adventskog vijenca
@@ -42,8 +215,181 @@ DESCRIPTION:Podsjetnik: Paljenje prve adventske svijeće i blagoslov advent
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-012@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261128T190000
+DTEND;TZID=Europe/Zagreb:20261128T210000
+SUMMARY:Adventska svijeća
+LOCATION:Trg Franje Tuđmana\, Split
+DESCRIPTION:Adventska svijeća. Program Adventa grada Splita\, Trg Franje T
+ uđmana.\nKategorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\n
+ Trg Franje Tuđmana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Adventska svijeća
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-013@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261128T200000
+DTEND;TZID=Europe/Zagreb:20261128T220000
+SUMMARY:Ivana Husar
+LOCATION:Prokurative\, Split
+DESCRIPTION:Ivana Husar. Program Adventa grada Splita\, Prokurative.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ivana Husar
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-014@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261128T200000
+DTEND;TZID=Europe/Zagreb:20261128T220000
+SUMMARY:Neda Ukraden
+LOCATION:Kampus\, Split
+DESCRIPTION:Neda Ukraden. Program Adventa grada Splita\, Kampus.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Neda Ukraden
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-015@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261129T110000
+DTEND;TZID=Europe/Zagreb:20261129T130000
+SUMMARY:Kazališna družina Ritam igre: Božićni vilenjaci (predstava)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Kazališna družina Ritam igre: Božićni vilenjaci (predstava)
+ . Program Adventa grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se 
+ naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kazališna družina Ritam igre: Božićni vilenjaci
+  (predstava)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-016@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261129T200000
+DTEND;TZID=Europe/Zagreb:20261129T220000
+SUMMARY:Klape - Cambi\, Iskon\, Kampanel i Šufit
+LOCATION:Prokurative\, Split
+DESCRIPTION:Klape - Cambi\, Iskon\, Kampanel i Šufit. Program Adventa grad
+ a Splita\, Prokurative.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Klape - Cambi\, Iskon\, Kampanel i Šufit
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-017@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261129T200000
+DTEND;TZID=Europe/Zagreb:20261129T220000
+SUMMARY:Teo Vučković & Enigma band
+LOCATION:Kampus\, Split
+DESCRIPTION:Teo Vučković & Enigma band. Program Adventa grada Splita\, Ka
+ mpus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, S
+ plit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Teo Vučković & Enigma band
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-018@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261130T130000
+DTEND;TZID=Europe/Zagreb:20261130T150000
+SUMMARY:Christmas in Europe
+LOCATION:Dioklecijanovi podrumi\, Split
+DESCRIPTION:Christmas in Europe. Program Adventa grada Splita\, Dioklecijan
+ ovi podrumi.\nKategorija: Kultura\nUlaz se naplaćuje\nNatkriveno\nDioklec
+ ijanovi podrumi\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Christmas in Europe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-019@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261130T150000
+DTEND;TZID=Europe/Zagreb:20261130T170000
+SUMMARY:Igre na ledu: štafeta u brzom klizanju
+LOCATION:Đardin\, Split
+DESCRIPTION:Igre na ledu: štafeta u brzom klizanju. Program Adventa grada 
+ Splita\, Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVan
+ jski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu: štafeta u brzom klizanju
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-020@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261130T180000
+DTEND;TZID=Europe/Zagreb:20261130T200000
+SUMMARY:Christmas in Europe
+LOCATION:Hrvatski dom\, Split
+DESCRIPTION:Christmas in Europe. Program Adventa grada Splita\, Hrvatski do
+ m.\nKategorija: Glazba\nUlaz se naplaćuje\nNatkriveno\nHrvatski dom\, Spl
+ it
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Christmas in Europe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-021@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261130T200000
+DTEND;TZID=Europe/Zagreb:20261130T220000
+SUMMARY:DJ Inzo
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Inzo. Program Adventa grada Splita\, Prokurative.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Inzo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-022@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261130T200000
+DTEND;TZID=Europe/Zagreb:20261130T220000
+SUMMARY:Stela Rade
+LOCATION:Kampus\, Split
+DESCRIPTION:Stela Rade. Program Adventa grada Splita\, Kampus.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Stela Rade
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-002@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261201T090000
 DTEND;TZID=Europe/Zagreb:20261201T120000
 SUMMARY:Božićne radionice
@@ -58,8 +404,148 @@ DESCRIPTION:Podsjetnik: Božićne radionice
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-023@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261201T093000
+DTEND;TZID=Europe/Zagreb:20261201T113000
+SUMMARY:Christmas in Europe
+LOCATION:Dioklecijanovi podrumi\, Split
+DESCRIPTION:Christmas in Europe. Program Adventa grada Splita\, Dioklecijan
+ ovi podrumi.\nKategorija: Kultura\nUlaz se naplaćuje\nNatkriveno\nDioklec
+ ijanovi podrumi\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Christmas in Europe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-024@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261201T200000
+DTEND;TZID=Europe/Zagreb:20261201T220000
+SUMMARY:DJ Kate2B
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Kate2B. Program Adventa grada Splita\, Prokurative.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Kate2B
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-025@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261201T200000
+DTEND;TZID=Europe/Zagreb:20261201T220000
+SUMMARY:Mate Milićević
+LOCATION:Kampus\, Split
+DESCRIPTION:Mate Milićević. Program Adventa grada Splita\, Kampus.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Mate Milićević
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-026@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261202T090000
+DTEND;TZID=Europe/Zagreb:20261202T110000
+SUMMARY:Christmas in Europe
+LOCATION:Dioklecijanovi podrumi\, Split
+DESCRIPTION:Christmas in Europe. Program Adventa grada Splita\, Dioklecijan
+ ovi podrumi.\nKategorija: Kultura\nUlaz se naplaćuje\nNatkriveno\nDioklec
+ ijanovi podrumi\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Christmas in Europe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-027@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261202T200000
+DTEND;TZID=Europe/Zagreb:20261202T220000
+SUMMARY:Antoniette Čerkez
+LOCATION:Kampus\, Split
+DESCRIPTION:Antoniette Čerkez. Program Adventa grada Splita\, Kampus.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Antoniette Čerkez
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-028@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261202T200000
+DTEND;TZID=Europe/Zagreb:20261202T220000
+SUMMARY:DJ Toni Tox
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Toni Tox. Program Adventa grada Splita\, Prokurative.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Toni Tox
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-029@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261203T200000
+DTEND;TZID=Europe/Zagreb:20261203T220000
+SUMMARY:DJ Black Shark
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Black Shark. Program Adventa grada Splita\, Prokurative.\nKa
+ tegorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-030@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261203T200000
+DTEND;TZID=Europe/Zagreb:20261203T220000
+SUMMARY:Tamburaški sastav Miris Juga
+LOCATION:Kampus\, Split
+DESCRIPTION:Tamburaški sastav Miris Juga. Program Adventa grada Splita\, K
+ ampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, 
+ Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tamburaški sastav Miris Juga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-031@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261204T000000
+DTEND;TZID=Europe/Zagreb:20261204T020000
+SUMMARY:Kako magazin (promocija & launch pop up store) / DUXS
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Kako magazin (promocija & launch pop up store) / DUXS. Program 
+ Adventa grada Splita\, Morpurgova poljana.\nKategorija: Glazba\nUlaz se na
+ plaćuje\nVanjski prostor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kako magazin (promocija & launch pop up store) / DU
+ XS
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-003@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261204T103000
 DTEND;TZID=Europe/Zagreb:20261204T123000
 SUMMARY:DV Trogir - glazbeno-scenski nastup
@@ -75,7 +561,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-004@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261204T160000
 DTEND;TZID=Europe/Zagreb:20261204T180000
 SUMMARY:Otvorenje klizališta uz kvadrilju na ledu
@@ -90,8 +576,38 @@ DESCRIPTION:Podsjetnik: Otvorenje klizališta uz kvadrilju na ledu
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-032@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261204T200000
+DTEND;TZID=Europe/Zagreb:20261204T220000
+SUMMARY:Crvena jabuka
+LOCATION:Prokurative\, Split
+DESCRIPTION:Crvena jabuka. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Crvena jabuka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-033@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261204T200000
+DTEND;TZID=Europe/Zagreb:20261204T220000
+SUMMARY:Josip Ivančić
+LOCATION:Kampus\, Split
+DESCRIPTION:Josip Ivančić. Program Adventa grada Splita\, Kampus.\nKatego
+ rija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Josip Ivančić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-005@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261204T200000
 DTEND;TZID=Europe/Zagreb:20261204T220000
 SUMMARY:DJ program
@@ -106,7 +622,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-006@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261204T200000
 DTEND;TZID=Europe/Zagreb:20261204T220000
 SUMMARY:DJ Toni Tox
@@ -122,7 +638,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-007@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261204T210000
 DTEND;TZID=Europe/Zagreb:20261204T230000
 SUMMARY:Tony Cetinski - koncert
@@ -137,8 +653,68 @@ DESCRIPTION:Podsjetnik: Tony Cetinski - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-001@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Željko Bebek - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Željko Bebek - koncert. Program Solinskog adventorija\, Gradin
+ a. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nV
+ anjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-034@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T000000
+DTEND;TZID=Europe/Zagreb:20261205T020000
+SUMMARY:ANTE JAKIR vinyl set / večer prirodnih vina (disco & funk)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:ANTE JAKIR vinyl set / večer prirodnih vina (disco & funk). Pr
+ ogram Adventa grada Splita\, Morpurgova poljana.\nKategorija: Glazba\nUlaz
+  se naplaćuje\nVanjski prostor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: ANTE JAKIR vinyl set / večer prirodnih vina (disco
+  & funk)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-035@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T100000
+DTEND;TZID=Europe/Zagreb:20261205T120000
+SUMMARY:Radionica - izrada božićnih ukrasa
+LOCATION:Prokurative\, Split
+DESCRIPTION:Radionica - izrada božićnih ukrasa. Program Adventa grada Spl
+ ita\, Prokurative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor
+ \nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Radionica - izrada božićnih ukrasa
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-036@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T110000
+DTEND;TZID=Europe/Zagreb:20261205T130000
+SUMMARY:Dječji adventski ples
+LOCATION:Prokurative\, Split
+DESCRIPTION:Dječji adventski ples. Program Adventa grada Splita\, Prokurat
+ ive.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nProkurative\
+ , Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji adventski ples
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-008@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T110000
 DTEND;TZID=Europe/Zagreb:20261205T130000
 SUMMARY:„Božićna medalja za dobrotu“ - dječja predstava
@@ -155,7 +731,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-009@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T123000
 DTEND;TZID=Europe/Zagreb:20261205T143000
 SUMMARY:Mandolinski orkestar KUD-a Kvadrilja - Ususret Božiću
@@ -172,7 +748,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-002@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T180000
 DTEND;TZID=Europe/Zagreb:20261205T200000
 SUMMARY:Paljenje 2. adventske svijeće
@@ -188,7 +764,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-010@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T180000
 DTEND;TZID=Europe/Zagreb:20261205T200000
 SUMMARY:Paljenje druge adventske svijeće i adventski koncert
@@ -205,8 +781,54 @@ DESCRIPTION:Podsjetnik: Paljenje druge adventske svijeće i adventski konce
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-037@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T190000
+DTEND;TZID=Europe/Zagreb:20261205T210000
+SUMMARY:Adventska svijeća
+LOCATION:Trg Franje Tuđmana\, Split
+DESCRIPTION:Adventska svijeća. Program Adventa grada Splita\, Trg Franje T
+ uđmana.\nKategorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\n
+ Trg Franje Tuđmana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Adventska svijeća
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-038@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T200000
+DTEND;TZID=Europe/Zagreb:20261205T220000
+SUMMARY:Rišpet
+LOCATION:Prokurative\, Split
+DESCRIPTION:Rišpet. Program Adventa grada Splita\, Prokurative.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Rišpet
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-039@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T200000
+DTEND;TZID=Europe/Zagreb:20261205T220000
+SUMMARY:Željko Bebek
+LOCATION:Kampus\, Split
+DESCRIPTION:Željko Bebek. Program Adventa grada Splita\, Kampus.\nKategori
+ ja: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Željko Bebek
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-011@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T200000
 DTEND;TZID=Europe/Zagreb:20261205T220000
 SUMMARY:DJ KATE2B
@@ -222,7 +844,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-001@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T210000
 DTEND;TZID=Europe/Zagreb:20261205T230000
 SUMMARY:Stela Rade
@@ -237,7 +859,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-012@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261205T210000
 DTEND;TZID=Europe/Zagreb:20261205T230000
 SUMMARY:Neki to vole vruće - koncert
@@ -252,8 +874,49 @@ DESCRIPTION:Podsjetnik: Neki to vole vruće - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-040@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261205T220000
+DTEND;TZID=Europe/Zagreb:20261206T000000
+SUMMARY:Svetinja
+LOCATION:Prokurative\, Split
+DESCRIPTION:Svetinja. Program Adventa grada Splita\, Prokurative.\nKategori
+ ja: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Svetinja
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:solin-2026-002@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Željko Samardžić - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Željko Samardžić - koncert. Program Solinskog adventorija\, 
+ Gradina. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplać
+ uje\nVanjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-041@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261206T110000
+DTEND;TZID=Europe/Zagreb:20261206T130000
+SUMMARY:Cantus Domini
+LOCATION:Prokurative\, Split
+DESCRIPTION:Cantus Domini. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Cantus Domini
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-013@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261206T123000
 DTEND;TZID=Europe/Zagreb:20261206T143000
 SUMMARY:Doček sv. Nikole
@@ -269,7 +932,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-014@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261206T130000
 DTEND;TZID=Europe/Zagreb:20261206T150000
 SUMMARY:„Čarobni božićni sat“ - dječja predstava
@@ -285,7 +948,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-015@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261206T140000
 DTEND;TZID=Europe/Zagreb:20261206T160000
 SUMMARY:Sv. Nikola na ledu - druženje\, podjela slatkiša i fotografiranje
@@ -301,8 +964,24 @@ DESCRIPTION:Podsjetnik: Sv. Nikola na ledu - druženje\, podjela slatkiša
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-042@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261206T160000
+DTEND;TZID=Europe/Zagreb:20261206T180000
+SUMMARY:Sv. Nikola u ledenom parku
+LOCATION:Đardin\, Split
+DESCRIPTION:Sv. Nikola u ledenom parku. Program Adventa grada Splita\, Đar
+ din.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nĐardin\, Sp
+ lit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sv. Nikola u ledenom parku
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-003@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261206T170000
 DTEND;TZID=Europe/Zagreb:20261206T190000
 SUMMARY:KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
@@ -317,8 +996,39 @@ DESCRIPTION:Podsjetnik: KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-043@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261206T200000
+DTEND;TZID=Europe/Zagreb:20261206T220000
+SUMMARY:Grupa Shtorya
+LOCATION:Prokurative\, Split
+DESCRIPTION:Grupa Shtorya. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Grupa Shtorya
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-044@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261206T200000
+DTEND;TZID=Europe/Zagreb:20261206T220000
+SUMMARY:Ludwig band / Stand up by Tomislav Primorac
+LOCATION:Kampus\, Split
+DESCRIPTION:Ludwig band / Stand up by Tomislav Primorac. Program Adventa gr
+ ada Splita\, Kampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ludwig band / Stand up by Tomislav Primorac
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-016@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261206T210000
 DTEND;TZID=Europe/Zagreb:20261206T230000
 SUMMARY:DJ program - Rock 'N' Roll classic
@@ -333,8 +1043,58 @@ DESCRIPTION:Podsjetnik: DJ program - Rock 'N' Roll classic
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-045@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261207T150000
+DTEND;TZID=Europe/Zagreb:20261207T170000
+SUMMARY:Igre na ledu: štafeta u brzom klizanju
+LOCATION:Đardin\, Split
+DESCRIPTION:Igre na ledu: štafeta u brzom klizanju. Program Adventa grada 
+ Splita\, Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVan
+ jski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu: štafeta u brzom klizanju
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-046@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261207T200000
+DTEND;TZID=Europe/Zagreb:20261207T220000
+SUMMARY:Dreamers / Filmska potjera s Moranom Zibar
+LOCATION:Kampus\, Split
+DESCRIPTION:Dreamers / Filmska potjera s Moranom Zibar. Program Adventa gra
+ da Splita\, Kampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prost
+ or\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dreamers / Filmska potjera s Moranom Zibar
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-047@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261207T200000
+DTEND;TZID=Europe/Zagreb:20261207T220000
+SUMMARY:Radio Dalmacija predstavlja: Petar Dragojević - Oliveru za rođend
+ an
+LOCATION:Prokurative\, Split
+DESCRIPTION:Radio Dalmacija predstavlja: Petar Dragojević - Oliveru za ro
+ đendan. Program Adventa grada Splita\, Prokurative.\nKategorija: Glazba\n
+ Ulaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Radio Dalmacija predstavlja: Petar Dragojević - Ol
+ iveru za rođendan
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-017@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261207T210000
 DTEND;TZID=Europe/Zagreb:20261207T230000
 SUMMARY:DJ program - Club music (House\, RnB\, HipHop)
@@ -350,7 +1110,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-018@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261208T090000
 DTEND;TZID=Europe/Zagreb:20261208T120000
 SUMMARY:Božićne radionice
@@ -366,7 +1126,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-004@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261208T170000
 DTEND;TZID=Europe/Zagreb:20261208T190000
 SUMMARY:Kino Mediteran - Hexe: Kraljevstvo čarolije
@@ -382,7 +1142,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-019@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261208T180000
 DTEND;TZID=Europe/Zagreb:20261208T200000
 SUMMARY:PUB KVIZ by Showtime - kviz općeg znanja
@@ -398,7 +1158,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-020@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261208T190000
 DTEND;TZID=Europe/Zagreb:20261208T210000
 SUMMARY:Predstavljanje TROGIR 365 - Izdanje povodom 30. obljetnice upisa Po
@@ -417,8 +1177,39 @@ DESCRIPTION:Podsjetnik: Predstavljanje TROGIR 365 - Izdanje povodom 30. obl
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-048@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261208T200000
+DTEND;TZID=Europe/Zagreb:20261208T220000
+SUMMARY:DJ John Van Thorn
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ John Van Thorn. Program Adventa grada Splita\, Prokurative.\
+ nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Sp
+ lit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ John Van Thorn
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-049@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261208T200000
+DTEND;TZID=Europe/Zagreb:20261208T220000
+SUMMARY:Giuliano i Diktatori
+LOCATION:Kampus\, Split
+DESCRIPTION:Giuliano i Diktatori. Program Adventa grada Splita\, Kampus.\nK
+ ategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Giuliano i Diktatori
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-021@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261208T210000
 DTEND;TZID=Europe/Zagreb:20261208T230000
 SUMMARY:DJ program - Domaća - zabavna
@@ -433,8 +1224,24 @@ DESCRIPTION:Podsjetnik: DJ program - Domaća - zabavna
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-050@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261209T150000
+DTEND;TZID=Europe/Zagreb:20261209T170000
+SUMMARY:Bijela Hajdukova srijeda na ledu
+LOCATION:Đardin\, Split
+DESCRIPTION:Bijela Hajdukova srijeda na ledu. Program Adventa grada Splita\
+ , Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVanjski pr
+ ostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bijela Hajdukova srijeda na ledu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-022@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261209T150000
 DTEND;TZID=Europe/Zagreb:20261209T170000
 SUMMARY:Igre na ledu - natjecanje u brzom klizanju djece od 6 do 9 godina (
@@ -452,8 +1259,38 @@ DESCRIPTION:Podsjetnik: Igre na ledu - natjecanje u brzom klizanju djece od
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-051@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261209T200000
+DTEND;TZID=Europe/Zagreb:20261209T220000
+SUMMARY:Bruno Rački
+LOCATION:Kampus\, Split
+DESCRIPTION:Bruno Rački. Program Adventa grada Splita\, Kampus.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bruno Rački
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-052@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261209T200000
+DTEND;TZID=Europe/Zagreb:20261209T220000
+SUMMARY:DJ Black Shark
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Black Shark. Program Adventa grada Splita\, Prokurative.\nKa
+ tegorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-023@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261209T210000
 DTEND;TZID=Europe/Zagreb:20261209T230000
 SUMMARY:DJ program - Latino music
@@ -468,8 +1305,56 @@ DESCRIPTION:Podsjetnik: DJ program - Latino music
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-053@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261210T000000
+DTEND;TZID=Europe/Zagreb:20261210T020000
+SUMMARY:Art Brunch radionica
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Art Brunch radionica. Program Adventa grada Splita\, Morpurgova
+  poljana.\nKategorija: Kultura\nUlaz se naplaćuje\nVanjski prostor\nMorpu
+ rgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Art Brunch radionica
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-054@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261210T200000
+DTEND;TZID=Europe/Zagreb:20261210T220000
+SUMMARY:Ana Uršula Najev - For Amy
+LOCATION:Prokurative\, Split
+DESCRIPTION:Ana Uršula Najev - For Amy. Program Adventa grada Splita\, Pro
+ kurative.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkur
+ ative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ana Uršula Najev - For Amy
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-055@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261210T200000
+DTEND;TZID=Europe/Zagreb:20261210T220000
+SUMMARY:Grupa Preko / Kviz znanja s Deanom Kotigom
+LOCATION:Kampus\, Split
+DESCRIPTION:Grupa Preko / Kviz znanja s Deanom Kotigom. Program Adventa gra
+ da Splita\, Kampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prost
+ or\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Grupa Preko / Kviz znanja s Deanom Kotigom
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-024@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261210T210000
 DTEND;TZID=Europe/Zagreb:20261210T230000
 SUMMARY:DJ program - Dalmatinska
@@ -484,8 +1369,24 @@ DESCRIPTION:Podsjetnik: DJ program - Dalmatinska
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-056@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261211T000000
+DTEND;TZID=Europe/Zagreb:20261211T020000
+SUMMARY:Bizzo
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Bizzo. Program Adventa grada Splita\, Morpurgova poljana.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova poljana\, 
+ Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bizzo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-025@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261211T103000
 DTEND;TZID=Europe/Zagreb:20261211T123000
 SUMMARY:DV Trogir - glazbeno-scenski nastup
@@ -501,7 +1402,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-006@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261211T173000
 DTEND;TZID=Europe/Zagreb:20261211T193000
 SUMMARY:Produkcija Z: Kako je dječak Srećko spasio Božić
@@ -517,8 +1418,54 @@ DESCRIPTION:Podsjetnik: Produkcija Z: Kako je dječak Srećko spasio Boži
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-057@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261211T200000
+DTEND;TZID=Europe/Zagreb:20261211T220000
+SUMMARY:Alen Nižetić
+LOCATION:Stobreč\, Split
+DESCRIPTION:Alen Nižetić. Program Adventa grada Splita\, Stobreč.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Alen Nižetić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-058@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261211T200000
+DTEND;TZID=Europe/Zagreb:20261211T220000
+SUMMARY:Maja Šuput
+LOCATION:Kampus\, Split
+DESCRIPTION:Maja Šuput. Program Adventa grada Splita\, Kampus.\nKategorija
+ : Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Maja Šuput
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-059@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261211T200000
+DTEND;TZID=Europe/Zagreb:20261211T220000
+SUMMARY:Miroslav Škoro
+LOCATION:Prokurative\, Split
+DESCRIPTION:Miroslav Škoro. Program Adventa grada Splita\, Prokurative.\nK
+ ategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Spli
+ t
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Miroslav Škoro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-026@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261211T200000
 DTEND;TZID=Europe/Zagreb:20261211T220000
 SUMMARY:DJ Black Shark
@@ -534,7 +1481,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-005@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261211T210000
 DTEND;TZID=Europe/Zagreb:20261211T230000
 SUMMARY:Magazin
@@ -549,7 +1496,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-027@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261211T210000
 DTEND;TZID=Europe/Zagreb:20261211T230000
 SUMMARY:Boris Novković - koncert
@@ -564,8 +1511,67 @@ DESCRIPTION:Podsjetnik: Boris Novković - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-003@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Adi Šoše - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Adi Šoše - koncert. Program Solinskog adventorija\, Gradina. 
+ Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nVanj
+ ski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-060@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T000000
+DTEND;TZID=Europe/Zagreb:20261212T020000
+SUMMARY:DDC (UK)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:DDC (UK). Program Adventa grada Splita\, Morpurgova poljana.\nK
+ ategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova poljana
+ \, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DDC (UK)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-061@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T100000
+DTEND;TZID=Europe/Zagreb:20261212T120000
+SUMMARY:Božićni studio - fotografiranje
+LOCATION:Foto klub Split\, Split
+DESCRIPTION:Božićni studio - fotografiranje. Program Adventa grada Splita
+ \, Foto klub Split.\nKategorija: Kultura\nUlaz se naplaćuje\nNatkriveno\n
+ Foto klub Split\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićni studio - fotografiranje
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-062@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T110000
+DTEND;TZID=Europe/Zagreb:20261212T130000
+SUMMARY:Music Talents Split
+LOCATION:Prokurative\, Split
+DESCRIPTION:Music Talents Split. Program Adventa grada Splita\, Prokurative
+ .\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, S
+ plit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Music Talents Split
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-028@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T110000
 DTEND;TZID=Europe/Zagreb:20261212T130000
 SUMMARY:„Adventski čarobni show - Spartanko Smotanko“ - zabavni show z
@@ -584,7 +1590,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-029@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T120000
 DTEND;TZID=Europe/Zagreb:20261212T140000
 SUMMARY:„Božićni vilenjaci“ - dječja predstava
@@ -600,7 +1606,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-030@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T124000
 DTEND;TZID=Europe/Zagreb:20261212T144000
 SUMMARY:Doček Djeda Božićnjaka
@@ -616,7 +1622,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-031@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T130000
 DTEND;TZID=Europe/Zagreb:20261212T150000
 SUMMARY:Podjela hrane
@@ -632,7 +1638,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-008@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T173000
 DTEND;TZID=Europe/Zagreb:20261212T193000
 SUMMARY:Klaun Šarenko: Božićna pustolovina luckastih vilenjaka
@@ -649,7 +1655,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-010@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T180000
 DTEND;TZID=Europe/Zagreb:20261212T200000
 SUMMARY:Paljenje 3. adventske svijeće
@@ -665,7 +1671,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-032@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T180000
 DTEND;TZID=Europe/Zagreb:20261212T200000
 SUMMARY:Paljenje treće adventske svijeće i adventski koncert
@@ -683,7 +1689,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-009@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T190000
 DTEND;TZID=Europe/Zagreb:20261212T210000
 SUMMARY:Fritulica - dječji kolaž program
@@ -698,8 +1704,70 @@ DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-063@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T190000
+DTEND;TZID=Europe/Zagreb:20261212T210000
+SUMMARY:Adventska svijeća
+LOCATION:Trg Franje Tuđmana\, Split
+DESCRIPTION:Adventska svijeća. Program Adventa grada Splita\, Trg Franje T
+ uđmana.\nKategorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\n
+ Trg Franje Tuđmana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Adventska svijeća
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-064@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T200000
+DTEND;TZID=Europe/Zagreb:20261212T220000
+SUMMARY:Bijelo dugme
+LOCATION:Prokurative\, Split
+DESCRIPTION:Bijelo dugme. Program Adventa grada Splita\, Prokurative.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bijelo dugme
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-065@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T200000
+DTEND;TZID=Europe/Zagreb:20261212T220000
+SUMMARY:Ivana Orlić / Kviz znanja: Dalmatinska pisma
+LOCATION:Kampus\, Split
+DESCRIPTION:Ivana Orlić / Kviz znanja: Dalmatinska pisma. Program Adventa 
+ grada Splita\, Kampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pr
+ ostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ivana Orlić / Kviz znanja: Dalmatinska pisma
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-066@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261212T200000
+DTEND;TZID=Europe/Zagreb:20261212T220000
+SUMMARY:Mjesni odbor
+LOCATION:Stobreč\, Split
+DESCRIPTION:Mjesni odbor. Program Adventa grada Splita\, Stobreč.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Mjesni odbor
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-033@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T200000
 DTEND;TZID=Europe/Zagreb:20261212T220000
 SUMMARY:DJ Toni Tox
@@ -715,7 +1783,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-007@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T210000
 DTEND;TZID=Europe/Zagreb:20261212T230000
 SUMMARY:Grupa Cambi
@@ -730,7 +1798,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-034@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261212T210000
 DTEND;TZID=Europe/Zagreb:20261212T230000
 SUMMARY:Mladen Grdović - koncert
@@ -745,8 +1813,84 @@ DESCRIPTION:Podsjetnik: Mladen Grdović - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-004@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Vesna Pisarović - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Vesna Pisarović - koncert. Program Solinskog adventorija\, Gra
+ dina. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje
+ \nVanjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-067@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T000000
+DTEND;TZID=Europe/Zagreb:20261213T020000
+SUMMARY:Pizza radionica s Rajom
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Pizza radionica s Rajom. Program Adventa grada Splita\, Morpurg
+ ova poljana.\nKategorija: Gastro\nUlaz se naplaćuje\nVanjski prostor\nMor
+ purgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Pizza radionica s Rajom
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-068@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T100000
+DTEND;TZID=Europe/Zagreb:20261213T120000
+SUMMARY:Produkcija Z - "Djed Mraz i šumske životinje" (predstava)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Produkcija Z - "Djed Mraz i šumske životinje" (predstava). Pr
+ ogram Adventa grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se napl
+ aćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Produkcija Z - "Djed Mraz i šumske životinje" (pr
+ edstava)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-069@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T110000
+DTEND;TZID=Europe/Zagreb:20261213T130000
+SUMMARY:Festival životinjskog carstva
+LOCATION:Stobreč\, Split
+DESCRIPTION:Festival životinjskog carstva. Program Adventa grada Splita\, 
+ Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nStobre
+ č\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Festival životinjskog carstva
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-070@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T110000
+DTEND;TZID=Europe/Zagreb:20261213T130000
+SUMMARY:Radionica - izrada božićnih ukrasa
+LOCATION:Prokurative\, Split
+DESCRIPTION:Radionica - izrada božićnih ukrasa. Program Adventa grada Spl
+ ita\, Prokurative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor
+ \nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Radionica - izrada božićnih ukrasa
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-035@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T120000
 DTEND;TZID=Europe/Zagreb:20261213T140000
 SUMMARY:„Stich & Božićna želja“ - dječja predstava
@@ -762,7 +1906,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-036@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T124500
 DTEND;TZID=Europe/Zagreb:20261213T144500
 SUMMARY:Doček sv. Lucije
@@ -778,7 +1922,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-037@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T130000
 DTEND;TZID=Europe/Zagreb:20261213T150000
 SUMMARY:KUD Kvadrilja - dječji nastup
@@ -794,7 +1938,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-038@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T140000
 DTEND;TZID=Europe/Zagreb:20261213T160000
 SUMMARY:Sv. Lucija na ledu - druženje\, podjela slatkiša i fotografiranje
@@ -810,8 +1954,24 @@ DESCRIPTION:Podsjetnik: Sv. Lucija na ledu - druženje\, podjela slatkiša
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-071@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T160000
+DTEND;TZID=Europe/Zagreb:20261213T180000
+SUMMARY:Sv. Lucija u ledenom parku
+LOCATION:Đardin\, Split
+DESCRIPTION:Sv. Lucija u ledenom parku. Program Adventa grada Splita\, Đar
+ din.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nĐardin\, Sp
+ lit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sv. Lucija u ledenom parku
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-012@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T170000
 DTEND;TZID=Europe/Zagreb:20261213T190000
 SUMMARY:HNK u Šibeniku: Snijeg u pravi čas & Dolazak sv. Lucije
@@ -827,8 +1987,23 @@ DESCRIPTION:Podsjetnik: HNK u Šibeniku: Snijeg u pravi čas & Dolazak sv.
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-072@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261213T200000
+DTEND;TZID=Europe/Zagreb:20261213T220000
+SUMMARY:Đani Maršan
+LOCATION:Prokurative\, Split
+DESCRIPTION:Đani Maršan. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Đani Maršan
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-011@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T210000
 DTEND;TZID=Europe/Zagreb:20261213T230000
 SUMMARY:Marko Kutlić
@@ -843,7 +2018,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-039@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261213T210000
 DTEND;TZID=Europe/Zagreb:20261213T230000
 SUMMARY:DJ program - Domaća zabavna
@@ -858,8 +2033,38 @@ DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-073@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261214T200000
+DTEND;TZID=Europe/Zagreb:20261214T220000
+SUMMARY:DJ Mess Joke
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Mess Joke. Program Adventa grada Splita\, Prokurative.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Mess Joke
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-074@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261214T200000
+DTEND;TZID=Europe/Zagreb:20261214T220000
+SUMMARY:Iva Ajduković
+LOCATION:Kampus\, Split
+DESCRIPTION:Iva Ajduković. Program Adventa grada Splita\, Kampus.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Iva Ajduković
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-040@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261214T210000
 DTEND;TZID=Europe/Zagreb:20261214T230000
 SUMMARY:DJ program - Trash
@@ -875,7 +2080,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-041@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261215T090000
 DTEND;TZID=Europe/Zagreb:20261215T120000
 SUMMARY:Božićne radionice
@@ -891,7 +2096,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-042@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261215T180000
 DTEND;TZID=Europe/Zagreb:20261215T200000
 SUMMARY:Josip Gotovac - „The best of“ - stand up nastup
@@ -906,8 +2111,38 @@ DESCRIPTION:Podsjetnik: Josip Gotovac - „The best of“ - stand up nastup
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-075@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261215T200000
+DTEND;TZID=Europe/Zagreb:20261215T220000
+SUMMARY:DJ / Kviz znanja
+LOCATION:Kampus\, Split
+DESCRIPTION:DJ / Kviz znanja. Program Adventa grada Splita\, Kampus.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ / Kviz znanja
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-076@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261215T200000
+DTEND;TZID=Europe/Zagreb:20261215T220000
+SUMMARY:DJ Toni Tox
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Toni Tox. Program Adventa grada Splita\, Prokurative.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Toni Tox
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-043@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261215T210000
 DTEND;TZID=Europe/Zagreb:20261215T230000
 SUMMARY:DJ program - Mesh up (strana\, domaća)
@@ -922,8 +2157,24 @@ DESCRIPTION:Podsjetnik: DJ program - Mesh up (strana\, domaća)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-077@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261216T150000
+DTEND;TZID=Europe/Zagreb:20261216T170000
+SUMMARY:Žuta splitska srijeda na ledu
+LOCATION:Đardin\, Split
+DESCRIPTION:Žuta splitska srijeda na ledu. Program Adventa grada Splita\, 
+ Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVanjski pros
+ tor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Žuta splitska srijeda na ledu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-013@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261216T170000
 DTEND;TZID=Europe/Zagreb:20261216T190000
 SUMMARY:Kino Mediteran - Asterix: Kraljevstvo Nubije
@@ -938,8 +2189,54 @@ DESCRIPTION:Podsjetnik: Kino Mediteran - Asterix: Kraljevstvo Nubije
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-078@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261216T200000
+DTEND;TZID=Europe/Zagreb:20261216T220000
+SUMMARY:DJ John Van Thorn
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ John Van Thorn. Program Adventa grada Splita\, Prokurative.\
+ nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Sp
+ lit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ John Van Thorn
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-079@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261216T200000
+DTEND;TZID=Europe/Zagreb:20261216T220000
+SUMMARY:Jole
+LOCATION:Kampus\, Split
+DESCRIPTION:Jole. Program Adventa grada Splita\, Kampus.\nKategorija: Glazb
+ a\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Jole
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-080@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261216T200000
+DTEND;TZID=Europe/Zagreb:20261216T220000
+SUMMARY:Čarli i Žana
+LOCATION:Stobreč\, Split
+DESCRIPTION:Čarli i Žana. Program Adventa grada Splita\, Stobreč.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarli i Žana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-044@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261216T210000
 DTEND;TZID=Europe/Zagreb:20261216T230000
 SUMMARY:DJ program - Studio 54: 80's Music
@@ -954,8 +2251,24 @@ DESCRIPTION:Podsjetnik: DJ program - Studio 54: 80's Music
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-081@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T000000
+DTEND;TZID=Europe/Zagreb:20261217T020000
+SUMMARY:Radionica Konac & more – izrada božićnih ukrasa
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Radionica Konac & more – izrada božićnih ukrasa. Program Ad
+ venta grada Splita\, Morpurgova poljana.\nKategorija: Djeca\nUlaz se napla
+ ćuje\nVanjski prostor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Radionica Konac & more – izrada božićnih ukrasa
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-045@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261217T150000
 DTEND;TZID=Europe/Zagreb:20261217T170000
 SUMMARY:Bijeli Hajdukov četvrtak na ledu - besplatno klizanje za sve posje
@@ -977,7 +2290,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-014@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261217T180000
 DTEND;TZID=Europe/Zagreb:20261217T200000
 SUMMARY:Svijet čarolije: Božićna radionica šašavog majstora
@@ -993,8 +2306,86 @@ DESCRIPTION:Podsjetnik: Svijet čarolije: Božićna radionica šašavog maj
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-082@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T190000
+DTEND;TZID=Europe/Zagreb:20261217T210000
+SUMMARY:"In Adventu Domini" - koncert sakralne glazbe
+LOCATION:Katedrala\, Split
+DESCRIPTION:"In Adventu Domini" - koncert sakralne glazbe. Program Adventa 
+ grada Splita\, Katedrala.\nKategorija: Glazba\nUlaz se naplaćuje\nNatkriv
+ eno\nKatedrala\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: "In Adventu Domini" - koncert sakralne glazbe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-083@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T200000
+DTEND;TZID=Europe/Zagreb:20261217T220000
+SUMMARY:DJ Black Shark
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Black Shark. Program Adventa grada Splita\, Prokurative.\nKa
+ tegorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-084@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T200000
+DTEND;TZID=Europe/Zagreb:20261217T220000
+SUMMARY:Glazbena mladež Split - Prigodni koncert
+LOCATION:Crkva sv. Frane\, Split
+DESCRIPTION:Glazbena mladež Split - Prigodni koncert. Program Adventa grad
+ a Splita\, Crkva sv. Frane.\nKategorija: Glazba\nUlaz se naplaćuje\nNatkr
+ iveno\nCrkva sv. Frane\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Glazbena mladež Split - Prigodni koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-085@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T200000
+DTEND;TZID=Europe/Zagreb:20261217T220000
+SUMMARY:Tamburaški sastav Miris Juga
+LOCATION:Kampus\, Split
+DESCRIPTION:Tamburaški sastav Miris Juga. Program Adventa grada Splita\, K
+ ampus.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, 
+ Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tamburaški sastav Miris Juga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-086@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261217T200000
+DTEND;TZID=Europe/Zagreb:20261217T220000
+SUMMARY:Čarli i Žana
+LOCATION:Stobreč\, Split
+DESCRIPTION:Čarli i Žana. Program Adventa grada Splita\, Stobreč.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarli i Žana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-046@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261217T210000
 DTEND;TZID=Europe/Zagreb:20261217T230000
 SUMMARY:DJ program - Club music (House\,RnB\, HipHop)
@@ -1009,8 +2400,24 @@ DESCRIPTION:Podsjetnik: DJ program - Club music (House\,RnB\, HipHop)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-087@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261218T000000
+DTEND;TZID=Europe/Zagreb:20261218T020000
+SUMMARY:Roberto Brigniani
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Roberto Brigniani. Program Adventa grada Splita\, Morpurgova po
+ ljana.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgov
+ a poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Roberto Brigniani
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-016@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261218T173000
 DTEND;TZID=Europe/Zagreb:20261218T193000
 SUMMARY:Ritam igre: Božićni vilenjaci
@@ -1026,7 +2433,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-017@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261218T183000
 DTEND;TZID=Europe/Zagreb:20261218T203000
 SUMMARY:Helen Doron Show: Let's Have Fun in English!
@@ -1041,8 +2448,54 @@ DESCRIPTION:Podsjetnik: Helen Doron Show: Let's Have Fun in English!
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-088@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261218T200000
+DTEND;TZID=Europe/Zagreb:20261218T220000
+SUMMARY:Buža band & Sila Nečista
+LOCATION:Kampus\, Split
+DESCRIPTION:Buža band & Sila Nečista. Program Adventa grada Splita\, Kamp
+ us.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Spl
+ it
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Buža band & Sila Nečista
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-089@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261218T200000
+DTEND;TZID=Europe/Zagreb:20261218T220000
+SUMMARY:Psihomodo Pop
+LOCATION:Prokurative\, Split
+DESCRIPTION:Psihomodo Pop. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Psihomodo Pop
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-090@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261218T200000
+DTEND;TZID=Europe/Zagreb:20261218T220000
+SUMMARY:Show Legende
+LOCATION:Stobreč\, Split
+DESCRIPTION:Show Legende. Program Adventa grada Splita\, Stobreč.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Show Legende
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-047@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261218T200000
 DTEND;TZID=Europe/Zagreb:20261218T220000
 SUMMARY:DJ Mess Joke
@@ -1058,7 +2511,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-015@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261218T210000
 DTEND;TZID=Europe/Zagreb:20261218T230000
 SUMMARY:Macao Band
@@ -1073,7 +2526,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-048@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261218T210000
 DTEND;TZID=Europe/Zagreb:20261218T230000
 SUMMARY:Rišpet - koncert
@@ -1088,8 +2541,67 @@ DESCRIPTION:Podsjetnik: Rišpet - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-005@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Duško Kuliš - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Duško Kuliš - koncert. Program Solinskog adventorija\, Gradin
+ a. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nV
+ anjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-091@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T000000
+DTEND;TZID=Europe/Zagreb:20261219T020000
+SUMMARY:Noć vinila
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Noć vinila. Program Adventa grada Splita\, Morpurgova poljana.
+ \nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova polj
+ ana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Noć vinila
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-092@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T110000
+DTEND;TZID=Europe/Zagreb:20261219T130000
+SUMMARY:Sveti Nikola i čarolija dobrote - Goranga
+LOCATION:Stobreč\, Split
+DESCRIPTION:Sveti Nikola i čarolija dobrote - Goranga. Program Adventa gra
+ da Splita\, Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski pros
+ tor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sveti Nikola i čarolija dobrote - Goranga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-093@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T110000
+DTEND;TZID=Europe/Zagreb:20261219T130000
+SUMMARY:Čarobni animatori: Veseli Božić (koncert)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Čarobni animatori: Veseli Božić (koncert). Program Adventa g
+ rada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski
+  prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarobni animatori: Veseli Božić (koncert)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-049@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T110000
 DTEND;TZID=Europe/Zagreb:20261219T130000
 SUMMARY:„Snijeg u pravi čas“ - dječja predstava
@@ -1105,7 +2617,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-021@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T120000
 DTEND;TZID=Europe/Zagreb:20261219T140000
 SUMMARY:Tradicionalna podjela bakalara (PŠK Srdela)
@@ -1121,7 +2633,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-050@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T120000
 DTEND;TZID=Europe/Zagreb:20261219T140000
 SUMMARY:Doček Djeda Božićnjaka
@@ -1137,7 +2649,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-051@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T123000
 DTEND;TZID=Europe/Zagreb:20261219T143000
 SUMMARY:Trogirski gudački orkestar - koncert
@@ -1153,7 +2665,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-019@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T173000
 DTEND;TZID=Europe/Zagreb:20261219T193000
 SUMMARY:Jasna Held - Pripovijedanje bajki i priča (1. termin)
@@ -1170,7 +2682,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-022@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T180000
 DTEND;TZID=Europe/Zagreb:20261219T200000
 SUMMARY:Paljenje 4. adventske svijeće
@@ -1186,7 +2698,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-052@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T180000
 DTEND;TZID=Europe/Zagreb:20261219T200000
 SUMMARY:Paljenje četvrte adventske svijeće
@@ -1203,7 +2715,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-020@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T190000
 DTEND;TZID=Europe/Zagreb:20261219T210000
 SUMMARY:Jasna Held - Pripovijedanje bajki i priča (2. termin)
@@ -1219,8 +2731,24 @@ DESCRIPTION:Podsjetnik: Jasna Held - Pripovijedanje bajki i priča (2. term
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-094@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T190000
+DTEND;TZID=Europe/Zagreb:20261219T210000
+SUMMARY:Adventska svijeća
+LOCATION:Trg Franje Tuđmana\, Split
+DESCRIPTION:Adventska svijeća. Program Adventa grada Splita\, Trg Franje T
+ uđmana.\nKategorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\n
+ Trg Franje Tuđmana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Adventska svijeća
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-053@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T190000
 DTEND;TZID=Europe/Zagreb:20261219T210000
 SUMMARY:Narodna glazba Trogir i gosti - Koncert u adventu
@@ -1235,8 +2763,53 @@ DESCRIPTION:Podsjetnik: Narodna glazba Trogir i gosti - Koncert u adventu
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-095@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T200000
+DTEND;TZID=Europe/Zagreb:20261219T220000
+SUMMARY:Alen Nižetić
+LOCATION:Kampus\, Split
+DESCRIPTION:Alen Nižetić. Program Adventa grada Splita\, Kampus.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nKampus\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Alen Nižetić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-096@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T200000
+DTEND;TZID=Europe/Zagreb:20261219T220000
+SUMMARY:Bravo Band
+LOCATION:Stobreč\, Split
+DESCRIPTION:Bravo Band. Program Adventa grada Splita\, Stobreč.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bravo Band
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-097@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261219T200000
+DTEND;TZID=Europe/Zagreb:20261219T220000
+SUMMARY:Dalmatino
+LOCATION:Prokurative\, Split
+DESCRIPTION:Dalmatino. Program Adventa grada Splita\, Prokurative.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dalmatino
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-054@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T200000
 DTEND;TZID=Europe/Zagreb:20261219T220000
 SUMMARY:DJ Toni Tox
@@ -1252,7 +2825,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-018@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T210000
 DTEND;TZID=Europe/Zagreb:20261219T230000
 SUMMARY:Željko Bebek
@@ -1267,7 +2840,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-055@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261219T210000
 DTEND;TZID=Europe/Zagreb:20261219T230000
 SUMMARY:Vanna - koncert
@@ -1282,8 +2855,52 @@ DESCRIPTION:Podsjetnik: Vanna - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-006@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Dražen Zečić - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Dražen Zečić - koncert. Program Solinskog adventorija\, Grad
+ ina. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\
+ nVanjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-098@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261220T110000
+DTEND;TZID=Europe/Zagreb:20261220T130000
+SUMMARY:Kazalište Mala scena: Kraljevna na zrnu graška (predstava)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Kazalište Mala scena: Kraljevna na zrnu graška (predstava). P
+ rogram Adventa grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se nap
+ laćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kazalište Mala scena: Kraljevna na zrnu graška (p
+ redstava)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-099@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261220T111500
+DTEND;TZID=Europe/Zagreb:20261220T131500
+SUMMARY:Spartanko - Adventski čarobni show
+LOCATION:Stobreč\, Split
+DESCRIPTION:Spartanko - Adventski čarobni show. Program Adventa grada Spli
+ ta\, Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nSt
+ obreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Spartanko - Adventski čarobni show
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-056@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261220T120000
 DTEND;TZID=Europe/Zagreb:20261220T140000
 SUMMARY:Adventura Trail 2026 - sportska utrka
@@ -1299,7 +2916,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-024@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261220T180000
 DTEND;TZID=Europe/Zagreb:20261220T200000
 SUMMARY:Fritulica - dječji kolaž program
@@ -1314,8 +2931,24 @@ DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-100@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261220T200000
+DTEND;TZID=Europe/Zagreb:20261220T220000
+SUMMARY:Splitski ženski zbor i Gradski zbor Brodosplit
+LOCATION:Prokurative\, Split
+DESCRIPTION:Splitski ženski zbor i Gradski zbor Brodosplit. Program Advent
+ a grada Splita\, Prokurative.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Splitski ženski zbor i Gradski zbor Brodosplit
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-057@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261220T200000
 DTEND;TZID=Europe/Zagreb:20261220T220000
 SUMMARY:Sakralni koncert - Ursa Ljuban\, orgulje i Matej Vukić\, truba
@@ -1332,7 +2965,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-023@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261220T210000
 DTEND;TZID=Europe/Zagreb:20261220T230000
 SUMMARY:Antoniette Čerkez
@@ -1347,7 +2980,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-058@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261220T210000
 DTEND;TZID=Europe/Zagreb:20261220T230000
 SUMMARY:DJ program - Trash
@@ -1362,8 +2995,24 @@ DESCRIPTION:Podsjetnik: DJ program - Trash
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-101@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261221T150000
+DTEND;TZID=Europe/Zagreb:20261221T170000
+SUMMARY:Igre na ledu: štafeta u brzom klizanju
+LOCATION:Đardin\, Split
+DESCRIPTION:Igre na ledu: štafeta u brzom klizanju. Program Adventa grada 
+ Splita\, Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVan
+ jski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu: štafeta u brzom klizanju
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-059@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261221T190000
 DTEND;TZID=Europe/Zagreb:20261221T210000
 SUMMARY:Klapa Trogir - koncert
@@ -1378,8 +3027,23 @@ DESCRIPTION:Podsjetnik: Klapa Trogir - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-102@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261221T200000
+DTEND;TZID=Europe/Zagreb:20261221T220000
+SUMMARY:Silente
+LOCATION:Prokurative\, Split
+DESCRIPTION:Silente. Program Adventa grada Splita\, Prokurative.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Silente
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-060@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261221T210000
 DTEND;TZID=Europe/Zagreb:20261221T230000
 SUMMARY:DJ program - Domaća zabavna
@@ -1395,7 +3059,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-061@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261222T103000
 DTEND;TZID=Europe/Zagreb:20261222T123000
 SUMMARY:DV Trogir - predstava
@@ -1410,8 +3074,38 @@ DESCRIPTION:Podsjetnik: DV Trogir - predstava
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-103@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261222T200000
+DTEND;TZID=Europe/Zagreb:20261222T220000
+SUMMARY:Zorica Kondža
+LOCATION:Prokurative\, Split
+DESCRIPTION:Zorica Kondža. Program Adventa grada Splita\, Prokurative.\nKa
+ tegorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Zorica Kondža
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-104@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261222T200000
+DTEND;TZID=Europe/Zagreb:20261222T220000
+SUMMARY:Čarli i Žana
+LOCATION:Stobreč\, Split
+DESCRIPTION:Čarli i Žana. Program Adventa grada Splita\, Stobreč.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarli i Žana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-062@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261222T210000
 DTEND;TZID=Europe/Zagreb:20261222T230000
 SUMMARY:DJ program - Latino Music
@@ -1426,8 +3120,49 @@ DESCRIPTION:Podsjetnik: DJ program - Latino Music
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-007@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Teo Grčić - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Teo Grčić - koncert. Program Solinskog adventorija\, Gradina.
+  Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-105@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261223T200000
+DTEND;TZID=Europe/Zagreb:20261223T220000
+SUMMARY:Tony Cetinski
+LOCATION:Prokurative\, Split
+DESCRIPTION:Tony Cetinski. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tony Cetinski
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-106@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261223T200000
+DTEND;TZID=Europe/Zagreb:20261223T220000
+SUMMARY:Čarli i Žana
+LOCATION:Stobreč\, Split
+DESCRIPTION:Čarli i Žana. Program Adventa grada Splita\, Stobreč.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarli i Žana
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-063@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261223T200000
 DTEND;TZID=Europe/Zagreb:20261223T220000
 SUMMARY:DJ Inzo
@@ -1443,7 +3178,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-064@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261223T210000
 DTEND;TZID=Europe/Zagreb:20261223T230000
 SUMMARY:Danijela Martinović - koncert
@@ -1458,8 +3193,71 @@ DESCRIPTION:Podsjetnik: Danijela Martinović - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-107@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T000000
+DTEND;TZID=Europe/Zagreb:20261224T020000
+SUMMARY:Santa's got soul (DUXS)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Santa's got soul (DUXS). Program Adventa grada Splita\, Morpurg
+ ova poljana.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMor
+ purgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Santa's got soul (DUXS)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-108@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T110000
+DTEND;TZID=Europe/Zagreb:20261224T130000
+SUMMARY:Božićni vilenjaci - Ritam igre
+LOCATION:Stobreč\, Split
+DESCRIPTION:Božićni vilenjaci - Ritam igre. Program Adventa grada Splita\
+ , Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nStobr
+ eč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićni vilenjaci - Ritam igre
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-109@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T110000
+DTEND;TZID=Europe/Zagreb:20261224T130000
+SUMMARY:Splitu s ljubavlju - podjela bakalara i fritula
+LOCATION:Peškarija\, Split
+DESCRIPTION:Splitu s ljubavlju - podjela bakalara i fritula. Program Advent
+ a grada Splita\, Peškarija.\nKategorija: Gastro\nUlaz se naplaćuje\nVanj
+ ski prostor\nPeškarija\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Splitu s ljubavlju - podjela bakalara i fritula
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-110@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T120000
+DTEND;TZID=Europe/Zagreb:20261224T140000
+SUMMARY:Klape ispod ure
+LOCATION:Ispod ure\, Split
+DESCRIPTION:Klape ispod ure. Program Adventa grada Splita\, Ispod ure.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nIspod ure\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Klape ispod ure
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-065@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261224T120000
 DTEND;TZID=Europe/Zagreb:20261224T140000
 SUMMARY:Bakalar Na Badnjak - gastro prezentacija i podjela hrane
@@ -1476,7 +3274,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-066@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261224T120000
 DTEND;TZID=Europe/Zagreb:20261224T140000
 SUMMARY:Trogirski Kanti - koncert
@@ -1491,8 +3289,69 @@ DESCRIPTION:Podsjetnik: Trogirski Kanti - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-111@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T123000
+DTEND;TZID=Europe/Zagreb:20261224T143000
+SUMMARY:Neno Belan
+LOCATION:Prokurative\, Split
+DESCRIPTION:Neno Belan. Program Adventa grada Splita\, Prokurative.\nKatego
+ rija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Neno Belan
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-112@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T150000
+DTEND;TZID=Europe/Zagreb:20261224T170000
+SUMMARY:Grupa Boss
+LOCATION:Prokurative\, Split
+DESCRIPTION:Grupa Boss. Program Adventa grada Splita\, Prokurative.\nKatego
+ rija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Grupa Boss
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-113@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T190000
+DTEND;TZID=Europe/Zagreb:20261224T210000
+SUMMARY:Vanjak Badnjak – KID VA\, MASTER YURI…
+LOCATION:Obrov\, Split
+DESCRIPTION:Vanjak Badnjak – KID VA\, MASTER YURI…. Program Adventa gra
+ da Splita\, Obrov.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prosto
+ r\nObrov\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Vanjak Badnjak – KID VA\, MASTER YURI…
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-114@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261224T200000
+DTEND;TZID=Europe/Zagreb:20261224T220000
+SUMMARY:DJ Zamba
+LOCATION:Stobreč\, Split
+DESCRIPTION:DJ Zamba. Program Adventa grada Splita\, Stobreč.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Zamba
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-067@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261224T210000
 DTEND;TZID=Europe/Zagreb:20261224T230000
 SUMMARY:DJ program - Domaća zabavna
@@ -1508,7 +3367,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-068@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261225T100000
 DTEND;TZID=Europe/Zagreb:20261225T110000
 SUMMARY:Božićno jutro na ledu - druženje s Djedom Božićnjakom\, podjel
@@ -1526,8 +3385,70 @@ DESCRIPTION:Podsjetnik: Božićno jutro na ledu - druženje s Djedom Boži
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-115@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261225T120000
+DTEND;TZID=Europe/Zagreb:20261225T140000
+SUMMARY:Božićno jutro u ledenom parku
+LOCATION:Đardin\, Split
+DESCRIPTION:Božićno jutro u ledenom parku. Program Adventa grada Splita\,
+  Đardin.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nĐardin
+ \, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićno jutro u ledenom parku
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-116@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261225T200000
+DTEND;TZID=Europe/Zagreb:20261225T220000
+SUMMARY:DJ Zamba
+LOCATION:Stobreč\, Split
+DESCRIPTION:DJ Zamba. Program Adventa grada Splita\, Stobreč.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Zamba
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-117@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261225T200000
+DTEND;TZID=Europe/Zagreb:20261225T220000
+SUMMARY:Josip Ivančić
+LOCATION:Stobreč\, Split
+DESCRIPTION:Josip Ivančić. Program Adventa grada Splita\, Stobreč.\nKate
+ gorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Josip Ivančić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-118@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261225T200000
+DTEND;TZID=Europe/Zagreb:20261225T220000
+SUMMARY:Ružica Čović
+LOCATION:Prokurative\, Split
+DESCRIPTION:Ružica Čović. Program Adventa grada Splita\, Prokurative.\nK
+ ategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Spli
+ t
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Ružica Čović
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-025@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261225T210000
 DTEND;TZID=Europe/Zagreb:20261225T230000
 SUMMARY:Grupa Viva (Božićni koncert)
@@ -1543,7 +3464,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-069@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261225T210000
 DTEND;TZID=Europe/Zagreb:20261225T230000
 SUMMARY:DJ program - Domaći pop - rock
@@ -1558,8 +3479,51 @@ DESCRIPTION:Podsjetnik: DJ program - Domaći pop - rock
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-008@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:Grupa Elite - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Grupa Elite - koncert. Program Solinskog adventorija\, Gradina.
+  Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-119@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261226T000000
+DTEND;TZID=Europe/Zagreb:20261226T020000
+SUMMARY:Frequenia (vocal + DJ set)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Frequenia (vocal + DJ set). Program Adventa grada Splita\, Morp
+ urgova poljana.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\n
+ Morpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Frequenia (vocal + DJ set)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-120@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261226T110000
+DTEND;TZID=Europe/Zagreb:20261226T130000
+SUMMARY:Čarobni animatori: Mini disco show (koncert)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Čarobni animatori: Mini disco show (koncert). Program Adventa 
+ grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjsk
+ i prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Čarobni animatori: Mini disco show (koncert)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-070@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261226T110000
 DTEND;TZID=Europe/Zagreb:20261226T130000
 SUMMARY:„Božićna bajka vilenjaka i prijatelja“ - dječja predstava
@@ -1575,8 +3539,39 @@ DESCRIPTION:Podsjetnik: „Božićna bajka vilenjaka i prijatelja“ - dje
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-121@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261226T200000
+DTEND;TZID=Europe/Zagreb:20261226T220000
+SUMMARY:Duško Kuliš
+LOCATION:Prokurative\, Split
+DESCRIPTION:Duško Kuliš. Program Adventa grada Splita\, Prokurative.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Duško Kuliš
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-122@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261226T200000
+DTEND;TZID=Europe/Zagreb:20261226T220000
+SUMMARY:Johnny Gitara i Festivo Band
+LOCATION:Stobreč\, Split
+DESCRIPTION:Johnny Gitara i Festivo Band. Program Adventa grada Splita\, St
+ obreč.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč
+ \, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Johnny Gitara i Festivo Band
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-071@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261226T200000
 DTEND;TZID=Europe/Zagreb:20261226T220000
 SUMMARY:DJ Black Shark
@@ -1592,7 +3587,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-026@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261226T210000
 DTEND;TZID=Europe/Zagreb:20261226T230000
 SUMMARY:Mejaši
@@ -1607,7 +3602,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-072@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261226T210000
 DTEND;TZID=Europe/Zagreb:20261226T230000
 SUMMARY:Vigor - koncert
@@ -1622,8 +3617,68 @@ DESCRIPTION:Podsjetnik: Vigor - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-009@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Ivica Sikirić Ićo - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Ivica Sikirić Ićo - koncert. Program Solinskog adventorija\, 
+ Gradina. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplać
+ uje\nVanjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-123@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261227T000000
+DTEND;TZID=Europe/Zagreb:20261227T020000
+SUMMARY:MJ Sudanni
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:MJ Sudanni. Program Adventa grada Splita\, Morpurgova poljana.\
+ nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova polja
+ na\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: MJ Sudanni
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-124@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261227T110000
+DTEND;TZID=Europe/Zagreb:20261227T130000
+SUMMARY:Djed Mraz u panici - Goranga
+LOCATION:Stobreč\, Split
+DESCRIPTION:Djed Mraz u panici - Goranga. Program Adventa grada Splita\, St
+ obreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nStobreč\
+ , Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Djed Mraz u panici - Goranga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-125@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261227T110000
+DTEND;TZID=Europe/Zagreb:20261227T130000
+SUMMARY:Teatar Poco Loco: Božićna Orkestra (predstava-koncert)
+LOCATION:Prokurative\, Split
+DESCRIPTION:Teatar Poco Loco: Božićna Orkestra (predstava-koncert). Progr
+ am Adventa grada Splita\, Prokurative.\nKategorija: Djeca\nUlaz se naplać
+ uje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Teatar Poco Loco: Božićna Orkestra (predstava-kon
+ cert)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-073@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261227T120000
 DTEND;TZID=Europe/Zagreb:20261227T140000
 SUMMARY:„Veliko Božićno pospremanje“ - dječja predstava
@@ -1639,8 +3694,38 @@ DESCRIPTION:Podsjetnik: „Veliko Božićno pospremanje“ - dječja predst
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-126@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261227T200000
+DTEND;TZID=Europe/Zagreb:20261227T220000
+SUMMARY:Cortez Band
+LOCATION:Stobreč\, Split
+DESCRIPTION:Cortez Band. Program Adventa grada Splita\, Stobreč.\nKategori
+ ja: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Cortez Band
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-127@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261227T200000
+DTEND;TZID=Europe/Zagreb:20261227T220000
+SUMMARY:Teo Grčić
+LOCATION:Prokurative\, Split
+DESCRIPTION:Teo Grčić. Program Adventa grada Splita\, Prokurative.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Teo Grčić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-027@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261227T210000
 DTEND;TZID=Europe/Zagreb:20261227T230000
 SUMMARY:Josip Ivančić
@@ -1655,7 +3740,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-074@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261227T210000
 DTEND;TZID=Europe/Zagreb:20261227T230000
 SUMMARY:DJ program - Trash
@@ -1670,8 +3755,56 @@ DESCRIPTION:Podsjetnik: DJ program - Trash
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-128@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261228T000000
+DTEND;TZID=Europe/Zagreb:20261228T020000
+SUMMARY:Kid Va
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Kid Va. Program Adventa grada Splita\, Morpurgova poljana.\nKat
+ egorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova poljana\,
+  Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Kid Va
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-129@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261228T110000
+DTEND;TZID=Europe/Zagreb:20261228T130000
+SUMMARY:Djed Mraz i čarolija knjige - Goranga
+LOCATION:Stobreč\, Split
+DESCRIPTION:Djed Mraz i čarolija knjige - Goranga. Program Adventa grada S
+ plita\, Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\
+ nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Djed Mraz i čarolija knjige - Goranga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-130@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261228T150000
+DTEND;TZID=Europe/Zagreb:20261228T170000
+SUMMARY:Igre na ledu: štafeta u brzom klizanju
+LOCATION:Đardin\, Split
+DESCRIPTION:Igre na ledu: štafeta u brzom klizanju. Program Adventa grada 
+ Splita\, Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVan
+ jski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu: štafeta u brzom klizanju
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-075@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261228T180000
 DTEND;TZID=Europe/Zagreb:20261228T200000
 SUMMARY:PUB KVIZ by Showtime - „Ne zaboravi stihove“
@@ -1686,8 +3819,24 @@ DESCRIPTION:Podsjetnik: PUB KVIZ by Showtime - „Ne zaboravi stihove“
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-131@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261228T200000
+DTEND;TZID=Europe/Zagreb:20261228T220000
+SUMMARY:Sergej Ćetković
+LOCATION:Prokurative\, Split
+DESCRIPTION:Sergej Ćetković. Program Adventa grada Splita\, Prokurative.\
+ nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Sp
+ lit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sergej Ćetković
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-076@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261228T210000
 DTEND;TZID=Europe/Zagreb:20261228T230000
 SUMMARY:DJ program - Večer hitova Miše Kovača
@@ -1702,8 +3851,70 @@ DESCRIPTION:Podsjetnik: DJ program - Večer hitova Miše Kovača
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-132@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261229T000000
+DTEND;TZID=Europe/Zagreb:20261229T020000
+SUMMARY:Goza
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Goza. Program Adventa grada Splita\, Morpurgova poljana.\nKateg
+ orija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nMorpurgova poljana\, S
+ plit
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Goza
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-133@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261229T110000
+DTEND;TZID=Europe/Zagreb:20261229T130000
+SUMMARY:Djed Mraz spašava Zemlju - Goranga
+LOCATION:Stobreč\, Split
+DESCRIPTION:Djed Mraz spašava Zemlju - Goranga. Program Adventa grada Spli
+ ta\, Stobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nSt
+ obreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Djed Mraz spašava Zemlju - Goranga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-134@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261229T200000
+DTEND;TZID=Europe/Zagreb:20261229T220000
+SUMMARY:Medak
+LOCATION:Stobreč\, Split
+DESCRIPTION:Medak. Program Adventa grada Splita\, Stobreč.\nKategorija: Gl
+ azba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Medak
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-135@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261229T200000
+DTEND;TZID=Europe/Zagreb:20261229T220000
+SUMMARY:Vatra
+LOCATION:Prokurative\, Split
+DESCRIPTION:Vatra. Program Adventa grada Splita\, Prokurative.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Vatra
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-077@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261229T200000
 DTEND;TZID=Europe/Zagreb:20261229T220000
 SUMMARY:DJ Mess Joke
@@ -1719,7 +3930,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-078@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261229T210000
 DTEND;TZID=Europe/Zagreb:20261229T230000
 SUMMARY:Zlatko Pejaković - koncert
@@ -1734,8 +3945,19 @@ DESCRIPTION:Podsjetnik: Zlatko Pejaković - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-010@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261229
+DTEND;VALUE=DATE:20261230
+SUMMARY:Nikola Rokvić - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Nikola Rokvić - koncert. Program Solinskog adventorija\, Gradi
+ na. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\n
+ Vanjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-079@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261230T160000
 DTEND;TZID=Europe/Zagreb:20261230T180000
 SUMMARY:Dječji doček Nove godine - Čarobni animatori
@@ -1751,7 +3973,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-028@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261230T183000
 DTEND;TZID=Europe/Zagreb:20261230T203000
 SUMMARY:Čarobni animatori: Dječji doček Nove godine
@@ -1766,8 +3988,23 @@ DESCRIPTION:Podsjetnik: Čarobni animatori: Dječji doček Nove godine
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-136@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261230T200000
+DTEND;TZID=Europe/Zagreb:20261230T220000
+SUMMARY:Magazin
+LOCATION:Stobreč\, Split
+DESCRIPTION:Magazin. Program Adventa grada Splita\, Stobreč.\nKategorija: 
+ Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Magazin
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-080@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261230T210000
 DTEND;TZID=Europe/Zagreb:20261230T230000
 SUMMARY:DJ program - Domaća zabavna
@@ -1782,8 +4019,42 @@ DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-137@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T000000
+DTEND;TZID=Europe/Zagreb:20261231T020000
+SUMMARY:Doček Nove godine - Stayin alive 26' (LIKSONIX)
+LOCATION:Morpurgova poljana\, Split
+DESCRIPTION:Doček Nove godine - Stayin alive 26' (LIKSONIX). Program Adven
+ ta grada Splita\, Morpurgova poljana.\nKategorija: Glazba\nUlaz se naplać
+ uje\nVanjski prostor\nMorpurgova poljana\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Nove godine - Stayin alive 26' (LIKSONIX)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-138@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T110000
+DTEND;TZID=Europe/Zagreb:20261231T130000
+SUMMARY:Dječji program / Dječji doček - Dječja Nova godina u ledenom pa
+ rku
+LOCATION:Đardin\, Split
+DESCRIPTION:Dječji program / Dječji doček - Dječja Nova godina u ledeno
+ m parku. Program Adventa grada Splita\, Đardin.\nKategorija: Djeca\nUlaz 
+ se naplaćuje\nVanjski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji program / Dječji doček - Dječja Nova god
+ ina u ledenom parku
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-081@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261231T110000
 DTEND;TZID=Europe/Zagreb:20261231T130000
 SUMMARY:Dječja Nova godina na ledu - disco na ledu uz DJ program i fotogra
@@ -1802,7 +4073,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-082@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261231T110000
 DTEND;TZID=Europe/Zagreb:20261231T130000
 SUMMARY:Marko Pecotić & Silvia Dvornik - jutarnji doček Nove godine
@@ -1818,8 +4089,137 @@ DESCRIPTION:Podsjetnik: Marko Pecotić & Silvia Dvornik - jutarnji doček N
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-139@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T120000
+DTEND;TZID=Europe/Zagreb:20261231T140000
+SUMMARY:Dječji doček - Jacques Houdek
+LOCATION:Prokurative\, Split
+DESCRIPTION:Dječji doček - Jacques Houdek. Program Adventa grada Splita\,
+  Prokurative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nPro
+ kurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji doček - Jacques Houdek
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-140@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T120000
+DTEND;TZID=Europe/Zagreb:20261231T140000
+SUMMARY:Dječji doček - Klape ispod ure
+LOCATION:Ispod ure\, Split
+DESCRIPTION:Dječji doček - Klape ispod ure. Program Adventa grada Splita\
+ , Ispod ure.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nIspo
+ d ure\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji doček - Klape ispod ure
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-141@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T133000
+DTEND;TZID=Europe/Zagreb:20261231T153000
+SUMMARY:Dječji doček - PMS (Premium Music Selectors)\, TJ CiCo (Balinjera
+ ) & zRiNe
+LOCATION:Pjaca\, Split
+DESCRIPTION:Dječji doček - PMS (Premium Music Selectors)\, TJ CiCo (Balin
+ jera) & zRiNe. Program Adventa grada Splita\, Pjaca.\nKategorija: Djeca\nU
+ laz se naplaćuje\nVanjski prostor\nPjaca\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji doček - PMS (Premium Music Selectors)\, TJ
+  CiCo (Balinjera) & zRiNe
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-142@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T140000
+DTEND;TZID=Europe/Zagreb:20261231T160000
+SUMMARY:Dječji doček - DJ Cliff
+LOCATION:Prokurative\, Split
+DESCRIPTION:Dječji doček - DJ Cliff. Program Adventa grada Splita\, Proku
+ rative.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nProkurati
+ ve\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji doček - DJ Cliff
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-143@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T172700
+DTEND;TZID=Europe/Zagreb:20261231T192700
+SUMMARY:Trio Gušt
+LOCATION:Stobreč\, Split
+DESCRIPTION:Trio Gušt. Program Adventa grada Splita\, Stobreč.\nKategorij
+ a: Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Trio Gušt
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-144@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T190000
+DTEND;TZID=Europe/Zagreb:20261231T210000
+SUMMARY:Doček Nove godine - Sensinijevo Piena party
+LOCATION:Obrov\, Split
+DESCRIPTION:Doček Nove godine - Sensinijevo Piena party. Program Adventa g
+ rada Splita\, Obrov.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nObrov\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Nove godine - Sensinijevo Piena party
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-145@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T200000
+DTEND;TZID=Europe/Zagreb:20261231T220000
+SUMMARY:Doček Nove godine - Jakov Jozinović
+LOCATION:Riva\, Split
+DESCRIPTION:Doček Nove godine - Jakov Jozinović. Program Adventa grada Sp
+ lita\, Riva.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nRiv
+ a\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Nove godine - Jakov Jozinović
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-146@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20261231T200000
+DTEND;TZID=Europe/Zagreb:20261231T220000
+SUMMARY:Doček Nove godine - Jelena Rozga
+LOCATION:Riva\, Split
+DESCRIPTION:Doček Nove godine - Jelena Rozga. Program Adventa grada Splita
+ \, Riva.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nRiva\, 
+ Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Nove godine - Jelena Rozga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-083@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261231T200000
 DTEND;TZID=Europe/Zagreb:20261231T220000
 SUMMARY:DJ Black Shark
@@ -1835,7 +4235,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-029@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261231T220000
 DTEND;TZID=Europe/Zagreb:20270101T000000
 SUMMARY:Siniša Vuco (Doček Nove godine)
@@ -1851,7 +4251,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-084@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20261231T220000
 DTEND;TZID=Europe/Zagreb:20270101T000000
 SUMMARY:Taxi Band - doček Nove godine
@@ -1866,8 +4266,50 @@ DESCRIPTION:Podsjetnik: Taxi Band - doček Nove godine
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-011@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Indira - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Indira - koncert. Program Solinskog adventorija\, Gradina. Sat 
+ početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski 
+ prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-147@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270101T200000
+DTEND;TZID=Europe/Zagreb:20270101T220000
+SUMMARY:DJ Occko
+LOCATION:Stobreč\, Split
+DESCRIPTION:DJ Occko. Program Adventa grada Splita\, Stobreč.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Occko
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-148@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270101T200000
+DTEND;TZID=Europe/Zagreb:20270101T220000
+SUMMARY:Marino Jakobić
+LOCATION:Prokurative\, Split
+DESCRIPTION:Marino Jakobić. Program Adventa grada Splita\, Prokurative.\nK
+ ategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Spli
+ t
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Marino Jakobić
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-085@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270101T200000
 DTEND;TZID=Europe/Zagreb:20270101T220000
 SUMMARY:DJ program
@@ -1883,7 +4325,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-086@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270101T210000
 DTEND;TZID=Europe/Zagreb:20270101T230000
 SUMMARY:Jurica Pađen & Aerodrom - koncert
@@ -1898,8 +4340,65 @@ DESCRIPTION:Podsjetnik: Jurica Pađen & Aerodrom - koncert
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:solin-2026-012@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:Matko i Brane - koncert
+LOCATION:Gradina\, Solin
+DESCRIPTION:Matko i Brane - koncert. Program Solinskog adventorija\, Gradin
+ a. Sat početka nije objavljen.\nKategorija: Glazba\nUlaz se naplaćuje\nV
+ anjski prostor\nGradina\, Solin
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-149@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270102T110000
+DTEND;TZID=Europe/Zagreb:20270102T130000
+SUMMARY:Božićna čarolija - Goranga
+LOCATION:Stobreč\, Split
+DESCRIPTION:Božićna čarolija - Goranga. Program Adventa grada Splita\, S
+ tobreč.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nStobreč
+ \, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićna čarolija - Goranga
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-150@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270102T200000
+DTEND;TZID=Europe/Zagreb:20270102T220000
+SUMMARY:DJ Black Shark
+LOCATION:Prokurative\, Split
+DESCRIPTION:DJ Black Shark. Program Adventa grada Splita\, Prokurative.\nKa
+ tegorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nProkurative\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-151@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270102T200000
+DTEND;TZID=Europe/Zagreb:20270102T220000
+SUMMARY:DJ Occko
+LOCATION:Stobreč\, Split
+DESCRIPTION:DJ Occko. Program Adventa grada Splita\, Stobreč.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Occko
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-030@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270102T210000
 DTEND;TZID=Europe/Zagreb:20270102T230000
 SUMMARY:Tomislav Bralić i Klapa Intrade
@@ -1914,7 +4413,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-087@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270102T210000
 DTEND;TZID=Europe/Zagreb:20270102T230000
 SUMMARY:DJ program - Trash
@@ -1930,7 +4429,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:trogir-2026-088@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270103T190000
 DTEND;TZID=Europe/Zagreb:20270103T220000
 SUMMARY:Zatvaranje klizališta uz DJ program
@@ -1945,8 +4444,23 @@ DESCRIPTION:Podsjetnik: Zatvaranje klizališta uz DJ program
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:split-2026-152@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270103T200000
+DTEND;TZID=Europe/Zagreb:20270103T220000
+SUMMARY:DJ Occko
+LOCATION:Stobreč\, Split
+DESCRIPTION:DJ Occko. Program Adventa grada Splita\, Stobreč.\nKategorija:
+  Glazba\nUlaz se naplaćuje\nVanjski prostor\nStobreč\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Occko
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:trogir-2026-089@kastela.live
-DTSTAMP:20261124T052858Z
+DTSTAMP:20261124T053502Z
 DTSTART;TZID=Europe/Zagreb:20270103T210000
 DTEND;TZID=Europe/Zagreb:20270103T230000
 SUMMARY:DJ program - Mesh up (strana\, domaća)
@@ -1958,6 +4472,38 @@ BEGIN:VALARM
 TRIGGER:-PT2H
 ACTION:DISPLAY
 DESCRIPTION:Podsjetnik: DJ program - Mesh up (strana\, domaća)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-153@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270104T150000
+DTEND;TZID=Europe/Zagreb:20270104T170000
+SUMMARY:Igre na ledu: štafeta u brzom klizanju
+LOCATION:Đardin\, Split
+DESCRIPTION:Igre na ledu: štafeta u brzom klizanju. Program Adventa grada 
+ Splita\, Đardin.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVan
+ jski prostor\nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu: štafeta u brzom klizanju
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:split-2026-154@kastela.live
+DTSTAMP:20261124T053502Z
+DTSTART;TZID=Europe/Zagreb:20270107T190000
+DTEND;TZID=Europe/Zagreb:20270107T210000
+SUMMARY:Zatvaranje sezone klizanja
+LOCATION:Đardin\, Split
+DESCRIPTION:Zatvaranje sezone klizanja. Program Adventa grada Splita\, Đar
+ din.\nKategorija: Sport i rekreacija\nUlaz se naplaćuje\nVanjski prostor\
+ nĐardin\, Split
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Zatvaranje sezone klizanja
 END:VALARM
 END:VEVENT
 END:VCALENDAR
