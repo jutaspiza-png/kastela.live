@@ -154,6 +154,30 @@ function placeFeatured(featuredSection) {
   days.at(-1).after(featuredSection);
 }
 
+function placeSeason(section) {
+  const nodes = [...$("#results").children];
+  const featured = nodes.find((node) => node.id === "featured-section");
+  const days = nodes.filter((node) => node.classList.contains("day"));
+  if (!days.length) {
+    (featured || $("#results")).after(section);
+    return;
+  }
+  const seen = new Set();
+  let anchor = null;
+  let passed = !featured;
+  for (const node of nodes) {
+    if (node === featured) {
+      passed = true;
+      continue;
+    }
+    if (!passed || !node.classList.contains("day")) continue;
+    seen.add(node.querySelector("h3")?.textContent || "");
+    anchor = node;
+    if (seen.size >= 2) break;
+  }
+  (anchor || days.at(-1)).after(section);
+}
+
 function setupFeaturedLoop() {
   const scroller = $("#featured");
   scroller.onscroll = null;
@@ -235,6 +259,8 @@ function render() {
   $("#featured").innerHTML = featured.map((event) => card(event)).join("");
   if (featured.length >= 2) setupFeaturedLoop();
   featuredSection.remove();
+  const seasonSection = $("#season-section");
+  seasonSection.remove();
 
   const results = $("#results");
   const title = $("#upcoming-title");
@@ -247,6 +273,7 @@ function render() {
     const message = waiting ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
     results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${waiting ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
     results.before(featuredSection);
+    placeSeason(seasonSection);
   } else {
     upcomingSection.hidden = false;
     title.innerHTML = `Uskoro · <span class="count">${events.length}</span> ${eventWord(events.length)}`;
@@ -275,6 +302,7 @@ function render() {
         </ul>
       </section>`).join("");
     placeFeatured(featuredSection);
+    placeSeason(seasonSection);
   }
 
   $("#status").hidden = true;
