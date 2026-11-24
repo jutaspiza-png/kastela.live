@@ -98,6 +98,7 @@
             </select>
           </label>
         </form>
+        <!--
         <div class="control-row">
           <label class="check">
             <input id="show-past" type="checkbox" />
@@ -105,6 +106,7 @@
           </label>
           <button class="text-btn" type="button" data-action="filtered-ics">Preuzmi odabir (.ics)</button>
         </div>
+        -->
       </div>
 
       <div class="wrap" id="dogadanja">
@@ -219,9 +221,9 @@
         </ul>
         <h3>Dodaj u kalendar</h3>
         <ol>
-          <li>Na popisu dodirni <strong>Dodaj u kalendar</strong>.</li>
-          <li><strong>Dodaj u privatni kalendar</strong> otvara potvrdu u kalendaru. Na iPhoneu je to Kalendar, na Androidu Google Kalendar. Potvrdi spremanje.</li>
-          <li><strong>Dodaj samo obavijest</strong> šalje push poruku 8 sati prije početka. Možeš je kasnije isključiti.</li>
+          <li>Na popisu dodirni <strong>Dodaj u kalendar</strong>. Otvori se događaj.</li>
+          <li>Pri dnu, <strong>Dodaj u kalendar</strong> otvara potvrdu u kalendaru. Na iPhoneu je to Kalendar, na Androidu Google Kalendar.</li>
+          <li><strong>Dodaj samo obavijest</strong> šalje push poruku 8 sati prije početka. Isti gumb je kasnije isključuje.</li>
         </ol>
         <p>Na iPhoneu obavijest radi nakon što stranicu dodaš na početni zaslon i otvoriš je odatle.</p>
       </form>
@@ -266,6 +268,28 @@
           <li>Odaberi Dodaj na početni zaslon.</li>
           <li>Otvori ikonu Kaštela i ponovno uključi obavijest.</li>
         </ol>
+      </form>
+    </dialog>
+
+    <dialog id="event">
+      <form method="dialog">
+        <div class="event-scroll">
+          <div class="dialog-head">
+            <p id="event-kicker" class="event-kicker"></p>
+            <button class="btn btn-icon" value="cancel" aria-label="Zatvori događaj">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <h2 id="event-title"></h2>
+          <p id="event-when" class="event-when"></p>
+          <p id="event-where" class="event-where"></p>
+          <p id="event-copy" class="event-copy"></p>
+        </div>
+        <div class="event-actions">
+          <button class="btn btn-dark" type="button" id="event-cal" data-action="ics-private">Dodaj u kalendar</button>
+          <button class="btn btn-line" type="button" id="event-notify" data-action="ics-notify">Dodaj samo obavijest</button>
+          <p id="event-note" class="fine"></p>
+        </div>
       </form>
     </dialog>
 

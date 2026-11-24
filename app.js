@@ -83,7 +83,7 @@ function cityMark(event) {
 function calendarButton(event, variant) {
   const list = variant === "list";
   const label = list ? "Dodaj u kalendar" : "";
-  return `<button class="${list ? "list-cal" : "cal"}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar" aria-haspopup="menu" aria-expanded="false">${list ? "" : calendarIcon()}${label}</button>`;
+  return `<button class="${list ? "list-cal" : "cal"}" type="button" data-action="ics" data-id="${escapeHtml(event.id)}" aria-label="Dodaj ${escapeHtml(event.title)} u kalendar" aria-haspopup="dialog">${list ? "" : calendarIcon()}${label}</button>`;
 }
 
 function card(event) {
@@ -211,7 +211,7 @@ function selected() {
 }
 
 function render() {
-  closeCalendarMenu();
+  if ($("#event")?.open) $("#event").close();
   const city = currentCity();
   const now = zagrebNow();
   const cityEvents = state.events.filter(inCity);
@@ -323,14 +323,32 @@ function openSubscribe() {
   if (!dialog.open) dialog.showModal();
 }
 
-let calendarAnchor = null;
+function eventClock(event) {
+  const day = formatDay(event.date);
+  if (!event.start_time) return `${day} · sat nije objavljen`;
+  const end = event.end_time ? `–${event.end_time}` : "";
+  return `${day} · ${event.start_time}${end}`;
+}
 
-function closeCalendarMenu(restore) {
-  document.querySelector(".cal-menu")?.remove();
-  if (!calendarAnchor) return;
-  calendarAnchor.setAttribute("aria-expanded", "false");
-  if (restore) calendarAnchor.focus();
-  calendarAnchor = null;
+function openEvent(item) {
+  const decision = scheduleDecision(item, new Date());
+  const on = reminderOn(item.id);
+  $("#event-kicker").textContent = item.category;
+  $("#event-kicker").className = `event-kicker day-badge ${catClass(item.category)}`;
+  $("#event-title").textContent = item.title;
+  $("#event-when").textContent = eventClock(item);
+  $("#event-where").textContent = `${item.venue} · ${item.district}`;
+  $("#event-copy").textContent = item.description;
+  $("#event-cal").dataset.id = item.id;
+  const notify = $("#event-notify");
+  notify.dataset.id = item.id;
+  notify.textContent = on ? "Isključi obavijest" : "Dodaj samo obavijest";
+  notify.disabled = !on && !decision.ok;
+  $("#event-note").textContent = on
+    ? "Obavijest je uključena. Stiže 8 sati prije početka."
+    : (decision.ok ? "Obavijest stiže 8 sati prije početka. U kalendar se ništa ne dodaje." : decision.message);
+  if ($("#menu")?.open) $("#menu").close();
+  if (!$("#event").open) $("#event").showModal();
 }
 
 function isAppleMobile() {
@@ -550,36 +568,6 @@ async function openReminderList() {
   if (!$("#reminders").open) $("#reminders").showModal();
 }
 
-function openCalendarMenu(anchor, event) {
-  closeCalendarMenu();
-  calendarAnchor = anchor;
-  anchor.setAttribute("aria-expanded", "true");
-  const decision = scheduleDecision(event, new Date());
-  const on = reminderOn(event.id);
-  const notifyLabel = on ? "Podsjetnik aktiviran" : "Dodaj samo obavijest";
-  const notifyNote = on
-    ? "Dodirni da isključiš obavijest."
-    : (decision.ok ? "Pošaljemo ti obavijest 8 sati prije početka događaja." : decision.message);
-  const menu = document.createElement("div");
-  menu.className = "cal-menu";
-  menu.dataset.id = event.id;
-  menu.setAttribute("role", "menu");
-  menu.innerHTML = `
-    <button role="menuitem" type="button" data-action="ics-private" data-id="${escapeHtml(event.id)}">Dodaj u privatni kalendar</button>
-    <button role="menuitem" type="button" data-action="ics-notify" data-id="${escapeHtml(event.id)}"${on || decision.ok ? "" : " disabled"} class="${on ? "is-on" : ""}">${notifyLabel}<small>${escapeHtml(notifyNote)}</small></button>
-  `;
-  document.body.append(menu);
-  const rect = anchor.getBoundingClientRect();
-  const menuRect = menu.getBoundingClientRect();
-  let top = rect.bottom + 8;
-  if (top + menuRect.height > window.innerHeight - 8) top = Math.max(8, rect.top - menuRect.height - 8);
-  let left = rect.left;
-  if (left + menuRect.width > window.innerWidth - 8) left = window.innerWidth - menuRect.width - 8;
-  menu.style.top = `${top}px`;
-  menu.style.left = `${Math.max(8, left)}px`;
-  menu.querySelector("button")?.focus();
-}
-
 function downloadIcs(filename, events, calName) {
   const ics = eventsToIcs(events, { pageUrl: document.baseURI, calName });
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
@@ -624,14 +612,12 @@ function bind() {
     state.category = $("#category").value;
     render();
   });
-  $("#show-past").addEventListener("change", () => {
+  $("#show-past")?.addEventListener("change", () => {
     state.showPast = $("#show-past").checked;
     render();
   });
   document.addEventListener("click", async (event) => {
     const button = event.target.closest("button, a");
-    const inMenu = Boolean(event.target.closest(".cal-menu"));
-    if (button?.dataset.action !== "ics" && !inMenu) closeCalendarMenu();
     if (!button) return;
     if (button.dataset.action === "subscribe") {
       event.preventDefault();
@@ -655,17 +641,13 @@ function bind() {
     if (button.dataset.action === "ics") {
       const item = state.events.find((entry) => entry.id === button.dataset.id);
       if (!item) return;
-      if (calendarAnchor === button) {
-        closeCalendarMenu();
-        return;
-      }
-      openCalendarMenu(button, item);
+      openEvent(item);
       return;
     }
     if (button.dataset.action === "ics-private" || button.dataset.action === "ics-notify" || button.dataset.action === "reminder-off") {
       event.preventDefault();
       const item = state.events.find((entry) => entry.id === button.dataset.id);
-      closeCalendarMenu();
+      if ($("#event")?.open) $("#event").close();
       if (!item) return;
       if (button.dataset.action === "ics-private") addOne(item);
       else toggleReminder(item);
@@ -708,13 +690,6 @@ function bind() {
       render();
     }
   });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && document.querySelector(".cal-menu")) {
-      event.preventDefault();
-      closeCalendarMenu(true);
-    }
-  });
-  window.addEventListener("scroll", () => closeCalendarMenu(), true);
   for (const dialog of document.querySelectorAll("dialog")) {
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();
