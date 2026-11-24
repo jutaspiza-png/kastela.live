@@ -15,13 +15,6 @@ const CITIES = [
   { id: "split", name: "Split", inPlace: "Splitu" },
 ];
 
-const CITY_MARK = {
-  kastela: "KS",
-  trogir: "TG",
-  solin: "SO",
-  split: "ST",
-};
-
 const state = {
   events: [],
   city: "all",
@@ -81,9 +74,9 @@ function calendarIcon() {
 }
 
 function cityMark(event) {
-  const mark = CITY_MARK[event.city];
-  if (!mark) return "";
-  return `<span class="city-mark" aria-hidden="true">${mark}</span>`;
+  const city = CITIES.find((item) => item.id === event.city);
+  if (!city || city.id === "all") return "";
+  return `<span class="city-mark" aria-hidden="true">${escapeHtml(city.name)}</span>`;
 }
 
 function calendarButton(event, variant) {
