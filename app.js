@@ -8,6 +8,7 @@ const MONTHS = ["", "sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "r
 const MONTHS_LONG = ["", "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja", "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"];
 
 const CITIES = [
+  { id: "all", name: "Sve", inPlace: "Kaštelima i okolici" },
   { id: "kastela", name: "Kaštela", inPlace: "Kaštelima" },
   { id: "trogir", name: "Trogir", inPlace: "Trogiru" },
   { id: "solin", name: "Solin", inPlace: "Solinu" },
@@ -16,7 +17,7 @@ const CITIES = [
 
 const state = {
   events: [],
-  city: "kastela",
+  city: "all",
   query: "",
   district: "all",
   period: "all",
@@ -159,9 +160,14 @@ function setupFeaturedLoop() {
   };
 }
 
+function inCity(event) {
+  if (state.city === "all") return true;
+  return (event.city || "kastela") === state.city;
+}
+
 function selected() {
   const now = zagrebNow();
-  const events = state.events.filter((event) => (event.city || "kastela") === state.city);
+  const events = state.events.filter(inCity);
   return filterEvents(events, criteria(), now).sort(
     (a, b) => `${a.date}T${a.start_time}`.localeCompare(`${b.date}T${b.start_time}`) || a.id.localeCompare(b.id),
   );
@@ -171,11 +177,11 @@ function render() {
   closeCalendarMenu();
   const city = currentCity();
   const now = zagrebNow();
-  const cityEvents = state.events.filter((event) => (event.city || "kastela") === city.id);
+  const cityEvents = state.events.filter(inCity);
   const upcoming = filterEvents(cityEvents, {}, now);
   $("#hero-title").innerHTML = `Što se događa<br />u ${escapeHtml(city.inPlace)}`;
-  $("#hero-count").textContent = city.id === "kastela"
-    ? (upcoming.length ? `${upcoming.length} nadolazećih događanja u Božićnom gradu i Fritulici.` : "Kalendar Božićnog grada i Fritulice.")
+  $("#hero-count").textContent = upcoming.length
+    ? `${upcoming.length} nadolazećih ${eventWord(upcoming.length)}.`
     : `Kalendar događanja u ${city.inPlace}.`;
   document.querySelectorAll("[data-city]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.city === city.id));
@@ -198,8 +204,9 @@ function render() {
     upcomingSection.hidden = false;
     title.textContent = "Uskoro";
     const bare = !state.query && state.district === "all" && state.period === "all" && state.category === "all" && !state.eveningOnly && !state.freeOnly;
-    const message = bare && city.id !== "kastela" ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
-    results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${bare && city.id !== "kastela" ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
+    const waiting = bare && city.id !== "all" && city.id !== "kastela" && city.id !== "trogir";
+    const message = waiting ? `Kalendar za ${city.name} još nema događanja.` : "Nema događanja za ovaj odabir.";
+    results.innerHTML = `<div class="empty"><p>${escapeHtml(message)}</p>${waiting ? "" : '<button class="btn btn-dark" type="button" data-action="reset">Očisti filtere</button>'}</div>`;
   } else {
     upcomingSection.hidden = false;
     title.innerHTML = `Uskoro · <span class="count">${events.length}</span> ${eventWord(events.length)}`;

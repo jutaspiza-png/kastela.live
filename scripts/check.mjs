@@ -10,7 +10,9 @@ const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const { events, errors } = validateEvents(parseCsv(csv));
 
 assert.equal(errors.length, 0, errors.join("\n"));
-assert.equal(events.length, 30);
+assert.equal(events.length, 119);
+assert.equal(events.filter((event) => event.city === "kastela").length, 30);
+assert.equal(events.filter((event) => event.city === "trogir").length, 89);
 
 for (const district of DISTRICTS) assert.ok(html.includes(district), `index.html nema ${district}`);
 for (const city of ["Trogir", "Solin", "Split"]) assert.ok(html.includes(city), `index.html nema ${city}`);
@@ -18,7 +20,7 @@ for (const category of CATEGORIES) assert.ok(html.includes(category), `index.htm
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);
   assert.ok(CATEGORIES.includes(event.category), event.category);
-  assert.equal(event.programme, "Advent u Kaštelima");
+  assert.ok(["Advent u Kaštelima", "Zimska Adventura Trogir 2026"].includes(event.programme), event.programme);
 }
 
 const stela = events.find((event) => event.id === "kastela-2026-001");
@@ -49,18 +51,23 @@ const adventSaturday = { date: "2026-12-05", time: "12:00" };
 assert.deepEqual(weekendDates("2026-11-23"), ["2026-11-28", "2026-11-29"]);
 assert.deepEqual(weekendDates(adventSaturday.date), ["2026-12-05", "2026-12-06"]);
 
-const today = filterEvents(events, { period: "today" }, adventSaturday).map((event) => event.id);
-assert.deepEqual(today.sort(), ["kastela-2026-001", "kastela-2026-002"]);
+const today = filterEvents(events, { period: "today" }, adventSaturday);
+assert.ok(today.every((event) => event.date === "2026-12-05"));
+assert.ok(today.some((event) => event.id === "kastela-2026-001"));
+assert.ok(today.some((event) => event.city === "trogir"));
 
-const evening = filterEvents(events, { eveningOnly: true }, adventSaturday).map((event) => event.id);
-assert.deepEqual(evening.sort(), ["kastela-2026-001", "kastela-2026-002"]);
+const evening = filterEvents(events, { eveningOnly: true }, adventSaturday);
+assert.ok(evening.every((event) => event.date === "2026-12-05" && event.start_time >= "17:00"));
+assert.ok(evening.some((event) => event.id === "kastela-2026-001"));
 
-const tomorrow = filterEvents(events, { period: "tomorrow" }, adventSaturday).map((event) => event.id);
-assert.deepEqual(tomorrow, ["kastela-2026-003"]);
+const tomorrow = filterEvents(events, { period: "tomorrow" }, adventSaturday);
+assert.ok(tomorrow.every((event) => event.date === "2026-12-06"));
+assert.ok(tomorrow.some((event) => event.id === "kastela-2026-003"));
+assert.ok(tomorrow.some((event) => event.city === "trogir"));
 
 const weekend = filterEvents(events, { period: "weekend" }, adventSaturday);
 assert.ok(weekend.every((event) => event.date === "2026-12-05" || event.date === "2026-12-06"));
-assert.equal(weekend.length, 3);
+assert.ok(weekend.some((event) => event.city === "kastela") && weekend.some((event) => event.city === "trogir"));
 
 const kids = filterEvents(events, { category: "Djeca" }, adventSaturday);
 assert.ok(kids.every((event) => event.category === "Djeca"));
@@ -75,12 +82,21 @@ assert.equal(search.length, 3);
 assert.equal(foldText("Đardin"), "dardin");
 
 const beforeSeason = filterEvents(events, {}, { date: "2026-11-23", time: "13:30" });
-assert.equal(beforeSeason.length, 30);
+assert.equal(beforeSeason.length, 119);
 
-const afterSeason = filterEvents(events, {}, { date: "2027-01-03", time: "10:00" });
+const afterSeason = filterEvents(events, {}, { date: "2027-01-04", time: "10:00" });
 assert.equal(afterSeason.length, 0);
-const withPast = filterEvents(events, { showPast: true }, { date: "2027-01-03", time: "10:00" });
-assert.equal(withPast.length, 30);
+const withPast = filterEvents(events, { showPast: true }, { date: "2027-01-04", time: "10:00" });
+assert.equal(withPast.length, 119);
+
+const tony = events.find((event) => event.id === "trogir-2026-007");
+assert.equal(tony.title, "Tony Cetinski - koncert");
+assert.equal(tony.city, "trogir");
+assert.equal(tony.district, "Trogir");
+assert.equal(tony.category, "Glazba");
+assert.equal(tony.date, "2026-12-04");
+const sameDay = events.filter((event) => event.date === "2026-12-05").map((event) => event.city);
+assert.ok(sameDay.includes("kastela") && sameDay.includes("trogir"));
 
 const late = filterEvents(events, { period: "today" }, { date: "2026-12-05", time: "23:00" });
 assert.deepEqual(late, []);
@@ -109,9 +125,9 @@ const uids = [...ics.matchAll(/^UID:(.+)$/gm)].map((match) => match[1]);
 assert.equal(new Set(uids).size, uids.length);
 
 const adventIcs = eventsToIcs(events, { now: new Date("2026-11-23T12:00:00Z"), calName: "Advent u Kaštelima" });
-assert.equal((adventIcs.match(/^BEGIN:VEVENT/gm) || []).length, 30);
+assert.equal((adventIcs.match(/^BEGIN:VEVENT/gm) || []).length, 119);
 assert.equal(adventIcs.includes("X-WR-CALNAME:Advent u Kaštelima"), true);
-assert.equal(ics.includes("X-WR-CALNAME:Događanja u Kaštelima"), true);
+assert.equal(ics.includes("X-WR-CALNAME:Događanja u Kaštelima i okolici"), true);
 
 const semi = validateEvents(parseCsv("id;title;date;start_time;end_time;venue;district;category;is_free;indoor_outdoor;image_url;description;programme\nkastela-2026-900;Proba;2026-12-01;18:00;;Riva;Kaštel Novi;Glazba;true;Vanjski prostor;;Kratko.;\n"));
 assert.equal(semi.errors.length, 0);

@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//kastela.live//Dogadanja//HR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Događanja u Kaštelima
+X-WR-CALNAME:Događanja u Kaštelima i okolici
 X-WR-TIMEZONE:Europe/Zagreb
 BEGIN:VTIMEZONE
 TZID:Europe/Zagreb
@@ -24,8 +24,155 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
+UID:trogir-2026-001@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261128T180000
+DTEND;TZID=Europe/Zagreb:20261128T200000
+SUMMARY:Paljenje prve adventske svijeće i blagoslov adventskog vijenca
+LOCATION:Franjevački samostan sv. Ante na Dridu\, Trogir
+DESCRIPTION:Paljenje prve adventske svijeće i blagoslov adventskog vijenca
+ . Program Zimske adventura u Trogiru\, Franjevački samostan sv. Ante na D
+ ridu.\nKategorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\nFra
+ njevački samostan sv. Ante na Dridu\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje prve adventske svijeće i blagoslov advent
+ skog vijenca
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-002@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261201T090000
+DTEND;TZID=Europe/Zagreb:20261201T120000
+SUMMARY:Božićne radionice
+LOCATION:Edukativna zona Muzeja grada Trogira\, Trogir
+DESCRIPTION:Božićne radionice. Program Zimske adventura u Trogiru\, Eduka
+ tivna zona Muzeja grada Trogira.\nKategorija: Djeca\nUlaz se naplaćuje\nN
+ atkriveno\nEdukativna zona Muzeja grada Trogira\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićne radionice
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-003@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261204T103000
+DTEND;TZID=Europe/Zagreb:20261204T123000
+SUMMARY:DV Trogir - glazbeno-scenski nastup
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DV Trogir - glazbeno-scenski nastup. Program Zimske adventura u
+  Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVan
+ jski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DV Trogir - glazbeno-scenski nastup
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-004@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261204T160000
+DTEND;TZID=Europe/Zagreb:20261204T180000
+SUMMARY:Otvorenje klizališta uz kvadrilju na ledu
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Otvorenje klizališta uz kvadrilju na ledu. Program Zimske adve
+ ntura u Trogiru\, Riva - klizalište.\nKategorija: Sport i rekreacija\nUla
+ z se naplaćuje\nVanjski prostor\nRiva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Otvorenje klizališta uz kvadrilju na ledu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-005@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261204T200000
+DTEND;TZID=Europe/Zagreb:20261204T220000
+SUMMARY:DJ program
+LOCATION:Riva\, Trogir
+DESCRIPTION:DJ program. Program Zimske adventura u Trogiru\, Riva.\nKategor
+ ija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nRiva\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-006@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261204T200000
+DTEND;TZID=Europe/Zagreb:20261204T220000
+SUMMARY:DJ Toni Tox
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Toni Tox. Program Zimske adventura u Trogiru\, Trg Ivana Pav
+ la II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana
+  Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Toni Tox
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-007@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261204T210000
+DTEND;TZID=Europe/Zagreb:20261204T230000
+SUMMARY:Tony Cetinski - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Tony Cetinski - koncert. Program Zimske adventura u Trogiru\, T
+ rg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prosto
+ r\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Tony Cetinski - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-008@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261205T110000
+DTEND;TZID=Europe/Zagreb:20261205T130000
+SUMMARY:„Božićna medalja za dobrotu“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Božićna medalja za dobrotu“ - dječja predstava. Program
+  Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz
+  se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Božićna medalja za dobrotu“ - dječja predst
+ ava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-009@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261205T123000
+DTEND;TZID=Europe/Zagreb:20261205T143000
+SUMMARY:Mandolinski orkestar KUD-a Kvadrilja - Ususret Božiću
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Mandolinski orkestar KUD-a Kvadrilja - Ususret Božiću. Progra
+ m Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUl
+ az se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Mandolinski orkestar KUD-a Kvadrilja - Ususret Bož
+ iću
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-002@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261205T180000
 DTEND;TZID=Europe/Zagreb:20261205T200000
 SUMMARY:Paljenje 2. adventske svijeće
@@ -40,8 +187,42 @@ DESCRIPTION:Podsjetnik: Paljenje 2. adventske svijeće
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-010@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261205T180000
+DTEND;TZID=Europe/Zagreb:20261205T200000
+SUMMARY:Paljenje druge adventske svijeće i adventski koncert
+LOCATION:Franjevački samostan sv. Ante na Dridu\, Trogir
+DESCRIPTION:Paljenje druge adventske svijeće i adventski koncert. Program 
+ Zimske adventura u Trogiru\, Franjevački samostan sv. Ante na Dridu.\nKat
+ egorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\nFranjevački 
+ samostan sv. Ante na Dridu\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje druge adventske svijeće i adventski konce
+ rt
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-011@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261205T200000
+DTEND;TZID=Europe/Zagreb:20261205T220000
+SUMMARY:DJ KATE2B
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ KATE2B. Program Zimske adventura u Trogiru\, Trg Ivana Pavla
+  II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana P
+ avla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ KATE2B
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-001@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261205T210000
 DTEND;TZID=Europe/Zagreb:20261205T230000
 SUMMARY:Stela Rade
@@ -55,8 +236,73 @@ DESCRIPTION:Podsjetnik: Stela Rade
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-012@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261205T210000
+DTEND;TZID=Europe/Zagreb:20261205T230000
+SUMMARY:Neki to vole vruće - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Neki to vole vruće - koncert. Program Zimske adventura u Trogi
+ ru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski 
+ prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Neki to vole vruće - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-013@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261206T123000
+DTEND;TZID=Europe/Zagreb:20261206T143000
+SUMMARY:Doček sv. Nikole
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Doček sv. Nikole. Program Zimske adventura u Trogiru\, Trg Iva
+ na Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nTrg 
+ Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček sv. Nikole
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-014@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261206T130000
+DTEND;TZID=Europe/Zagreb:20261206T150000
+SUMMARY:„Čarobni božićni sat“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Čarobni božićni sat“ - dječja predstava. Program Zimsk
+ e adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se na
+ plaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Čarobni božićni sat“ - dječja predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-015@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261206T140000
+DTEND;TZID=Europe/Zagreb:20261206T160000
+SUMMARY:Sv. Nikola na ledu - druženje\, podjela slatkiša i fotografiranje
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Sv. Nikola na ledu - druženje\, podjela slatkiša i fotografir
+ anje. Program Zimske adventura u Trogiru\, Riva - klizalište.\nKategorija
+ : Djeca\nUlaz se naplaćuje\nVanjski prostor\nRiva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sv. Nikola na ledu - druženje\, podjela slatkiša 
+ i fotografiranje
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-003@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261206T170000
 DTEND;TZID=Europe/Zagreb:20261206T190000
 SUMMARY:KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
@@ -71,8 +317,56 @@ DESCRIPTION:Podsjetnik: KDK Škatula: Pobuna igračaka & Dolazak sv. Nikole
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-016@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261206T210000
+DTEND;TZID=Europe/Zagreb:20261206T230000
+SUMMARY:DJ program - Rock 'N' Roll classic
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Rock 'N' Roll classic. Program Zimske adventura u 
+ Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Rock 'N' Roll classic
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-017@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261207T210000
+DTEND;TZID=Europe/Zagreb:20261207T230000
+SUMMARY:DJ program - Club music (House\, RnB\, HipHop)
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Club music (House\, RnB\, HipHop). Program Zimske 
+ adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se nap
+ laćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Club music (House\, RnB\, HipHop)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-018@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261208T090000
+DTEND;TZID=Europe/Zagreb:20261208T120000
+SUMMARY:Božićne radionice
+LOCATION:Edukativna zona Muzeja grada Trogira\, Trogir
+DESCRIPTION:Božićne radionice. Program Zimske adventura u Trogiru\, Eduka
+ tivna zona Muzeja grada Trogira.\nKategorija: Djeca\nUlaz se naplaćuje\nN
+ atkriveno\nEdukativna zona Muzeja grada Trogira\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićne radionice
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-004@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261208T170000
 DTEND;TZID=Europe/Zagreb:20261208T190000
 SUMMARY:Kino Mediteran - Hexe: Kraljevstvo čarolije
@@ -87,8 +381,127 @@ DESCRIPTION:Podsjetnik: Kino Mediteran - Hexe: Kraljevstvo čarolije
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-019@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261208T180000
+DTEND;TZID=Europe/Zagreb:20261208T200000
+SUMMARY:PUB KVIZ by Showtime - kviz općeg znanja
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:PUB KVIZ by Showtime - kviz općeg znanja. Program Zimske adven
+ tura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Kultura\nUlaz se naplać
+ uje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: PUB KVIZ by Showtime - kviz općeg znanja
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-020@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261208T190000
+DTEND;TZID=Europe/Zagreb:20261208T210000
+SUMMARY:Predstavljanje TROGIR 365 - Izdanje povodom 30. obljetnice upisa Po
+ vijesnog grada Trogira na UNESCO-ov popis svjetske baštine
+LOCATION:Galerija Cate Dujšin Ribar\, Trogir
+DESCRIPTION:Predstavljanje TROGIR 365 - Izdanje povodom 30. obljetnice upis
+ a Povijesnog grada Trogira na UNESCO-ov popis svjetske baštine. Program Z
+ imske adventura u Trogiru\, Galerija Cate Dujšin Ribar.\nKategorija: Kult
+ ura\nUlaz se naplaćuje\nNatkriveno\nGalerija Cate Dujšin Ribar\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Predstavljanje TROGIR 365 - Izdanje povodom 30. obl
+ jetnice upisa Povijesnog grada Trogira na UNESCO-ov popis svjetske baštin
+ e
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-021@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261208T210000
+DTEND;TZID=Europe/Zagreb:20261208T230000
+SUMMARY:DJ program - Domaća - zabavna
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaća - zabavna. Program Zimske adventura u Trog
+ iru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski
+  prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaća - zabavna
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-022@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261209T150000
+DTEND;TZID=Europe/Zagreb:20261209T170000
+SUMMARY:Igre na ledu - natjecanje u brzom klizanju djece od 6 do 9 godina (
+ štafeta)
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Igre na ledu - natjecanje u brzom klizanju djece od 6 do 9 godi
+ na (štafeta). Program Zimske adventura u Trogiru\, Riva - klizalište.\nK
+ ategorija: Sport i rekreacija\nUlaz se naplaćuje\nVanjski prostor\nRiva -
+  klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Igre na ledu - natjecanje u brzom klizanju djece od
+  6 do 9 godina (štafeta)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-023@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261209T210000
+DTEND;TZID=Europe/Zagreb:20261209T230000
+SUMMARY:DJ program - Latino music
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Latino music. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Latino music
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-024@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261210T210000
+DTEND;TZID=Europe/Zagreb:20261210T230000
+SUMMARY:DJ program - Dalmatinska
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Dalmatinska. Program Zimske adventura u Trogiru\, 
+ Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prost
+ or\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Dalmatinska
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-025@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261211T103000
+DTEND;TZID=Europe/Zagreb:20261211T123000
+SUMMARY:DV Trogir - glazbeno-scenski nastup
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DV Trogir - glazbeno-scenski nastup. Program Zimske adventura u
+  Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVan
+ jski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DV Trogir - glazbeno-scenski nastup
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-006@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261211T173000
 DTEND;TZID=Europe/Zagreb:20261211T193000
 SUMMARY:Produkcija Z: Kako je dječak Srećko spasio Božić
@@ -104,8 +517,24 @@ DESCRIPTION:Podsjetnik: Produkcija Z: Kako je dječak Srećko spasio Boži
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-026@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261211T200000
+DTEND;TZID=Europe/Zagreb:20261211T220000
+SUMMARY:DJ Black Shark
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Black Shark. Program Zimske adventura u Trogiru\, Trg Ivana 
+ Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Iv
+ ana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-005@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261211T210000
 DTEND;TZID=Europe/Zagreb:20261211T230000
 SUMMARY:Magazin
@@ -119,8 +548,91 @@ DESCRIPTION:Podsjetnik: Magazin
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-027@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261211T210000
+DTEND;TZID=Europe/Zagreb:20261211T230000
+SUMMARY:Boris Novković - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Boris Novković - koncert. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Boris Novković - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-028@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T110000
+DTEND;TZID=Europe/Zagreb:20261212T130000
+SUMMARY:„Adventski čarobni show - Spartanko Smotanko“ - zabavni show z
+ a djecu
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Adventski čarobni show - Spartanko Smotanko“ - zabavni sh
+ ow za djecu. Program Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKat
+ egorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, 
+ Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Adventski čarobni show - Spartanko Smotanko“ 
+ - zabavni show za djecu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-029@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T120000
+DTEND;TZID=Europe/Zagreb:20261212T140000
+SUMMARY:„Božićni vilenjaci“ - dječja predstava
+LOCATION:Plano\, igralište\, Trogir
+DESCRIPTION:„Božićni vilenjaci“ - dječja predstava. Program Zimske a
+ dventura u Trogiru\, Plano\, igralište.\nKategorija: Djeca\nUlaz se napla
+ ćuje\nVanjski prostor\nPlano\, igralište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Božićni vilenjaci“ - dječja predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-030@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T124000
+DTEND;TZID=Europe/Zagreb:20261212T144000
+SUMMARY:Doček Djeda Božićnjaka
+LOCATION:Plano\, igralište\, Trogir
+DESCRIPTION:Doček Djeda Božićnjaka. Program Zimske adventura u Trogiru\,
+  Plano\, igralište.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prost
+ or\nPlano\, igralište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Djeda Božićnjaka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-031@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T130000
+DTEND;TZID=Europe/Zagreb:20261212T150000
+SUMMARY:Podjela hrane
+LOCATION:Plano\, igralište\, Trogir
+DESCRIPTION:Podjela hrane. Program Zimske adventura u Trogiru\, Plano\, igr
+ alište.\nKategorija: Gastro\nUlaz se naplaćuje\nVanjski prostor\nPlano\,
+  igralište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Podjela hrane
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-008@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261212T173000
 DTEND;TZID=Europe/Zagreb:20261212T193000
 SUMMARY:Klaun Šarenko: Božićna pustolovina luckastih vilenjaka
@@ -137,7 +649,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-010@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261212T180000
 DTEND;TZID=Europe/Zagreb:20261212T200000
 SUMMARY:Paljenje 3. adventske svijeće
@@ -152,8 +664,26 @@ DESCRIPTION:Podsjetnik: Paljenje 3. adventske svijeće
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-032@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T180000
+DTEND;TZID=Europe/Zagreb:20261212T200000
+SUMMARY:Paljenje treće adventske svijeće i adventski koncert
+LOCATION:Franjevački samostan sv. Ante na Dridu\, Trogir
+DESCRIPTION:Paljenje treće adventske svijeće i adventski koncert. Program
+  Zimske adventura u Trogiru\, Franjevački samostan sv. Ante na Dridu.\nKa
+ tegorija: Tradicionalno\nUlaz se naplaćuje\nVanjski prostor\nFranjevački
+  samostan sv. Ante na Dridu\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje treće adventske svijeće i adventski konc
+ ert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-009@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261212T190000
 DTEND;TZID=Europe/Zagreb:20261212T210000
 SUMMARY:Fritulica - dječji kolaž program
@@ -168,8 +698,24 @@ DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-033@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T200000
+DTEND;TZID=Europe/Zagreb:20261212T220000
+SUMMARY:DJ Toni Tox
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Toni Tox. Program Zimske adventura u Trogiru\, Trg Ivana Pav
+ la II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana
+  Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Toni Tox
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-007@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261212T210000
 DTEND;TZID=Europe/Zagreb:20261212T230000
 SUMMARY:Grupa Cambi
@@ -183,8 +729,89 @@ DESCRIPTION:Podsjetnik: Grupa Cambi
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-034@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261212T210000
+DTEND;TZID=Europe/Zagreb:20261212T230000
+SUMMARY:Mladen Grdović - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Mladen Grdović - koncert. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Mladen Grdović - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-035@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261213T120000
+DTEND;TZID=Europe/Zagreb:20261213T140000
+SUMMARY:„Stich & Božićna želja“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Stich & Božićna želja“ - dječja predstava. Program Zim
+ ske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se 
+ naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Stich & Božićna želja“ - dječja predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-036@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261213T124500
+DTEND;TZID=Europe/Zagreb:20261213T144500
+SUMMARY:Doček sv. Lucije
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Doček sv. Lucije. Program Zimske adventura u Trogiru\, Trg Iva
+ na Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nTrg 
+ Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček sv. Lucije
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-037@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261213T130000
+DTEND;TZID=Europe/Zagreb:20261213T150000
+SUMMARY:KUD Kvadrilja - dječji nastup
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:KUD Kvadrilja - dječji nastup. Program Zimske adventura u Trog
+ iru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski 
+ prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: KUD Kvadrilja - dječji nastup
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-038@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261213T140000
+DTEND;TZID=Europe/Zagreb:20261213T160000
+SUMMARY:Sv. Lucija na ledu - druženje\, podjela slatkiša i fotografiranje
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Sv. Lucija na ledu - druženje\, podjela slatkiša i fotografir
+ anje. Program Zimske adventura u Trogiru\, Riva - klizalište.\nKategorija
+ : Djeca\nUlaz se naplaćuje\nVanjski prostor\nRiva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sv. Lucija na ledu - druženje\, podjela slatkiša 
+ i fotografiranje
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-012@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261213T170000
 DTEND;TZID=Europe/Zagreb:20261213T190000
 SUMMARY:HNK u Šibeniku: Snijeg u pravi čas & Dolazak sv. Lucije
@@ -201,7 +828,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-011@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261213T210000
 DTEND;TZID=Europe/Zagreb:20261213T230000
 SUMMARY:Marko Kutlić
@@ -215,8 +842,88 @@ DESCRIPTION:Podsjetnik: Marko Kutlić
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-039@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261213T210000
+DTEND;TZID=Europe/Zagreb:20261213T230000
+SUMMARY:DJ program - Domaća zabavna
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaća zabavna. Program Zimske adventura u Trogir
+ u\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-040@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261214T210000
+DTEND;TZID=Europe/Zagreb:20261214T230000
+SUMMARY:DJ program - Trash
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Trash. Program Zimske adventura u Trogiru\, Trg Iv
+ ana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTr
+ g Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Trash
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-041@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261215T090000
+DTEND;TZID=Europe/Zagreb:20261215T120000
+SUMMARY:Božićne radionice
+LOCATION:Edukativna zona Muzeja grada Trogira\, Trogir
+DESCRIPTION:Božićne radionice. Program Zimske adventura u Trogiru\, Eduka
+ tivna zona Muzeja grada Trogira.\nKategorija: Djeca\nUlaz se naplaćuje\nN
+ atkriveno\nEdukativna zona Muzeja grada Trogira\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićne radionice
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-042@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261215T180000
+DTEND;TZID=Europe/Zagreb:20261215T200000
+SUMMARY:Josip Gotovac - „The best of“ - stand up nastup
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Josip Gotovac - „The best of“ - stand up nastup. Program Zi
+ mske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Predstava\nUla
+ z se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Josip Gotovac - „The best of“ - stand up nastup
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-043@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261215T210000
+DTEND;TZID=Europe/Zagreb:20261215T230000
+SUMMARY:DJ program - Mesh up (strana\, domaća)
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Mesh up (strana\, domaća). Program Zimske adventu
+ ra u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje
+ \nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Mesh up (strana\, domaća)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-013@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261216T170000
 DTEND;TZID=Europe/Zagreb:20261216T190000
 SUMMARY:Kino Mediteran - Asterix: Kraljevstvo Nubije
@@ -231,8 +938,46 @@ DESCRIPTION:Podsjetnik: Kino Mediteran - Asterix: Kraljevstvo Nubije
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-044@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261216T210000
+DTEND;TZID=Europe/Zagreb:20261216T230000
+SUMMARY:DJ program - Studio 54: 80's Music
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Studio 54: 80's Music. Program Zimske adventura u 
+ Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Studio 54: 80's Music
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-045@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261217T150000
+DTEND;TZID=Europe/Zagreb:20261217T170000
+SUMMARY:Bijeli Hajdukov četvrtak na ledu - besplatno klizanje za sve posje
+ titelje u dresovima ili majicama Hajduka\, fotografiranje\, navijačke pje
+ sme i milenijska fotografija
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Bijeli Hajdukov četvrtak na ledu - besplatno klizanje za sve p
+ osjetitelje u dresovima ili majicama Hajduka\, fotografiranje\, navijačke
+  pjesme i milenijska fotografija. Program Zimske adventura u Trogiru\, Riv
+ a - klizalište.\nKategorija: Sport i rekreacija\nUlaz slobodan\nVanjski p
+ rostor\nRiva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bijeli Hajdukov četvrtak na ledu - besplatno kliza
+ nje za sve posjetitelje u dresovima ili majicama Hajduka\, fotografiranje\
+ , navijačke pjesme i milenijska fotografija
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-014@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261217T180000
 DTEND;TZID=Europe/Zagreb:20261217T200000
 SUMMARY:Svijet čarolije: Božićna radionica šašavog majstora
@@ -248,8 +993,24 @@ DESCRIPTION:Podsjetnik: Svijet čarolije: Božićna radionica šašavog maj
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-046@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261217T210000
+DTEND;TZID=Europe/Zagreb:20261217T230000
+SUMMARY:DJ program - Club music (House\,RnB\, HipHop)
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Club music (House\,RnB\, HipHop). Program Zimske a
+ dventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se napl
+ aćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Club music (House\,RnB\, HipHop)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-016@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261218T173000
 DTEND;TZID=Europe/Zagreb:20261218T193000
 SUMMARY:Ritam igre: Božićni vilenjaci
@@ -265,7 +1026,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-017@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261218T183000
 DTEND;TZID=Europe/Zagreb:20261218T203000
 SUMMARY:Helen Doron Show: Let's Have Fun in English!
@@ -280,8 +1041,24 @@ DESCRIPTION:Podsjetnik: Helen Doron Show: Let's Have Fun in English!
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-047@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261218T200000
+DTEND;TZID=Europe/Zagreb:20261218T220000
+SUMMARY:DJ Mess Joke
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Mess Joke. Program Zimske adventura u Trogiru\, Trg Ivana Pa
+ vla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivan
+ a Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Mess Joke
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-015@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261218T210000
 DTEND;TZID=Europe/Zagreb:20261218T230000
 SUMMARY:Macao Band
@@ -295,8 +1072,40 @@ DESCRIPTION:Podsjetnik: Macao Band
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-048@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261218T210000
+DTEND;TZID=Europe/Zagreb:20261218T230000
+SUMMARY:Rišpet - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Rišpet - koncert. Program Zimske adventura u Trogiru\, Trg Iva
+ na Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg
+  Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Rišpet - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-049@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T110000
+DTEND;TZID=Europe/Zagreb:20261219T130000
+SUMMARY:„Snijeg u pravi čas“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Snijeg u pravi čas“ - dječja predstava. Program Zimske a
+ dventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se napla
+ ćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Snijeg u pravi čas“ - dječja predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-021@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261219T120000
 DTEND;TZID=Europe/Zagreb:20261219T140000
 SUMMARY:Tradicionalna podjela bakalara (PŠK Srdela)
@@ -311,8 +1120,40 @@ DESCRIPTION:Podsjetnik: Tradicionalna podjela bakalara (PŠK Srdela)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-050@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T120000
+DTEND;TZID=Europe/Zagreb:20261219T140000
+SUMMARY:Doček Djeda Božićnjaka
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Doček Djeda Božićnjaka. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prost
+ or\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Doček Djeda Božićnjaka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-051@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T123000
+DTEND;TZID=Europe/Zagreb:20261219T143000
+SUMMARY:Trogirski gudački orkestar - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Trogirski gudački orkestar - koncert. Program Zimske adventura
+  u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\n
+ Vanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Trogirski gudački orkestar - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-019@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261219T173000
 DTEND;TZID=Europe/Zagreb:20261219T193000
 SUMMARY:Jasna Held - Pripovijedanje bajki i priča (1. termin)
@@ -329,7 +1170,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:kastela-2026-022@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261219T180000
 DTEND;TZID=Europe/Zagreb:20261219T200000
 SUMMARY:Paljenje 4. adventske svijeće
@@ -344,8 +1185,25 @@ DESCRIPTION:Podsjetnik: Paljenje 4. adventske svijeće
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-052@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T180000
+DTEND;TZID=Europe/Zagreb:20261219T200000
+SUMMARY:Paljenje četvrte adventske svijeće
+LOCATION:Franjevački samostan sv. Ante na Dridu\, Trogir
+DESCRIPTION:Paljenje četvrte adventske svijeće. Program Zimske adventura 
+ u Trogiru\, Franjevački samostan sv. Ante na Dridu.\nKategorija: Tradicio
+ nalno\nUlaz se naplaćuje\nVanjski prostor\nFranjevački samostan sv. Ante
+  na Dridu\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Paljenje četvrte adventske svijeće
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-020@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261219T190000
 DTEND;TZID=Europe/Zagreb:20261219T210000
 SUMMARY:Jasna Held - Pripovijedanje bajki i priča (2. termin)
@@ -361,8 +1219,40 @@ DESCRIPTION:Podsjetnik: Jasna Held - Pripovijedanje bajki i priča (2. term
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-053@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T190000
+DTEND;TZID=Europe/Zagreb:20261219T210000
+SUMMARY:Narodna glazba Trogir i gosti - Koncert u adventu
+LOCATION:Katedrala sv. Lovre\, Trogir
+DESCRIPTION:Narodna glazba Trogir i gosti - Koncert u adventu. Program Zims
+ ke adventura u Trogiru\, Katedrala sv. Lovre.\nKategorija: Glazba\nUlaz se
+  naplaćuje\nNatkriveno\nKatedrala sv. Lovre\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Narodna glazba Trogir i gosti - Koncert u adventu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-054@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T200000
+DTEND;TZID=Europe/Zagreb:20261219T220000
+SUMMARY:DJ Toni Tox
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Toni Tox. Program Zimske adventura u Trogiru\, Trg Ivana Pav
+ la II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana
+  Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Toni Tox
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-018@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261219T210000
 DTEND;TZID=Europe/Zagreb:20261219T230000
 SUMMARY:Željko Bebek
@@ -376,8 +1266,40 @@ DESCRIPTION:Podsjetnik: Željko Bebek
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-055@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261219T210000
+DTEND;TZID=Europe/Zagreb:20261219T230000
+SUMMARY:Vanna - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Vanna - koncert. Program Zimske adventura u Trogiru\, Trg Ivana
+  Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg I
+ vana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Vanna - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-056@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261220T120000
+DTEND;TZID=Europe/Zagreb:20261220T140000
+SUMMARY:Adventura Trail 2026 - sportska utrka
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Adventura Trail 2026 - sportska utrka. Program Zimske adventura
+  u Trogiru\, Trg Ivana Pavla II.\nKategorija: Sport i rekreacija\nUlaz se 
+ naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Adventura Trail 2026 - sportska utrka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-024@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261220T180000
 DTEND;TZID=Europe/Zagreb:20261220T200000
 SUMMARY:Fritulica - dječji kolaž program
@@ -392,8 +1314,25 @@ DESCRIPTION:Podsjetnik: Fritulica - dječji kolaž program
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-057@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261220T200000
+DTEND;TZID=Europe/Zagreb:20261220T220000
+SUMMARY:Sakralni koncert - Ursa Ljuban\, orgulje i Matej Vukić\, truba
+LOCATION:Katedrala sv. Lovre\, Trogir
+DESCRIPTION:Sakralni koncert - Ursa Ljuban\, orgulje i Matej Vukić\, truba
+ . Program Zimske adventura u Trogiru\, Katedrala sv. Lovre.\nKategorija: G
+ lazba\nUlaz se naplaćuje\nNatkriveno\nKatedrala sv. Lovre\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Sakralni koncert - Ursa Ljuban\, orgulje i Matej Vu
+ kić\, truba
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-023@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261220T210000
 DTEND;TZID=Europe/Zagreb:20261220T230000
 SUMMARY:Antoniette Čerkez
@@ -407,8 +1346,188 @@ DESCRIPTION:Podsjetnik: Antoniette Čerkez
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-058@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261220T210000
+DTEND;TZID=Europe/Zagreb:20261220T230000
+SUMMARY:DJ program - Trash
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Trash. Program Zimske adventura u Trogiru\, Trg Iv
+ ana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTr
+ g Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Trash
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-059@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261221T190000
+DTEND;TZID=Europe/Zagreb:20261221T210000
+SUMMARY:Klapa Trogir - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Klapa Trogir - koncert. Program Zimske adventura u Trogiru\, Tr
+ g Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor
+ \nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Klapa Trogir - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-060@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261221T210000
+DTEND;TZID=Europe/Zagreb:20261221T230000
+SUMMARY:DJ program - Domaća zabavna
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaća zabavna. Program Zimske adventura u Trogir
+ u\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-061@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261222T103000
+DTEND;TZID=Europe/Zagreb:20261222T123000
+SUMMARY:DV Trogir - predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DV Trogir - predstava. Program Zimske adventura u Trogiru\, Trg
+  Ivana Pavla II.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\n
+ Trg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DV Trogir - predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-062@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261222T210000
+DTEND;TZID=Europe/Zagreb:20261222T230000
+SUMMARY:DJ program - Latino Music
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Latino Music. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Latino Music
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-063@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261223T200000
+DTEND;TZID=Europe/Zagreb:20261223T220000
+SUMMARY:DJ Inzo
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Inzo. Program Zimske adventura u Trogiru\, Trg Ivana Pavla I
+ I.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana Pav
+ la II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Inzo
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-064@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261223T210000
+DTEND;TZID=Europe/Zagreb:20261223T230000
+SUMMARY:Danijela Martinović - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Danijela Martinović - koncert. Program Zimske adventura u Trog
+ iru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski
+  prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Danijela Martinović - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-065@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261224T120000
+DTEND;TZID=Europe/Zagreb:20261224T140000
+SUMMARY:Bakalar Na Badnjak - gastro prezentacija i podjela hrane
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Bakalar Na Badnjak - gastro prezentacija i podjela hrane. Progr
+ am Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Gastro\nU
+ laz se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Bakalar Na Badnjak - gastro prezentacija i podjela 
+ hrane
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-066@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261224T120000
+DTEND;TZID=Europe/Zagreb:20261224T140000
+SUMMARY:Trogirski Kanti - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Trogirski Kanti - koncert. Program Zimske adventura u Trogiru\,
+  Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pros
+ tor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Trogirski Kanti - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-067@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261224T210000
+DTEND;TZID=Europe/Zagreb:20261224T230000
+SUMMARY:DJ program - Domaća zabavna
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaća zabavna. Program Zimske adventura u Trogir
+ u\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-068@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261225T100000
+DTEND;TZID=Europe/Zagreb:20261225T110000
+SUMMARY:Božićno jutro na ledu - druženje s Djedom Božićnjakom\, podjel
+ a slatkiša i fotografiranje
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Božićno jutro na ledu - druženje s Djedom Božićnjakom\, po
+ djela slatkiša i fotografiranje. Program Zimske adventura u Trogiru\, Riv
+ a - klizalište.\nKategorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\n
+ Riva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Božićno jutro na ledu - druženje s Djedom Boži
+ ćnjakom\, podjela slatkiša i fotografiranje
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-025@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261225T210000
 DTEND;TZID=Europe/Zagreb:20261225T230000
 SUMMARY:Grupa Viva (Božićni koncert)
@@ -423,8 +1542,57 @@ DESCRIPTION:Podsjetnik: Grupa Viva (Božićni koncert)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-069@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261225T210000
+DTEND;TZID=Europe/Zagreb:20261225T230000
+SUMMARY:DJ program - Domaći pop - rock
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaći pop - rock. Program Zimske adventura u Tro
+ giru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjsk
+ i prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaći pop - rock
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-070@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261226T110000
+DTEND;TZID=Europe/Zagreb:20261226T130000
+SUMMARY:„Božićna bajka vilenjaka i prijatelja“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Božićna bajka vilenjaka i prijatelja“ - dječja predstav
+ a. Program Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: D
+ jeca\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Božićna bajka vilenjaka i prijatelja“ - dje
+ čja predstava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-071@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261226T200000
+DTEND;TZID=Europe/Zagreb:20261226T220000
+SUMMARY:DJ Black Shark
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Black Shark. Program Zimske adventura u Trogiru\, Trg Ivana 
+ Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Iv
+ ana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-026@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261226T210000
 DTEND;TZID=Europe/Zagreb:20261226T230000
 SUMMARY:Mejaši
@@ -438,8 +1606,41 @@ DESCRIPTION:Podsjetnik: Mejaši
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-072@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261226T210000
+DTEND;TZID=Europe/Zagreb:20261226T230000
+SUMMARY:Vigor - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Vigor - koncert. Program Zimske adventura u Trogiru\, Trg Ivana
+  Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg I
+ vana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Vigor - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-073@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261227T120000
+DTEND;TZID=Europe/Zagreb:20261227T140000
+SUMMARY:„Veliko Božićno pospremanje“ - dječja predstava
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:„Veliko Božićno pospremanje“ - dječja predstava. Program
+  Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz
+  se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: „Veliko Božićno pospremanje“ - dječja predst
+ ava
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-027@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261227T210000
 DTEND;TZID=Europe/Zagreb:20261227T230000
 SUMMARY:Josip Ivančić
@@ -453,8 +1654,104 @@ DESCRIPTION:Podsjetnik: Josip Ivančić
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-074@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261227T210000
+DTEND;TZID=Europe/Zagreb:20261227T230000
+SUMMARY:DJ program - Trash
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Trash. Program Zimske adventura u Trogiru\, Trg Iv
+ ana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTr
+ g Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Trash
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-075@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261228T180000
+DTEND;TZID=Europe/Zagreb:20261228T200000
+SUMMARY:PUB KVIZ by Showtime - „Ne zaboravi stihove“
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:PUB KVIZ by Showtime - „Ne zaboravi stihove“. Program Zimsk
+ e adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Kultura\nUlaz se 
+ naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: PUB KVIZ by Showtime - „Ne zaboravi stihove“
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-076@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261228T210000
+DTEND;TZID=Europe/Zagreb:20261228T230000
+SUMMARY:DJ program - Večer hitova Miše Kovača
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Večer hitova Miše Kovača. Program Zimske advent
+ ura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuj
+ e\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Večer hitova Miše Kovača
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-077@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261229T200000
+DTEND;TZID=Europe/Zagreb:20261229T220000
+SUMMARY:DJ Mess Joke
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Mess Joke. Program Zimske adventura u Trogiru\, Trg Ivana Pa
+ vla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivan
+ a Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Mess Joke
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-078@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261229T210000
+DTEND;TZID=Europe/Zagreb:20261229T230000
+SUMMARY:Zlatko Pejaković - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Zlatko Pejaković - koncert. Program Zimske adventura u Trogiru
+ \, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski pr
+ ostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Zlatko Pejaković - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-079@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261230T160000
+DTEND;TZID=Europe/Zagreb:20261230T180000
+SUMMARY:Dječji doček Nove godine - Čarobni animatori
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Dječji doček Nove godine - Čarobni animatori. Program Zimske
+  adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Djeca\nUlaz se nap
+ laćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječji doček Nove godine - Čarobni animatori
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-028@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261230T183000
 DTEND;TZID=Europe/Zagreb:20261230T203000
 SUMMARY:Čarobni animatori: Dječji doček Nove godine
@@ -469,8 +1766,76 @@ DESCRIPTION:Podsjetnik: Čarobni animatori: Dječji doček Nove godine
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-080@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261230T210000
+DTEND;TZID=Europe/Zagreb:20261230T230000
+SUMMARY:DJ program - Domaća zabavna
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Domaća zabavna. Program Zimske adventura u Trogir
+ u\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski p
+ rostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Domaća zabavna
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-081@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261231T110000
+DTEND;TZID=Europe/Zagreb:20261231T130000
+SUMMARY:Dječja Nova godina na ledu - disco na ledu uz DJ program i fotogra
+ firanje
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Dječja Nova godina na ledu - disco na ledu uz DJ program i fot
+ ografiranje. Program Zimske adventura u Trogiru\, Riva - klizalište.\nKat
+ egorija: Djeca\nUlaz se naplaćuje\nVanjski prostor\nRiva - klizalište\, 
+ Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Dječja Nova godina na ledu - disco na ledu uz DJ p
+ rogram i fotografiranje
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-082@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261231T110000
+DTEND;TZID=Europe/Zagreb:20261231T130000
+SUMMARY:Marko Pecotić & Silvia Dvornik - jutarnji doček Nove godine
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Marko Pecotić & Silvia Dvornik - jutarnji doček Nove godine. 
+ Program Zimske adventura u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glaz
+ ba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Marko Pecotić & Silvia Dvornik - jutarnji doček N
+ ove godine
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-083@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261231T200000
+DTEND;TZID=Europe/Zagreb:20261231T220000
+SUMMARY:DJ Black Shark
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ Black Shark. Program Zimske adventura u Trogiru\, Trg Ivana 
+ Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Iv
+ ana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ Black Shark
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-029@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20261231T220000
 DTEND;TZID=Europe/Zagreb:20270101T000000
 SUMMARY:Siniša Vuco (Doček Nove godine)
@@ -485,8 +1850,56 @@ DESCRIPTION:Podsjetnik: Siniša Vuco (Doček Nove godine)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:trogir-2026-084@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20261231T220000
+DTEND;TZID=Europe/Zagreb:20270101T000000
+SUMMARY:Taxi Band - doček Nove godine
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Taxi Band - doček Nove godine. Program Zimske adventura u Trog
+ iru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski
+  prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Taxi Band - doček Nove godine
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-085@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20270101T200000
+DTEND;TZID=Europe/Zagreb:20270101T220000
+SUMMARY:DJ program
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program. Program Zimske adventura u Trogiru\, Trg Ivana Pavl
+ a II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTrg Ivana 
+ Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-086@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20270101T210000
+DTEND;TZID=Europe/Zagreb:20270101T230000
+SUMMARY:Jurica Pađen & Aerodrom - koncert
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:Jurica Pađen & Aerodrom - koncert. Program Zimske adventura u 
+ Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVan
+ jski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Jurica Pađen & Aerodrom - koncert
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:kastela-2026-030@kastela.live
-DTSTAMP:20261123T125927Z
+DTSTAMP:20261124T052858Z
 DTSTART;TZID=Europe/Zagreb:20270102T210000
 DTEND;TZID=Europe/Zagreb:20270102T230000
 SUMMARY:Tomislav Bralić i Klapa Intrade
@@ -497,6 +1910,54 @@ BEGIN:VALARM
 TRIGGER:-PT2H
 ACTION:DISPLAY
 DESCRIPTION:Podsjetnik: Tomislav Bralić i Klapa Intrade
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-087@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20270102T210000
+DTEND;TZID=Europe/Zagreb:20270102T230000
+SUMMARY:DJ program - Trash
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Trash. Program Zimske adventura u Trogiru\, Trg Iv
+ ana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje\nVanjski prostor\nTr
+ g Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Trash
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-088@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20270103T190000
+DTEND;TZID=Europe/Zagreb:20270103T220000
+SUMMARY:Zatvaranje klizališta uz DJ program
+LOCATION:Riva - klizalište\, Trogir
+DESCRIPTION:Zatvaranje klizališta uz DJ program. Program Zimske adventura 
+ u Trogiru\, Riva - klizalište.\nKategorija: Glazba\nUlaz se naplaćuje\nV
+ anjski prostor\nRiva - klizalište\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: Zatvaranje klizališta uz DJ program
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:trogir-2026-089@kastela.live
+DTSTAMP:20261124T052858Z
+DTSTART;TZID=Europe/Zagreb:20270103T210000
+DTEND;TZID=Europe/Zagreb:20270103T230000
+SUMMARY:DJ program - Mesh up (strana\, domaća)
+LOCATION:Trg Ivana Pavla II\, Trogir
+DESCRIPTION:DJ program - Mesh up (strana\, domaća). Program Zimske adventu
+ ra u Trogiru\, Trg Ivana Pavla II.\nKategorija: Glazba\nUlaz se naplaćuje
+ \nVanjski prostor\nTrg Ivana Pavla II\, Trogir
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Podsjetnik: DJ program - Mesh up (strana\, domaća)
 END:VALARM
 END:VEVENT
 END:VCALENDAR

@@ -23,7 +23,13 @@ export const DISTRICTS = [
   "Kaštel Kambelovac",
   "Kaštel Gomilica",
   "Kaštel Sućurac",
+  "Trogir",
 ];
+
+export function cityOf(district) {
+  if (district === "Trogir") return "trogir";
+  return "kastela";
+}
 
 export const CATEGORIES = [
   "Glazba",
@@ -203,6 +209,7 @@ export function validateEvents(rows) {
     const span = resolveSpan(raw.date, raw.start_time, raw.end_time);
     events.push({
       ...raw,
+      city: cityOf(raw.district),
       is_free: raw.is_free === "true",
       end_time: span.end_time,
       end_date: span.end_date,
@@ -293,7 +300,7 @@ export function eventsToIcs(events, options = {}) {
     "PRODID:-//kastela.live//Dogadanja//HR",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    `X-WR-CALNAME:${escapeText(options.calName || "Događanja u Kaštelima")}`,
+    `X-WR-CALNAME:${escapeText(options.calName || "Događanja u Kaštelima i okolici")}`,
     "X-WR-TIMEZONE:Europe/Zagreb",
     "BEGIN:VTIMEZONE",
     "TZID:Europe/Zagreb",
