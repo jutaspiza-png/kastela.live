@@ -15,6 +15,13 @@ const CITIES = [
   { id: "split", name: "Split", inPlace: "Splitu" },
 ];
 
+const CITY_MARK = {
+  kastela: "KS",
+  trogir: "TG",
+  solin: "SO",
+  split: "ST",
+};
+
 const state = {
   events: [],
   city: "all",
@@ -71,6 +78,12 @@ function motif(category) {
 
 function calendarIcon() {
   return '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 3v4M16 3v4M4 10h16M12 13v5M9.5 15.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+}
+
+function cityMark(event) {
+  const mark = CITY_MARK[event.city];
+  if (!mark) return "";
+  return `<span class="city-mark" aria-hidden="true">${mark}</span>`;
 }
 
 function calendarButton(event, variant) {
@@ -221,6 +234,7 @@ function render() {
         <h3>${escapeHtml(formatDay(date))}</h3>
         <ul>
           ${items.map((event) => `<li>
+            ${cityMark(event)}
             <time datetime="${escapeHtml(event.date)}${event.start_time ? `T${escapeHtml(event.start_time)}` : ""}">${escapeHtml(event.start_time || "—")}</time>
             <div class="event-copy">
               <strong>${escapeHtml(event.title)}</strong>

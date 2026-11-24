@@ -419,6 +419,7 @@ h2 { margin: 0; font-size: 26px; letter-spacing: -0.04em; }
 }
 .day ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .day li {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 8px 12px;
@@ -427,6 +428,25 @@ h2 { margin: 0; font-size: 26px; letter-spacing: -0.04em; }
   border-radius: 16px;
   padding: 12px 14px;
   align-items: start;
+}
+.city-mark {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  z-index: 1;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  height: 15px;
+  padding: 0 5px;
+  border: 1px solid color-mix(in srgb, var(--blue) 35%, white);
+  border-radius: 5px;
+  background: white;
+  color: var(--ink);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
 }
 .event-side {
   grid-column: 1 / -1;
