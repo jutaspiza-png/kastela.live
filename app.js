@@ -346,7 +346,7 @@ function openEvent(item) {
   notify.disabled = !on && !decision.ok;
   $("#event-note").textContent = on
     ? "Obavijest je uključena. Stiže 8 sati prije početka."
-    : (decision.ok ? "Obavijest stiže 8 sati prije početka. U kalendar se ništa ne dodaje." : decision.message);
+    : (decision.ok ? "Obavijest stiže 8 sati prije početka." : decision.message);
   if ($("#menu")?.open) $("#menu").close();
   if (!$("#event").open) $("#event").showModal();
 }
