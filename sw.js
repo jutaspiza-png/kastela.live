@@ -1,4 +1,4 @@
-const CACHE = "kastela-v8";
+const CACHE = "kastela-v9";
 const SHELL = [
   "./",
   "./index.html",
@@ -40,7 +40,9 @@ self.addEventListener("push", (event) => {
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  const target = new URL(event.notification.data?.url || "./", self.location.origin).href;
+  const targetUrl = new URL(event.notification.data?.url || "./", self.location.origin);
+  if (targetUrl.origin !== self.location.origin) targetUrl.href = `${self.location.origin}/`;
+  const target = targetUrl.href;
   event.waitUntil(self.clients.matchAll({ type: "window", includeUncontrolled: true }).then(async (windows) => {
     for (const client of windows) {
       if (!client.url.startsWith(self.location.origin)) continue;

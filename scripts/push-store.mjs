@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { randomUUID, timingSafeEqual } from "node:crypto";
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { eventStartUtc, reminderInstant, scheduleDecision } from "./push-time.mjs";
@@ -45,8 +45,53 @@ function nowIso(now) {
   return now.toISOString();
 }
 
+const MAX_ACTIVE_SUBSCRIPTIONS = 400;
+const MAX_REMINDERS = 800;
+const PUSH_HOSTS = new Set([
+  "fcm.googleapis.com",
+  "updates.push.services.mozilla.com",
+  "web.push.apple.com",
+]);
+const SITE_HOSTS = new Set(["www.kastela.live", "kastela.live", "kastelalive.vercel.app"]);
+
+function sameSecret(left, right) {
+  const a = Buffer.from(String(left || ""));
+  const b = Buffer.from(String(right || ""));
+  if (!a.length || a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
+export function isPushEndpoint(endpoint) {
+  let url;
+  try {
+    url = new URL(String(endpoint || ""));
+  } catch {
+    return false;
+  }
+  if (url.protocol !== "https:" || url.username || url.password) return false;
+  const host = url.hostname.toLowerCase();
+  if (PUSH_HOSTS.has(host)) return true;
+  return host.endsWith(".notify.windows.com") || host.endsWith(".push.services.mozilla.com");
+}
+
+export function trustedSiteOrigin(value, { local = false } = {}) {
+  let url;
+  try {
+    url = new URL(String(value || ""));
+  } catch {
+    return "";
+  }
+  if (url.username || url.password) return "";
+  const host = url.hostname.toLowerCase();
+  if (host === "localhost" || host === "127.0.0.1") {
+    return local && url.protocol === "http:" ? url.origin : "";
+  }
+  if (url.protocol !== "https:" || !SITE_HOSTS.has(host)) return "";
+  return `https://${host}`;
+}
+
 function findSubscription(store, endpoint, auth) {
-  return store.subscriptions.find((item) => item.endpoint === endpoint && item.auth === auth && item.status === "active") || null;
+  return store.subscriptions.find((item) => item.endpoint === endpoint && sameSecret(item.auth, auth) && item.status === "active") || null;
 }
 
 function touch(item, now) {
@@ -57,11 +102,13 @@ export function upsertSubscription(store, input, now = new Date()) {
   const endpoint = String(input.endpoint || "");
   const p256dh = String(input.p256dh || input.keys?.p256dh || "");
   const auth = String(input.auth || input.keys?.auth || "");
-  if (!endpoint.startsWith("https://") || !p256dh || !auth) {
+  if (!isPushEndpoint(endpoint) || !p256dh || p256dh.length > 200 || !auth || auth.length > 200) {
     return { ok: false, status: 400, message: "Pretplata nije potpuna." };
   }
   let subscription = store.subscriptions.find((item) => item.endpoint === endpoint);
   if (!subscription) {
+    const active = store.subscriptions.filter((item) => item.status === "active").length;
+    if (active >= MAX_ACTIVE_SUBSCRIPTIONS) return { ok: false, status: 429, message: "Previše pretplata." };
     subscription = {
       id: randomUUID(),
       endpoint,
@@ -72,9 +119,10 @@ export function upsertSubscription(store, input, now = new Date()) {
       status: "active",
     };
     store.subscriptions.push(subscription);
+  } else if (!sameSecret(subscription.auth, auth)) {
+    return { ok: false, status: 401, message: "Pretplata nije potvrđena." };
   } else {
     subscription.p256dh = p256dh;
-    subscription.auth = auth;
     subscription.status = "active";
     subscription.last_used_at = nowIso(now);
     touch(subscription, now);
@@ -109,6 +157,9 @@ export function activateReminder(store, { endpoint, auth, event, now = new Date(
   if (!subscription) return { ok: false, status: 401, message: "Najprije uključi obavijesti na ovom uređaju." };
   const decision = scheduleDecision(event, now);
   if (!decision.ok) return { ok: false, status: 409, ...decision };
+  if (store.reminders.length >= MAX_REMINDERS && !store.reminders.some((item) => item.subscription_id === subscription.id && item.event_id === event.id && item.status === "pending")) {
+    return { ok: false, status: 429, message: "Previše podsjetnika." };
+  }
   const existing = store.reminders.find((item) => item.subscription_id === subscription.id && item.event_id === event.id && item.status === "pending");
   if (existing) {
     existing.scheduled_at = decision.scheduled_at;
@@ -300,13 +351,17 @@ export function stats(store) {
   };
 }
 
+function pageBase(origin) {
+  return trustedSiteOrigin(origin) || "https://www.kastela.live";
+}
+
 export function reminderPayload(event, origin) {
   const place = [event.venue, event.district].filter(Boolean).join(", ");
-  const image = /^https?:\/\//i.test(event.image_url || "") ? event.image_url : undefined;
+  const image = /^https:\/\//i.test(event.image_url || "") ? event.image_url : undefined;
   return {
     title: "Kaštela.live – Podsjetnik",
     body: `${event.title} počinje za 8 sati! Vidimo se u ${place}.`,
-    url: `${origin.replace(/\/$/, "")}/#${event.id}`,
+    url: `${pageBase(origin)}/#${encodeURIComponent(event.id)}`,
     image,
   };
 }
@@ -315,6 +370,6 @@ export function cancellationPayload(title, origin) {
   return {
     title: "Kaštela.live – Otkazano",
     body: title ? `${title} je uklonjen iz kalendara.` : "Događaj je uklonjen iz kalendara.",
-    url: `${origin.replace(/\/$/, "")}/`,
+    url: `${pageBase(origin)}/`,
   };
 }

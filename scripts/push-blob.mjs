@@ -15,31 +15,45 @@ function normalize(parsed) {
 async function loadBlob() {
   try {
     const result = await get(PATHNAME, { access: "private", useCache: false });
-    if (!result || result.statusCode === 404) return emptyStore();
+    if (!result || result.statusCode === 404) return { store: emptyStore(), etag: "" };
     const text = await new Response(result.stream).text();
-    return normalize(JSON.parse(text));
+    return { store: normalize(JSON.parse(text)), etag: result.etag || "" };
   } catch (error) {
     const missing = error?.statusCode === 404 || /not found|does not exist/i.test(String(error?.message || ""));
-    if (missing) return emptyStore();
+    if (missing) return { store: emptyStore(), etag: "" };
     throw error;
   }
 }
 
-async function saveBlob(store) {
+async function saveBlob(store, etag) {
   await put(PATHNAME, JSON.stringify(store), {
     access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
+    ...(etag ? { ifMatch: etag } : {}),
   });
+}
+
+function conflicted(error) {
+  return error?.statusCode === 412 || /precondition|etag|if-match|ifmatch/i.test(String(error?.message || ""));
 }
 
 export function withBlobStore(fn) {
   const run = chain.then(async () => {
-    const store = await loadBlob();
-    const result = await fn(store);
-    await saveBlob(store);
-    return result;
+    let last;
+    for (let attempt = 0; attempt < 5; attempt += 1) {
+      const { store, etag } = await loadBlob();
+      const result = await fn(store);
+      try {
+        await saveBlob(store, etag);
+        return result;
+      } catch (error) {
+        last = error;
+        if (!conflicted(error)) throw error;
+      }
+    }
+    throw last;
   });
   chain = run.then(() => {}, () => {});
   return run;

@@ -48,7 +48,7 @@ Vremena u kalendaru nose `TZID=Europe/Zagreb`. Svaki događaj ima svoj `UID` (`i
 
 Na iPhoneu obavijest radi nakon dodavanja stranice na početni zaslon. Dopuštenje se traži tek na dodir. **Moji podsjetnici** u izborniku isključuju obavijest na tom uređaju. Brisanje pretplate je `DELETE /api/push-subscriptions`.
 
-`node scripts/serve.mjs` svake minute provjeri rok. Na Vercelu isto radi zakazana funkcija `api/push-dispatch` svakih 15 minuta. Ručno slanje je `POST /api/push-dispatch`. S lokalnog računala token nije potreban. Inače zaglavlje `x-admin-token` mora biti `PUSH_ADMIN_TOKEN`. Statistika je na `admin.html` i `GET /api/push-stats`.
+`node scripts/serve.mjs` svake minute provjeri rok. Na Vercelu isto radi zakazana funkcija `api/push-dispatch` svakih 15 minuta, i ona traži `Authorization: Bearer` s vrijednošću `CRON_SECRET`. Ručno slanje je `POST /api/push-dispatch`. S lokalnog računala token nije potreban. Inače zaglavlje `x-admin-token` mora biti `PUSH_ADMIN_TOKEN`. Statistika je na `admin.html` i `GET /api/push-stats`.
 
 Na Vercelu pretplate stoje u privatnom Blob spremištu (`push/store.json`), a ključevi u `VAPID_PUBLIC_KEY` i `VAPID_PRIVATE_KEY`. Lokalno i dalje vrijede `data/vapid.json` i `data/push-store.json`.
 
@@ -58,6 +58,7 @@ VAPID ključevi su u `data/vapid.json` (nije u gitu) ili u varijablama:
 - `VAPID_PRIVATE_KEY`
 - `VAPID_SUBJECT` (npr. `mailto:podsjetnik@kastela.live`)
 - `PUSH_ADMIN_TOKEN`
+- `CRON_SECRET` (Vercel ga šalje zakazanoj funkciji)
 
 Pretplate i podsjetnici stoje u `data/push-store.json`. Nema prijave korisnika. Promjena vremena u `data/events.csv` preračuna rok. Nestanak događaja gasi podsjetnik i, ako pretplata još vrijedi, pošalje obavijest da je događaj uklonjen.
 

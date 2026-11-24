@@ -13,9 +13,11 @@ import {
   saveStore,
   loadStore,
   syncWithEvents,
+  reminderPayload,
   upsertSubscription,
   withStore,
 } from "./push-store.mjs";
+import { dispatchAllowed, siteOrigin } from "./push-api.mjs";
 
 const winter = zagrebLocalToUtc("2026-12-05", "20:00");
 assert.equal(winter.toISOString(), "2026-12-05T19:00:00.000Z");
@@ -36,7 +38,7 @@ assert.equal(scheduleDecision(event, new Date("2026-12-05T13:00:00.000Z")).code,
 assert.equal(scheduleDecision(event, new Date("2026-12-05T21:00:00.000Z")).code, "past");
 
 const store = emptyStore();
-const sub = upsertSubscription(store, { endpoint: "https://push.example/device", p256dh: "key", auth: "secret" }, noon);
+const sub = upsertSubscription(store, { endpoint: "https://fcm.googleapis.com/fcm/send/device", p256dh: "key", auth: "secret" }, noon);
 assert.equal(sub.ok, true);
 const first = activateReminder(store, { endpoint: sub.subscription.endpoint, auth: "secret", event, now: noon });
 const second = activateReminder(store, { endpoint: sub.subscription.endpoint, auth: "secret", event, now: noon });
@@ -69,14 +71,14 @@ markFailed(store, failing.reminder.id, { statusCode: 410, message: "gone" }, noo
 assert.equal(store.subscriptions[0].status, "gone");
 assert.equal(activateReminder(store, { endpoint: sub.subscription.endpoint, auth: "secret", event, now: noon }).status, 401);
 
-upsertSubscription(store, { endpoint: "https://push.example/device", p256dh: "key", auth: "secret" }, noon);
-activateReminder(store, { endpoint: "https://push.example/device", auth: "secret", event, now: noon });
-assert.equal(deactivateReminder(store, { endpoint: "https://push.example/device", auth: "secret", eventId: "e1", now: noon }).changed, true);
+upsertSubscription(store, { endpoint: "https://fcm.googleapis.com/fcm/send/device", p256dh: "key", auth: "secret" }, noon);
+activateReminder(store, { endpoint: "https://fcm.googleapis.com/fcm/send/device", auth: "secret", event, now: noon });
+assert.equal(deactivateReminder(store, { endpoint: "https://fcm.googleapis.com/fcm/send/device", auth: "secret", eventId: "e1", now: noon }).changed, true);
 assert.equal(store.reminders.find((item) => item.event_id === "e1" && item.status === "pending"), undefined);
 
 const dueStore = emptyStore();
-upsertSubscription(dueStore, { endpoint: "https://push.example/due", p256dh: "p", auth: "d" }, noon);
-activateReminder(dueStore, { endpoint: "https://push.example/due", auth: "d", event, now: noon });
+upsertSubscription(dueStore, { endpoint: "https://fcm.googleapis.com/fcm/send/due", p256dh: "p", auth: "d" }, noon);
+activateReminder(dueStore, { endpoint: "https://fcm.googleapis.com/fcm/send/due", auth: "d", event, now: noon });
 const atDue = new Date(reminderInstant(event).getTime() + 1000);
 syncWithEvents(dueStore, [event], atDue);
 assert.equal(dueStore.reminders[0].status, "pending");
@@ -86,10 +88,23 @@ const directory = mkdtempSync(join(tmpdir(), "kastela-push-"));
 const file = join(directory, "store.json");
 saveStore(file, emptyStore());
 await withStore(file, (saved) => {
-  upsertSubscription(saved, { endpoint: "https://push.example/a", p256dh: "p", auth: "a" }, noon);
+  upsertSubscription(saved, { endpoint: "https://fcm.googleapis.com/fcm/send/a", p256dh: "p", auth: "a" }, noon);
 });
 const loaded = loadStore(file);
 assert.equal(loaded.subscriptions.length, 1);
 rmSync(directory, { recursive: true, force: true });
+
+assert.equal(upsertSubscription(emptyStore(), { endpoint: "https://evil.example/hook", p256dh: "p", auth: "a" }, noon).status, 400);
+const owned = emptyStore();
+upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "old", auth: "secret" }, noon);
+assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "new", auth: "other" }, noon).status, 401);
+assert.equal(owned.subscriptions[0].p256dh, "old");
+assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "new", auth: "secret" }, noon).ok, true);
+assert.equal(owned.subscriptions[0].p256dh, "new");
+assert.equal(reminderPayload(event, "https://attacker.example").url.startsWith("https://www.kastela.live/#"), true);
+assert.equal(siteOrigin({ headers: { origin: "https://attacker.example" }, socket: {} }), "https://www.kastela.live");
+assert.equal(siteOrigin({ headers: { origin: "https://www.kastela.live" }, socket: {} }), "https://www.kastela.live");
+assert.equal(dispatchAllowed({ headers: {}, socket: { remoteAddress: "203.0.113.8" } }), false);
+assert.equal(dispatchAllowed({ headers: {}, socket: { remoteAddress: "127.0.0.1" } }), true);
 
 console.log("push-check: raspored, duplikati, izmjena, otkaz i slanje");

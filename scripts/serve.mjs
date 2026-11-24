@@ -6,7 +6,6 @@ import { handlePushApi, startPushScheduler } from "./push-api.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const port = Number(process.env.PORT || 4173);
-let pageOrigin = `http://127.0.0.1:${port}`;
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -25,7 +24,6 @@ const types = {
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", "http://127.0.0.1");
-    if (request.headers.origin) pageOrigin = request.headers.origin;
     if (url.pathname.startsWith("/api/push")) {
       await handlePushApi(request, response, url, root);
       return;
@@ -33,7 +31,9 @@ const server = createServer(async (request, response) => {
     let pathname = decodeURIComponent(url.pathname);
     if (pathname.endsWith("/")) pathname += "index.html";
     pathname = pathname.replace(/^\/+/, "");
-    if (!pathname || pathname.split("/").includes("..")) {
+    const parts = pathname.split("/");
+    const base = parts.at(-1) || "";
+    if (!pathname || parts.includes("..") || parts.some((part) => part.startsWith(".")) || base === "vapid.json" || base === "push-store.json") {
       response.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
       response.end("Zabranjeno");
       return;
@@ -62,7 +62,7 @@ const server = createServer(async (request, response) => {
   }
 });
 
-startPushScheduler(root, () => pageOrigin);
+startPushScheduler(root, () => `http://127.0.0.1:${port}`);
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`Kaštela događanja: http://127.0.0.1:${port}`);

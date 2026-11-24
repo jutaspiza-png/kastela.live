@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "node:crypto";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,6 +15,7 @@ import {
   reminderViews,
   stats,
   syncWithEvents,
+  trustedSiteOrigin,
   upsertSubscription,
 } from "./push-store.mjs";
 import { withPushStore } from "./push-persist.mjs";
@@ -93,19 +95,67 @@ function parseJson(value) {
   }
 }
 
+const MAX_BODY = 4096;
+const writes = new Map();
+
+function sameSecret(left, right) {
+  const a = Buffer.from(String(left || ""));
+  const b = Buffer.from(String(right || ""));
+  if (!a.length || a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
+function parsedWithinLimit(value) {
+  if (value == null) return value;
+  try {
+    if (JSON.stringify(value).length > MAX_BODY) return null;
+  } catch {
+    return null;
+  }
+  return value;
+}
+
 async function readBody(request) {
+  const declared = Number(request.headers?.["content-length"] || 0);
+  if (Number.isFinite(declared) && declared > MAX_BODY) return null;
   const existing = request.body;
-  if (Buffer.isBuffer(existing)) return existing.length ? parseJson(existing.toString("utf8")) : {};
-  if (typeof existing === "string") return existing ? parseJson(existing) : {};
-  if (existing && typeof existing === "object") return existing;
+  if (Buffer.isBuffer(existing)) {
+    if (existing.length > MAX_BODY) return null;
+    return existing.length ? parseJson(existing.toString("utf8")) : {};
+  }
+  if (typeof existing === "string") {
+    if (existing.length > MAX_BODY) return null;
+    return existing ? parseJson(existing) : {};
+  }
+  if (existing && typeof existing === "object") return parsedWithinLimit(existing);
   try {
     const chunks = [];
-    for await (const chunk of request) chunks.push(chunk);
+    let size = 0;
+    for await (const chunk of request) {
+      size += chunk.length;
+      if (size > MAX_BODY) return null;
+      chunks.push(chunk);
+    }
     if (!chunks.length) return {};
     return parseJson(Buffer.concat(chunks).toString("utf8"));
   } catch {
     return null;
   }
+}
+
+function withinRate(request) {
+  const now = Date.now();
+  const ip = String(request.headers?.["x-forwarded-for"] || request.socket?.remoteAddress || "local").split(",")[0].trim();
+  for (const [key, limit] of [[ip, 30], ["all", 120]]) {
+    const recent = (writes.get(key) || []).filter((time) => now - time < 60_000);
+    if (recent.length >= limit) {
+      writes.set(key, recent);
+      return false;
+    }
+    recent.push(now);
+    writes.set(key, recent);
+  }
+  return true;
 }
 
 function sendJson(response, status, payload) {
@@ -124,16 +174,23 @@ function isLocal(request) {
 function allowedAdmin(request, vapid) {
   if (isLocal(request)) return true;
   const token = request.headers["x-admin-token"];
-  return Boolean(vapid.adminToken) && token === vapid.adminToken;
+  const bearer = String(request.headers.authorization || "");
+  const admin = vapid?.adminToken || "";
+  const cron = process.env.CRON_SECRET || "";
+  if (admin && (sameSecret(token, admin) || sameSecret(bearer, `Bearer ${admin}`))) return true;
+  return Boolean(cron) && sameSecret(bearer, `Bearer ${cron}`);
+}
+
+export function dispatchAllowed(request) {
+  return allowedAdmin(request, loadVapid(process.cwd()) || {});
 }
 
 export function siteOrigin(request) {
-  const origin = request?.headers?.origin;
-  if (origin) return origin;
-  const host = request?.headers?.["x-forwarded-host"] || request?.headers?.host;
-  if (host && !String(host).includes("localhost") && !String(host).startsWith("127.")) return `https://${host}`;
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-  return "https://www.kastela.live";
+  const local = isLocal(request);
+  const host = String(request?.headers?.["x-forwarded-host"] || request?.headers?.host || "").split(",")[0].trim();
+  return trustedSiteOrigin(request?.headers?.origin, { local })
+    || trustedSiteOrigin(host ? `https://${host}` : "", { local })
+    || "https://www.kastela.live";
 }
 
 export function startPushScheduler(root, originOf) {
@@ -200,6 +257,10 @@ export async function handlePushApi(request, response, url, root) {
   }[url.pathname] || url.pathname;
   const file = storeFile(root);
   const method = request.method || "GET";
+  if (method !== "GET" && !withinRate(request)) {
+    sendJson(response, 429, { ok: false, message: "Previše zahtjeva. Pokušaj ponovno za minutu." });
+    return;
+  }
 
   if (route === "/api/push/config" && method === "GET") {
     sendJson(response, 200, { publicKey: vapid.publicKey });
