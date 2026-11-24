@@ -145,16 +145,20 @@ async function readBody(request) {
 
 function withinRate(request) {
   const now = Date.now();
-  const ip = String(request.headers?.["x-forwarded-for"] || request.socket?.remoteAddress || "local").split(",")[0].trim();
-  for (const [key, limit] of [[ip, 30], ["all", 120]]) {
-    const recent = (writes.get(key) || []).filter((time) => now - time < 60_000);
-    if (recent.length >= limit) {
-      writes.set(key, recent);
-      return false;
+  const real = process.env.VERCEL ? String(request.headers?.["x-real-ip"] || "").split(",")[0].trim() : "";
+  const key = real || String(request.socket?.remoteAddress || "local");
+  if (writes.size > 500) {
+    for (const [name, times] of writes) {
+      if (!times.some((time) => now - time < 60_000)) writes.delete(name);
     }
-    recent.push(now);
-    writes.set(key, recent);
   }
+  const recent = (writes.get(key) || []).filter((time) => now - time < 60_000);
+  if (recent.length >= 20) {
+    writes.set(key, recent);
+    return false;
+  }
+  recent.push(now);
+  writes.set(key, recent);
   return true;
 }
 
@@ -167,6 +171,7 @@ function sendJson(response, status, payload) {
 }
 
 function isLocal(request) {
+  if (request.headers?.["x-forwarded-for"] || request.headers?.["x-real-ip"] || request.headers?.forwarded) return false;
   const address = request.socket?.remoteAddress || "";
   return address === "127.0.0.1" || address === "::1" || address.endsWith(":127.0.0.1");
 }

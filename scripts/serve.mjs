@@ -64,6 +64,7 @@ const server = createServer(async (request, response) => {
 
 startPushScheduler(root, () => `http://127.0.0.1:${port}`);
 
-server.listen(port, "0.0.0.0", () => {
-  console.log(`Kaštela događanja: http://127.0.0.1:${port}`);
+const host = process.env.HOST || "127.0.0.1";
+server.listen(port, host, () => {
+  console.log(`Kaštela događanja: http://${host}:${port}`);
 });

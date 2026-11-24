@@ -98,6 +98,34 @@ function touch(item, now) {
   item.updated_at = nowIso(now);
 }
 
+function hasLiveReminder(store, subscriptionId) {
+  return store.reminders.some((item) => item.subscription_id === subscriptionId && (item.status === "pending" || item.status === "sending"));
+}
+
+function reclaimSubscriptions(store, now) {
+  const cutoff = now.getTime() - 14 * 24 * 60 * 60 * 1000;
+  store.reminders = store.reminders.filter((item) => {
+    if (item.status === "pending" || item.status === "sending") return true;
+    return new Date(item.updated_at || item.created_at || 0).getTime() >= cutoff;
+  });
+  const live = new Set(
+    store.reminders.filter((item) => item.status === "pending" || item.status === "sending").map((item) => item.subscription_id),
+  );
+  store.subscriptions = store.subscriptions.filter((item) => item.status === "active");
+  let active = store.subscriptions.length;
+  if (active < MAX_ACTIVE_SUBSCRIPTIONS) return;
+  const idle = store.subscriptions
+    .filter((item) => !live.has(item.id))
+    .sort((a, b) => String(a.last_used_at || "").localeCompare(String(b.last_used_at || "")));
+  const drop = new Set();
+  for (const item of idle) {
+    if (active < MAX_ACTIVE_SUBSCRIPTIONS) break;
+    drop.add(item.id);
+    active -= 1;
+  }
+  if (drop.size) store.subscriptions = store.subscriptions.filter((item) => !drop.has(item.id));
+}
+
 export function upsertSubscription(store, input, now = new Date()) {
   const endpoint = String(input.endpoint || "");
   const p256dh = String(input.p256dh || input.keys?.p256dh || "");
@@ -105,6 +133,7 @@ export function upsertSubscription(store, input, now = new Date()) {
   if (!isPushEndpoint(endpoint) || !p256dh || p256dh.length > 200 || !auth || auth.length > 200) {
     return { ok: false, status: 400, message: "Pretplata nije potpuna." };
   }
+  reclaimSubscriptions(store, now);
   let subscription = store.subscriptions.find((item) => item.endpoint === endpoint);
   if (!subscription) {
     const active = store.subscriptions.filter((item) => item.status === "active").length;
@@ -120,7 +149,12 @@ export function upsertSubscription(store, input, now = new Date()) {
     };
     store.subscriptions.push(subscription);
   } else if (!sameSecret(subscription.auth, auth)) {
-    return { ok: false, status: 401, message: "Pretplata nije potvrđena." };
+    if (hasLiveReminder(store, subscription.id)) return { ok: false, status: 401, message: "Pretplata nije potvrđena." };
+    subscription.p256dh = p256dh;
+    subscription.auth = auth;
+    subscription.status = "active";
+    subscription.last_used_at = nowIso(now);
+    touch(subscription, now);
   } else {
     subscription.p256dh = p256dh;
     subscription.status = "active";

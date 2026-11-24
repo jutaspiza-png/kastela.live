@@ -97,14 +97,24 @@ rmSync(directory, { recursive: true, force: true });
 assert.equal(upsertSubscription(emptyStore(), { endpoint: "https://evil.example/hook", p256dh: "p", auth: "a" }, noon).status, 400);
 const owned = emptyStore();
 upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "old", auth: "secret" }, noon);
-assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "new", auth: "other" }, noon).status, 401);
-assert.equal(owned.subscriptions[0].p256dh, "old");
-assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "new", auth: "secret" }, noon).ok, true);
+assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "new", auth: "other" }, noon).ok, true);
+assert.equal(owned.subscriptions[0].auth, "other");
+activateReminder(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", auth: "other", event, now: noon });
+assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "stolen", auth: "intruder" }, noon).status, 401);
 assert.equal(owned.subscriptions[0].p256dh, "new");
+assert.equal(upsertSubscription(owned, { endpoint: "https://fcm.googleapis.com/fcm/send/owned", p256dh: "kept", auth: "other" }, noon).ok, true);
+assert.equal(owned.subscriptions[0].p256dh, "kept");
 assert.equal(reminderPayload(event, "https://attacker.example").url.startsWith("https://www.kastela.live/#"), true);
 assert.equal(siteOrigin({ headers: { origin: "https://attacker.example" }, socket: {} }), "https://www.kastela.live");
 assert.equal(siteOrigin({ headers: { origin: "https://www.kastela.live" }, socket: {} }), "https://www.kastela.live");
 assert.equal(dispatchAllowed({ headers: {}, socket: { remoteAddress: "203.0.113.8" } }), false);
 assert.equal(dispatchAllowed({ headers: {}, socket: { remoteAddress: "127.0.0.1" } }), true);
+assert.equal(dispatchAllowed({ headers: { "x-forwarded-for": "203.0.113.9" }, socket: { remoteAddress: "127.0.0.1" } }), false);
+const crowd = emptyStore();
+for (let index = 0; index < 400; index += 1) {
+  assert.equal(upsertSubscription(crowd, { endpoint: `https://fcm.googleapis.com/fcm/send/n${index}`, p256dh: "p", auth: "a" }, noon).ok, true);
+}
+assert.equal(upsertSubscription(crowd, { endpoint: "https://fcm.googleapis.com/fcm/send/extra", p256dh: "p", auth: "a" }, noon).ok, true);
+assert.equal(crowd.subscriptions.filter((item) => item.status === "active").length, 400);
 
 console.log("push-check: raspored, duplikati, izmjena, otkaz i slanje");
