@@ -512,6 +512,7 @@ dialog form { padding: 22px; }
   border-radius: 0;
 }
 #menu h3 { margin: 18px 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+#menu .menu-list + .guide-link { margin-top: 18px; }
 .menu-list { display: grid; gap: 4px; }
 .menu-list button { text-align: left; border: 0; background: transparent; padding: 8px 0; font-weight: 600; border-bottom: 1px solid var(--line); }
 a.guide-link { text-decoration: none; }

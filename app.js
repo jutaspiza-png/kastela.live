@@ -181,8 +181,6 @@ function render() {
     button.setAttribute("aria-pressed", String(button.dataset.city === city.id));
   });
   const kastela = city.id === "kastela";
-  $("#places-heading").hidden = !kastela;
-  $("#place-menu").hidden = !kastela;
   $("#district").closest("label").hidden = !kastela;
 
   const events = selected();
