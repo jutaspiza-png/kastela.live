@@ -1,4 +1,4 @@
-const CACHE = "kastela-v11";
+const CACHE = "kastela-v12";
 const SHELL = [
   "./",
   "./index.html",

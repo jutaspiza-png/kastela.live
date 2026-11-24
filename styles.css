@@ -241,6 +241,25 @@ h1 { margin: 0; font-size: clamp(42px, 8vw, 76px); line-height: 0.92; letter-spa
 
 .controls { margin-top: 8px; }
 .cities { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.season-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 16px; }
+.season-links a {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.season-links a[aria-current="page"] { background: var(--ink); color: white; border-color: var(--ink); }
+.programme-list { padding-bottom: 48px; }
+.programme-list .day h2 { margin: 8px 0 12px; font-size: 1.45rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; color: var(--orange); }
+.programme-list .day time { white-space: nowrap; }
+.programme-list .day li > .day-badge { grid-column: 1 / -1; justify-self: start; }
+@media (min-width: 720px) {
+  .programme-list .day li { grid-template-columns: 124px minmax(0, 1fr) auto; }
+  .programme-list .day li > .day-badge { grid-column: auto; justify-self: end; align-self: center; }
+}
 .cities button {
   border: 1px solid var(--line);
   background: white;

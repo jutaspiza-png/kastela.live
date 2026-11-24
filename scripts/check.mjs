@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { CATEGORIES, DISTRICTS, eventsToIcs, googleTemplateUrl, parseCsv, resolveSpan, validateEvents } from "./ics.mjs";
 import { filterEvents, foldText, weekendDates } from "./filter.mjs";
 import { cityFromHost } from "./cities.mjs";
+import { PROGRAMMES, renderProgrammePage, sitemapXml } from "./programmes.mjs";
 import { validateSundayStores } from "./sunday-stores.mjs";
 
 const csv = readFileSync(new URL("../data/events.csv", import.meta.url), "utf8");
@@ -32,7 +33,7 @@ for (const category of CATEGORIES) assert.ok(html.includes(category), `index.htm
 for (const event of events) {
   assert.ok(DISTRICTS.includes(event.district), event.district);
   assert.ok(CATEGORIES.includes(event.category), event.category);
-  assert.ok(["Advent u Kaštelima", "Zimska Adventura Trogir 2026", "Solinski Adventorium 2026", "Advent Grada Splita 2026"].includes(event.programme), event.programme);
+  assert.ok(PROGRAMMES.some((item) => item.programme === event.programme), event.programme);
 }
 
 const stela = events.find((event) => event.id === "kastela-2026-001");
@@ -173,5 +174,19 @@ assert.ok(sunday.stores.some((store) => store.chain === "Tommy" && store.open));
 assert.ok(sunday.stores.some((store) => store.chain === "Tommy" && store.open === false && store.hours === null));
 assert.ok(sunday.stores.some((store) => store.chain === "Ribola" && store.city === "Kaštela" && store.open));
 assert.equal(sunday.stores.filter((store) => !["Kaštela", "Split", "Solin", "Trogir"].includes(store.city)).length, 0);
+
+for (const programme of PROGRAMMES) {
+  assert.equal(html.includes(`href=".${programme.path}"`), true, programme.path);
+  const list = events.filter((event) => event.programme === programme.programme);
+  assert.ok(list.length > 0, programme.programme);
+  const page = renderProgrammePage(programme, list);
+  assert.equal(page.includes(`<h1>${programme.programme}</h1>`), true, programme.programme);
+  assert.equal((page.match(/<li>/g) || []).length, list.length, programme.programme);
+  assert.equal(page.includes(`https://www.kastela.live${programme.path}`), true);
+  assert.equal(sitemapXml().includes(`https://www.kastela.live${programme.path}`), true);
+}
+const solin = PROGRAMMES.find((item) => item.city === "solin");
+const solinPage = renderProgrammePage(solin, events.filter((event) => event.programme === solin.programme));
+assert.equal(solinPage.includes(">—<"), true);
 
 console.log(`check: ${events.length} događanja, ICS ${Buffer.byteLength(ics)} bajtova`);

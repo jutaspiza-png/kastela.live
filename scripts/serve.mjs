@@ -3,6 +3,8 @@ import { readFile } from "node:fs/promises";
 import { extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { handlePushApi, startPushScheduler } from "./push-api.mjs";
+import { loadEvents } from "./generate-ics.mjs";
+import { isPublicPath, publicBody } from "./programmes.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const port = Number(process.env.PORT || 4173);
@@ -24,6 +26,14 @@ const types = {
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", "http://127.0.0.1");
+    if (isPublicPath(url.pathname)) {
+      const generated = publicBody(url.pathname, loadEvents(join(root, "data", "events.csv")));
+      if (generated) {
+        response.writeHead(200, { "Content-Type": generated.type, "Cache-Control": "no-cache" });
+        response.end(generated.body);
+        return;
+      }
+    }
     if (url.pathname.startsWith("/api/push")) {
       await handlePushApi(request, response, url, root);
       return;

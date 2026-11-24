@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { foldText } from "./filter.mjs";
 import { loadEvents, writeCalendar } from "./generate-ics.mjs";
 import { eventsToIcs } from "./ics.mjs";
+import { writePublicPages } from "./programmes.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const site = resolve(root, "_site");
@@ -52,5 +53,6 @@ for (const [name, list] of programmes) {
   const slug = foldText(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "kalendar";
   writeFileSync(resolve(programmeDir, `${slug}.ics`), eventsToIcs(list, { calName: name }));
 }
+writePublicPages(site, events);
 
 console.log(`_site: ${events.length} događanja`);
